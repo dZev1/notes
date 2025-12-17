@@ -24,11 +24,11 @@ Esto parece totalmente inútil, pero ahora podemos hacer un **Override** del fac
 Hay una pequeña limitación: las sublcases pueden devolver diferentes tipos de productos sólo si estos productos tienen una clase base o interfaz en común. También el factory method debe tener su tipo de retorno declarado como esta interfaz.
 
 Queremos llegar a la siguiente estructura:
-![alt text](imgs/image.png)
+![alt text](imgs/factory_method_img.png)
 
 ## Estructura
 
-![alt text](imgs/structure.png)
+![alt text](imgs/factory_method_structure.png)
 
 1. El producto declara la interfaz, que es común a todos los objetos producidos por el creador y sus subclases.
 2. Los productos concretos son diferentes implementaciones de la interfaz de producto.

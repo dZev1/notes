@@ -30,7 +30,7 @@ La clase singleton declara el método getInstance() que retorna la misma instanc
 
 Tenemos una conexión a una **Base de datos**. Su clase de conexión `DatabaseConnection` actúa como un Singleton. Su clase no tiene un constructor público, entonces se debe usar su método `getInstance` si se requiere obtener la db.
 
-```Java
+```java
 public class Database {
     private static Database instance;
 
@@ -53,7 +53,7 @@ public class Database {
 }
 ```
 
-```Java
+```java
 public class App {
     public static void main(String[] args) {
         Database db = Database.getInstance();

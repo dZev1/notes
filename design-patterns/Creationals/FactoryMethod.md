@@ -42,7 +42,7 @@ Tengo un restaurante de cómida rápida **McLovin**, en él se hacen hamburguesa
 
 Tenemos la siguiente implementación de `order`:
 
-```Java
+```java
 public class Restaurant {
     public Burger order(String type) {
         Burger burger = null;
@@ -59,13 +59,13 @@ public class Restaurant {
 
 siendo `Burger` una interfaz y `CowBurger`, `VeggieBurger` implementaciones de Burger.
 
-```Java
+```java
 public interface Burger {
     void prepare();
 }
 ```
 
-```Java
+```java
 public class CowBurger implements Burger {
     private boolean prepared; 
 
@@ -75,7 +75,7 @@ public class CowBurger implements Burger {
 }
 ```
 
-```Java
+```java
 public class VeggieBurger implements Burger {
     private boolean prepared; 
 
@@ -89,7 +89,7 @@ Ahora, seguimos teniendo muchos `if`s que debería ser posible eliminar de algun
 
 Hagamos varias cosas. Primero, hagamos que `Restaurant` sea una clase abstracta, e implementemos un método abstracto `createBurger()`. Luego cambiemos la implementacion de `order` a la siguiente:
 
-```Java
+```java
 public abstract class Restaurant {
     public Burger order() {
         Burger burger = createBurger();
@@ -103,7 +103,7 @@ public abstract class Restaurant {
 
 Y ahora creamos las clases `VeggieBurgerRestaurant` y `CowBurgerRestaurant`:
 
-```Java
+```java
 public class CowBurgerRestaurant extends Restaurant {
     @Override
     public Burger createBurger() {
@@ -112,7 +112,7 @@ public class CowBurgerRestaurant extends Restaurant {
 }
 ```
 
-```Java
+```java
 public class VeggieBurgerRestaurant extends Restaurant {
     @Override
     public Burger createBurger() {
@@ -123,7 +123,7 @@ public class VeggieBurgerRestaurant extends Restaurant {
 
 De esta manera limpiamos bastante el código, solo teniendo que hacer:
 
-```Java
+```java
 public class Main {
     public static void main(String[] args) {
         Restaurant cowResto = new CowBurgerRestaurant();

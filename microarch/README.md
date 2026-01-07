@@ -8,7 +8,8 @@ Preparación para el final de miroarquitectura, para sacarme un excelente 10 cre
 	- [[microarch/README#Transistor MOS|Transistor CMOS]]
 - [[historia|Historia]]
 - [[sistema-de-memoria|Sistema de Memoria]]
-- [[tecnologías-de-memoria|Tecnologías de Memoria]]
+	- [[tecnologías-de-memoria|Tecnologías de Memoria]]
+	- [[memoria-cache|Memoria Cache]]
 ## Conceptitos
 
 ### Alta Impedancia (Z)
@@ -44,6 +45,7 @@ Cuando el voltaje de un ánodo aumenta por encima del cátodo, se el diodo es **
 #### Estructura MOS
 
 Una estructura MOS se crea superponiendo varias capas de materiales conductores y aislantes formando una estructura simil a un sanguche. La tecnología CMOS provee dos tipos de transistores: nMOS y pMOS, se pueden utilizar ambos transistores de manera intercambiable, asi que usaremos CMOS para referirnos a cualquiera de ellos.
+
 ![[Pasted image 20260103232854.png]]
 
 ---
@@ -51,3 +53,5 @@ $$V_{DD} \iff POWER \iff LOGIC \ 1 \iff Voltaje+$$
 $$V_{SS} \iff GROUND \iff LOGIC \ 0$$
 
 Se puede ver a los transistores MOS como switches ON/OFF (1/0 para los nMOS y 0/1 para los pMOS)
+
+El 0 del nMOS es más fuerte que el 0 del pMOS y el 1 del pMOS es más fuerte que el 1 del nMOS.

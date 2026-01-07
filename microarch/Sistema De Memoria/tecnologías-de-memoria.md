@@ -75,7 +75,7 @@ El problema consiste en decidir qué tipo de RAM utilizar en el sistema:
 >
 >Si usamos solo DRAM, resolvemos el costo y la energía, pero con una velocidad inviable, es demasiado lenta.
 
-## SOLUCIÓN: Cache Memory
+## SOLUCIÓN: [[memoria-cache|Cache Memory]]
 
 La memoria cache, es el primer nivel de la jerarquía. Es la primer memoria que se encuentra la dirección que la CPU coloca en el Address Bus.
 

@@ -69,7 +69,7 @@ MISS Penalty no se mide, se estima con un promedio en base a experimentar con un
 MISS rate y MISS penalty varían de forma notable para lecturas y escrituras.
 
 ## Hardware dedicado es más complejidad
-![[Pasted image 20260107150355.png]]
+![[Pasted image 20260107150355 1.png]]
 
 El **Cache Controller** está entre el procesador y el bus del sistema. Las líneas del bus de control indican qué operación va a iniciar el procesador hacia el sistema. el bus de address hacia qué dirección hacerla, y por el bus de datos fluye la información.
 
@@ -77,7 +77,7 @@ El controlador Cache se convierte en el árbitro del bus, tomando el control de 
 
 El controlador cache tiene una interfaz con el Bus Local del procesador, una con el Procesador y una con el Control del Cache. Por último tenemos el Directorio Cache, que es una memoria de acceso por contenido
 
-![[Pasted image 20260107151115.png]]
+![[Pasted image 20260107151115 1.png]]
 
 Cada vez que llega una dirección al controlador cache, ell directorio es el encargado de decir si hay un MISS o un HIT.
 

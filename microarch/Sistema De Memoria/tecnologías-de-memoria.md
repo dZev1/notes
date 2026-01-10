@@ -18,7 +18,7 @@ Tienen mayor capacidad que las no volátiles, y pueden modificarse en tiempo rea
 
 ![[Pasted image 20260106143113.png]]
 
-![[Pasted image 20260106143620.png]]
+![[Pasted image 20260106143620 1.png]]
 
 Almacena información en forma de estado de carga en un capacitor y la sostiene durante un breve lapso con ayuda de un transistor. Un bit se implementa con un solo transistor, el cual está en estado de corte, por lo cual consume mínima energía.
 
@@ -28,7 +28,7 @@ Cuando leemos la información guardada, nos llevamos la carga, por lo cual se de
 
 #### Memoria volátil estática (SRAM)
 
-![[Pasted image 20260106143842.png]]
+![[Pasted image 20260106143842 1.png]]
 
 Seis transistores por cada celda, entonces hay mayor consumo. Ganamos el no tener que refrescarla, la información se mantiene ahí, no se pierde al leerla. Es más rápida que la DRAM, pero más costosa.
 
@@ -44,7 +44,7 @@ El resto es memoria volátil y es allí donde el sistema copia hasta buena parte
 
 Sigue un modelo de Von Neumann. Es decir, tenemos un procesador, una memoria y la lógica de entrada/salida para conectar el computador al mundo exterior. Hay buffers desde el bus del sistema al bus del procesador, para poder manejar los dispositivos conectados al bus del sistema.
 
-![[Pasted image 20260106145955.png]]
+![[Pasted image 20260106145955 1.png]]
 
 Desde los años 80, las velocidades de las CPU comienzan a superar año a año a los tiempos de acceso a memoria dinámica.
 

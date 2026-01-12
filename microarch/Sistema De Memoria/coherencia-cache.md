@@ -140,3 +140,178 @@ Una operación puede iniciarse antes de que se complete otra, aunque solo se per
 Para cualquier protocolo de coherencia se deben definir dos atributos por línea de cache: su **ownership** y su **coherencia**. Estos atributos definen las acciones que el protocolo debe realizar para cada actividad posible en el bus del sistema detectable por el Snoop Bus.
 
 Un cache es propietario de la línea cuando es el único que la tiene. Sino, ownership es **SHARED**. Una línea esta coherente con el resto de las copias disponibles cuando todas las copias son iguales; y es incoherente si su copia está **DIRTY** en algún cache producto de alguna escritura. Esto puede tolerarse siempre que el cache que tiene la copia **DIRTY** tenga el ownership de la línea.
+
+## Protocolo MSI
+
+Protocolo de tres estados: Modified, Shared, Invalid (**M, S, I**). Es el protocolo más simple que se puede implementar.
+
+- **Invalid**: la línea es inválida. No se informa al sistema que se invalida una línea.
+- **Shared**: la línea puede **potencialmente** estar compartida. Entonces puede estar compartida o el core que marca Shared puede ser el único que la tenga.
+- **Modified**: la línea fue modificada en el cache **local**, la línea está DIRTY. Como este protocolo es **write-invalidate**, este estado es además **EXCLUSIVO**. Este estado implica que ese core es el dueño de la línea. Este estado permite aplicar políticas **Write Back** en el cache local.
+
+Estos protocolos tienden a beneficiar no solo la performance del core local, sino que también la del conjunto.
+
+### Transiciones requerimientos CPU
+
+![[Pasted image 20260111161819.png]]
+
+#### INVALID  --CPU Read--> SHARED
+
+Da un *Read Miss* en el bus, sale al bus del sistema a buscar el dato. Una vez que se haga con el dato, lo almacena en el cache y lo coloca en estado **SHARED**. No sabemos si la línea está en otra cache o no. Asume por default SHARED.
+
+#### INVALID --CPU Write--> MODIFIED
+
+Da un *Write Miss* en el bus, propaga el write miss a los demás cores. Los cache controllers de cada core van a ver si tienen la línea. En caso de tenerla, la van a invalidar. Una vez hecha la escritura, la línea se marca como **MODIFIED**. Ahora la política de escritura es *Write-Back* para esta línea.
+
+#### MODIFIED --CPU Read/Write HIT--> MODIFIED
+
+Cualquier operación de escritura o lectura que se efectúe sobre esta línea, mantendrá su estado MODIFIED.
+
+#### MODIFIED --CPU Write MISS--> MODIFIED
+
+Se produce un Write Back de la línea actual para salvarla, luego propagamos Write Miss al bus. Luego hay que hacer un Replacement de la línea.
+
+La línea se mantiene modified pero tiene otra dirección de la memoria principal y valor. **REPLACEMENT**.
+
+#### MODIFIED --CPU Read MISS--> SHARED
+
+Se hace el Write Back de la línea, luego se propaga un Read Miss al bus y luego hacer un reemplazo a la línea. Se coloca el estado SHARED.
+
+#### SHARED --CPU Read HIT--> SHARED
+
+Siempre que se pida leer la dirección se lee sin problema, sin modificar nada.
+
+#### SHARED --CPU Read MISS--> SHARED
+
+Puede ocurrir un Conflict Miss sobre esa línea. Puede buscar la lectura de una línea que mapee a ese set del cache, por lo tanto se propaga Read Miss en el Bus y se reemplaza la línea.
+
+#### SHARED --CPU Write--> MODIFIED
+
+Si se escribe la línea en la misma dirección de memoria, simplemente pasamos de estado la línea a MODIFIED previamente invalidadas todas las copias en los demás cores.
+
+#### SHARED --CPU Write MISS--> MODIFIED
+
+La CPU quiere escribir en el dato que mapea a esta línea, pero no la tengo. Como la cache está llena, se produce Miss y Conflict Miss.
+
+Entonces se reemplaza la línea, la antigua siendo descartada y se vuelve exclusiva la línea (hence MODIFIED).
+
+### Transiciones requerimientos BUS
+
+![[Pasted image 20260111162634.png]]
+
+Cuando se detecta un Write Miss o un Invalidate en el bus, todos los caches que poseen esa línea deben invalidarla.
+
+#### Mod --Write Miss de la línea--> Invalid
+
+Se hace un Write Back de la línea y se aborta el acceso a memoria.
+
+#### Shared --Write Miss de la línea o Invalidate--> Invalid
+
+No se hace nada, solo se invalida.
+
+#### Mod --Read Miss de la línea--> Invalid
+
+Se aborta el acceso a memoria y se hace un Write Back de la línea.
+
+#### Shared --Read Miss--> Shared
+
+### No es óptimo
+
+Al ser Shared tan impreciso, se hacen muchas transacciones en el bus innecesarias por si llega a ocurrir que otro core tenga el dato.
+
+Cuando se tienen dos cores, puede estar bien, pero cuando aumentamos los cores, ya no tanto.
+
+## Protocolo MESI
+
+Agrega el estado Exclusive para disminuir la actividad en el bus. Una línea en estado **E** puede escribirse sin generar transacciones en el bus. Aplica a cache L1 de datos y L2/L3, L1 de código es MSI.
+
+- **Modified**: Línea presente solamente en este cache que varió respecto de su valor en memoria del sistema. Requiere Write-Back hacia la memoria principal antes que otro procesador lea desde allí el dato, que ya no es válido.
+- **Exclusive**: Línea presente solo en este cache, que coincide con la copia en memoria principal. La línea está LIMPIA, la podemos modificar sin informar a nadie.
+- **Shared**: Línea del cache presente y *puede* estar almacenada en los caches de otros cores. Este estado asegura la coherencia. Estas seguro que la copia de esta línea es buena, está compartida y coherente con el resto del sistema.
+- **Invalid**: Línea no válida.
+
+### Transiciones Reqs CPU
+
+Todas las lecturas de líneas enviadas por la CPU se resuelven desde el cache, a excepción de aquellas líneas en estado INVALID. Las líneas inválidas se buscan en la jerarquía inferior inmediata. Una línea Shared o Exclusive se puede descartar e invalidarse en cualquier momento.
+
+
+![[Pasted image 20260111191359.png]]
+
+#### INVALID --CPU Read--> EXCLUSIVE
+
+Se coloca un Read Miss en el bus y cambia el estado de la línea a EXCLUSIVE.
+
+#### INVALID --CPU Write--> MODIFIED
+
+Se propaga un Write Miss en el bus y se cambia el estado de la línea a MODIFIED.
+
+#### MOD --CPU Read/Write HIT--> MOD
+
+No cambia el estado y todas las lecturas y escrituras se hacen solamente sobre el cache local a máxima velocidad. Se utiliza Write Back
+
+#### MOD --CPU Conflict Read Miss--> EXCLUSIVE
+
+Se hace un Write Back de la línea, luego se propaga un read miss al bus y se hace un replacement con la línea nueva. Luego se coloca la línea en modo EXCLUSIVE.
+
+#### MOD --CPU Conflict Read Miss--> Shared
+
+Es una transacción iniciada por la CPU local, pero que además recibe del bus una orden de que está compartida la línea. Se hace un Write Back de la línea, se propaga un Read Miss con un Shared en el bus y luego se hace el replacement de la línea.
+#### EXCLUSIVE --CPU Read HIT--> EXCLUSIVE
+
+Todas las lecturas se llevan a cabo a máxima velocidad en el cache local. Se mantiene el modo Exclusive.
+
+#### EXCLUSIVE --CPU Write--> MOD
+
+Se hacen a gran velocidad en el cache local, pero como cambiamos la copia que está en la memoria principal, tenemos que cambiar a MODIFIED, sin invalidar en el bus nada.
+
+#### SHARED --CPU Write Miss--> EXCLUSIVE
+
+Se propaga un Write Miss en el bus haciendo previamente un Write Back de la línea.
+
+#### SHARED --CPU Conflict Read Miss--> SHARED
+
+Esto ocurre si se lee un Read Miss junto a un Shared en el bus. Solo se hace un Replacement y queda en estado shared.
+
+#### SHARED --CPU Read HIT--> SHARED
+
+Si se lee una línea en Shared, no hay ningún tipo de problema. Queda en Shared.
+
+#### SHARED --CPU Conflict Read MISS--> Exclusive
+
+Esto ocurre si hay un conflict read miss que y no se recibe un Shared del bus. Se reemplaza la línea y se tiene el ownership exclusive.
+
+### Señales
+
+- **Read For Ownership (RFO)**: línea que va de controlador en controlador bidireccional que permite a un controlador avisar a los demás un requerimiento de propiedad de la línea.
+	- Es enviada por el cache que necesita escribir una línea en estado **Shared** o **Invalid**. El resto de los caches revisan si tienen la línea. En caso de tenerla la invalidan al recibir esta transacción.
+	- Desde el punto de vista del Cache Controller, es una lectura de la línea cacheada con toma del bus para escribir contenido de la línea en el nivel jerárquico inferior, es decir, un **Write Back**.
+	- Fuerza al resto de los controladores a invalidarla.
+- **Shared**: línea bidireccional al controlador. Con esta línea los cores se informan si una línea es shared o no. Si un core tiene una línea exclusive y recibe del Snoop Bus que se va a leer esa línea, activa la línea Shared para que el otro core no la ponga exclusive, sino Shared.
+
+### Transiciones Reqs del Bus
+
+![[Pasted image 20260111194350.png]]
+
+#### Mod --Read Miss--> Exclusive
+
+Si por el Snoop Bus se detecta un Read Miss para una línea Modified en el cache local, el controlador asume que tiene la única copia válida, pero que está incoherente al resto de los niveles de la jerarquía. Entonces se activa la línea RFO para indicar al lector que ese dato incoherente y previamente realizando un Write back de la línea.
+
+#### Shared --Read Miss--> Shared
+
+Si se ejecuta un Read Miss, es otro más que no tenía, pero quedamos en shared. La leemos nada más.
+
+#### Mod --Write Miss--> Invalid
+
+Se hace un Write Back de la línea previo a invalidarla.
+
+#### Exclusive --Write Miss/Invalidate--> Invalid
+
+Se invalida la línea sin requerir hacer write backs.
+
+### Limitaciones y Fortalezas
+
+Es eficiente para mantener la coherencia en un sistema multiprocesador, con diferentes niveles de memoria; optimiza el uso del bus del sistema, habilitando política Write Back de escritura siempre que se pueda; invalida copias cada vez que se escribe un dato y que una escritura sea Write Through.
+
+Un efecto de Write Invalidate es que probablemente aquellos cores que invalidaron su copia por requerimiento de escritura vuelvan a necesitarla. Solo la obtienen de los niveles inferiores de la jerarquía, con un costo de performance evidente. Esto es aún más evidente a medida que aumentemos el número de cores.
+
+## Protocolo MOESI

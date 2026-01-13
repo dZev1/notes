@@ -314,4 +314,28 @@ Es eficiente para mantener la coherencia en un sistema multiprocesador, con dife
 
 Un efecto de Write Invalidate es que probablemente aquellos cores que invalidaron su copia por requerimiento de escritura vuelvan a necesitarla. Solo la obtienen de los niveles inferiores de la jerarquía, con un costo de performance evidente. Esto es aún más evidente a medida que aumentemos el número de cores.
 
-## Protocolo MOESI
+## Protocolos para Multicore
+
+### MESIF
+
+Se busca optimizar el acceso al bus en sistemas con memoria distribuida. Intel agrega un estado adicional a MESI, el estado **Forward** (**F**) como una forma especial del estado **S**.
+
+El protocolo debe asegurar que entre los caches que tienen una línea en estado S, una de ellas tenga estado F. Cuando se invalida una línea F y S, no se informan. Si no queda ninguna línea en estado F, el próximo **Read Miss** se resuelve desde el nivel jerárquico inferior, con su penalización de performance consecuente.
+
+Para minimizar este costo, se asigna el estado F mediante un criterio **LRU**. El cache que resuelve Forward, cede el estado F a la línea del cache que termina de leerse. Siempre el último que lee esta línea, tiene el estado F, mientras que la copia que tenía antes el estado F, pasa a estado S.
+
+>[!Note] ¿Cómo funciona F?
+> La línea F es una línea Shared forwardeable. Cuando otro core genera un Read Miss al querer leer esta línea, en lugar de hacer perder tiempo al core, el core que tiene la línea F, habilita su salida y le provee la línea.
+
+### MOESI
+
+Se agrega un quinto estado: **Owned**. *Modified*, *Invalid*
+y *Exclusive*, se comportan como en MESI. Al estado *Shared* se le introduce una diferencia por consecuencia del nuevo estado.
+
+**Shared** indica que una copia de la línea puede estar en otros caches, y es válida. Hasta ahí, igual que MESI. Pero ahora, la copia en memoria principal puede no ser válida.
+
+Si ningún cache tiene una copia de esa línea en estado **OWNED**, la copia de memoria principal es válida. Si no hay ninguna, es inválida.
+
+Solo **una** copia de una línea puede tomar estado Owned en un cache. Indica que se trata de una de varias copias válidas de la línea, pero con la diferencia de que esta es la única que permite escribirla sin efectuar Write Back. El resto de las copias permanecen S y válidas.
+
+Cada vez que se escribe una línea **Owned**, se activa la transacción por el bus local, y el resto de los caches con copias Shared, la actualizan. Así, se disminuyen los **write back** por intentar leer una línea DIRTY, y las invalidaciones al escribir una línea S. Además,el cache que tiene la línea Owned, se encarga de proveerla a los *"nuevos lectores"*, aquellos que le asignarán al leer S.

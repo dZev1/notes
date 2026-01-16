@@ -13,12 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
                 "file": "microarch/Sistema De Memoria/memoria-cache.md",
+=======
+                "file": "microarch/Sistema De Memoria/summary.md",
+>>>>>>> 3eec369 (mango)
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
+<<<<<<< HEAD
               "title": "memoria-cache"
+=======
+              "title": "summary"
+>>>>>>> 3eec369 (mango)
             }
           }
         ]
@@ -183,10 +191,17 @@
   },
   "active": "b69cacb89751a388",
   "lastOpenFiles": [
+    "microarch/Sistema De Memoria/memoria-cache.md",
+    "microarch/Sistema De Memoria/summary.md",
+    "microarch/Sistema De Memoria/coherencia-cache.md",
     "microarch/Sistema De Memoria/tecnologías-de-memoria.md",
+    "microarch/historia.md",
     "microarch/Sistema De Memoria/sistema-de-memoria.md",
+<<<<<<< HEAD
     "microarch/Sistema De Memoria/memoria-cache.md",
     "microarch/Sistema De Memoria/coherencia-cache.md",
+=======
+>>>>>>> 3eec369 (mango)
     "microarch/imgs/Pasted image 20260110154357.png",
     "Untitled 1.md",
     "microarch/imgs/Pasted image 20260111194350.png",
@@ -200,7 +215,6 @@
     "microarch/imgs/Pasted image 20260110103931.png",
     "microarch/imgs/Pasted image 20260110102217.png",
     "microarch/README.md",
-    "microarch/historia.md",
     "2026-01-07.md",
     "microarch/Sistema De Memoria",
     "Conceptitos.md",

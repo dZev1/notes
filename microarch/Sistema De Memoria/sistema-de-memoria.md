@@ -14,7 +14,7 @@ Sin embargo, aún teniendo todo esto, la performance era similar a su predecesor
 
 La memoria no es un componente, es un subsistema. Lo ideal sería tener un sistema de memoria de una sola tecnología y sin jerarquía. Con un diseño simple y costo moderado.
 
-En la realidad, esto solo es posiblle en sistemas triviales basados en microcontroladores para actividades de control rudimentarias. En un sistema de cómputo un poco más sofisticado, si o si debemos mirar a la memoria como un subsistema, llegando a un punto tal en que es más importante el diseño del subsistema de memoria que el de la propia CPU.
+En la realidad, esto solo es posible en sistemas triviales basados en microcontroladores para actividades de control rudimentarias. En un sistema de cómputo un poco más sofisticado, si o si debemos mirar a la memoria como un subsistema, llegando a un punto tal en que es más importante el diseño del subsistema de memoria que el de la propia CPU.
 
 Así fueron aflorando problemas en el diseño del subsistema de memoria que no eran relevantes, entre ellos la integridad de señal entre los distintos tipos y niveles jerárquicos de memoria y CPU.
 

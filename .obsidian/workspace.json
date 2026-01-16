@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "microarch/Sistema De Memoria/coherencia-cache.md",
+                "file": "microarch/Sistema De Memoria/memoria-cache.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "coherencia-cache"
+              "title": "memoria-cache"
             }
           }
         ]
@@ -185,8 +185,9 @@
   "lastOpenFiles": [
     "microarch/Sistema De Memoria/tecnologías-de-memoria.md",
     "microarch/Sistema De Memoria/sistema-de-memoria.md",
-    "microarch/imgs/Pasted image 20260110154357.png",
+    "microarch/Sistema De Memoria/memoria-cache.md",
     "microarch/Sistema De Memoria/coherencia-cache.md",
+    "microarch/imgs/Pasted image 20260110154357.png",
     "Untitled 1.md",
     "microarch/imgs/Pasted image 20260111194350.png",
     "microarch/imgs/Pasted image 20260111191359.png",
@@ -194,7 +195,6 @@
     "microarch/imgs/Pasted image 20260111161819.png",
     "microarch/imgs/Pasted image 20260111160119.png",
     "Untitled.md",
-    "microarch/Sistema De Memoria/memoria-cache.md",
     "microarch/imgs/Pasted image 20260106143620 1.png",
     "microarch/imgs/Pasted image 20260110111050.png",
     "microarch/imgs/Pasted image 20260110103931.png",

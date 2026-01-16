@@ -8,11 +8,9 @@ Dispositivos capaces de retener información almacenada aún cuando se les desco
 
 En la actualidad son denominadas **Flash**, por su tecnología de origen. Pueden ser grabadas con algoritmos de escritura específicos. Incluye a los discos de estado sólido, tarjetas SD, flash drives, y las memorias que componen al **firmware** de cualquier equipo.
 
-
-
 ### Memorias Volátiles
-Una vez que se interrumpe la alimentación eléctrica, la infromación almacenada se pierde.
-Tienen mayor capacidad que las no volátiles, y pueden modificarse en tiempo real a gran velocidad.
+
+Una vez que se interrumpe la alimentación eléctrica, la infromación almacenada se pierde. Pueden modificarse en tiempo real a gran velocidad.
 
 #### Memoria volátil dinámica (DRAM)
 

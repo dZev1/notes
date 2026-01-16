@@ -1,0 +1,36 @@
+# Notas DRAM
+
+- Tener en cuenta a la hora de diseñar DRAMS:
+	- Pines
+		- Las entradas de los circuitos lógicos reflejan inductancia, capacitancia, etc, estos son parámetros que tenemos que considerar, pues sino podemos tener problemas de integridad de señal.
+	- Señalización
+		- Implementar un mediador entre la DRAM y la CPU. Necesitamos un controlador de memoria dinámica. Normalmente cada core ya tiene implementado uno. Hay entonces un Handshake entre la memoria y el controlador.
+	- Integridad de Señal
+		- Mantener la integridad de señal con respecto a la frecuencia de trabajo de la CPU.
+	- Encapsulado
+		- El encapsulado define la manufacturabilidad del dispositivo. Cómo proveo un chip de gran densidad electrónica, con una cantidad considerable de terminales que estén separados para que sea soldable. Qué tipo de montaje tiene, VGA o Superficial. Etcétera.
+	- Clock y Sincronización
+		- Al estar fuera del CPU, se tienen que definir criterios de montaje en el PCB y adaptaciones al bus, para así mantener la sincronización con el resto del sistema.
+	- Timing
+		- Recordemos que estas memorias hay que refrescarlas, necesitamos saber cuánto tardamos en leer, cuánto en escribir, cosas que debe saber el controlador de memoria
+ 
+- Estos chips van a un PCB llamado **DIMM**
+
+## **Controlador de Memoria Dinámica (North Bridge para Intel^{TM})**
+- Media entre la CPU y los chips DRAM.
+- Sugiere demoras de acceso, que se compensa con funciones y valor agregado que incluye el controlador.
+- No es el gran responsable de la demora.
+- Sugiere complejidad en el sistema.
+- Aporta independencia a la CPU de detalles de DRAM.
+
+## **Celdas**
+
+- Bit = Transistor que actúa como capacitor.
+	- Cuando leo destruyo la información contenida en esa celda.
+	- Cada vez que leo, tengo que volver a escribir.
+	- Esto trae más retardo para el inicio del próximo ciclo de lectura.
+	- El leakage, hacen que el capacitor pierda carga solo, sin hacer nada.
+	- Se deben refrescar periódicamente para no perder la información almacenada.
+- Los conductores que transportan la señal, deben estar precargados en un estado **entre** 0 y 1.
+	- La carga de la capacidad de entrada del transistor hace que se desbalancee el estado de esa carga en + o en -.
+	- Usando amplificadores, podemos empujar la carga, habiendo detectado el desbalance de la celda, a su estado lógico inicial.

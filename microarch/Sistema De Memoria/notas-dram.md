@@ -152,3 +152,48 @@
 	- Cuando una transacción gana la arbitración, se traduce la dirección física del bus del procesador a la dirección del bus del controlador de memoria, especificando FILA y COLUMNA.
 		- Puede llegar a traducir una transacción en varios comandos a las RAM.
 		- Buffering == IMPORTANTE pero aumenta el consumo. Está en permanente análisis de Trade-Ons y Trade-Offs.
+
+## Configuración de DRAM devices
+
+- DRAM devices son circuitos analógicos.
+- Almacenar y recuperar datos en forma de carga en un capacitor con amplificadores de sensibilidad agrega retardo (en nano segundos no en ciclos de clock).
+- Cada DRAM, según su diseño y fabricación tiene parámetros de timing distintos.
+- Por esto la industria encontró una solución proveyendo una interfaz sincrónica.
+- Se agregan registros de modo a los DRAM.
+
+- **Registro de Modo**
+	- CAS Latency
+		- Retardo de un CAS.
+		- De acuerdo al valor de este campo de bits, el dispositivo SDRAM retorna el dato dos o tres ciclos de clock luego de activado el CAS.
+	- Tipo de Burst
+		- Da el orden en el que se retornan los datos
+			- Secuencial
+			- Entrelazado
+	- Longitud de Burst
+		- 1, 2, 4 u 8 palabras
+	- Los DDR SDRAM y los D-RDRAM tienen más registros de modo donde se pueden configurar más parámetros de control.
+
+- Las SDRAM se clasifican según el número de bits contenidos en el dispositivo, pero se pueden organizar de otras maneras, según tamaño de palabra de datos.
+	- Generalmente tienen el mismo número de bancos, filas y según disminuya la cantidad de columnas aumenta el ancho de banda del **data** bus.
+
+- **Burst**
+	- Podemos programar el tamaño del Burst como 1, 2, 4 u 8 columnas de datos a transferir como respuesta a un solo CAS.
+	- En las SDRAM y DDR SDRAM, se necesita re ordenar los datos de tal forma que la columna requerida esté en primer lugar en la transferencia.
+	- **Prebúsqueda de n-bits**
+		- Cada vez que se envía un comando READ a un device SDRAM, la lógica de control determina duración y orden de burst de datos.
+		- Cada columna se mueve en forma separada a través del bus de datos interno.
+		- Controlar de manera separada cada columna limita la tasa de datos de operación.
+		- En DDR SDRAM, se fueron moviendo más cantidad de bits en paralelo desde los amplificadores hasta el latch de lectura, y los datos se envían en un pipeline desde un multiplexor al bus externo de datos.
+		- Basado en el principio de localidad, busca los primeros N bits y los siguientes, que tienen alta probabilidad de ser requeridos.
+		- La velocidad se incrementa pero el chip no puede ser mayor de 4x.
+
+## Integración con Cache
+
+- Hay que evitar un cuello de botella.
+- **Interfaz DRAM-LLC**
+	- Rango de 8 chips
+	- Cada chip tiene 8 matrices de bits (8x8), así se entrega 1 Byte.
+	- Entre los 8 chips se compone una qword.
+	- Esta qword es pasada al Controlador de Memoria que se comunica con el LLC.
+	- Se usa el modo Burst de 8 golpes para llenar toda la línea.
+	- Igualmente se hacen 8 lecturas para llenar la línea, pero sin el retardo que se haría si tuviesemos que pasar cada address, copiar el byte, repetir.

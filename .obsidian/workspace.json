@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "microarch/Sistema De Memoria/notas-dram.md",
+                "file": "microarch/Sistema De Memoria/coherencia-cache.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "notas-dram"
+              "title": "coherencia-cache"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -186,5 +185,10 @@
     }
   },
   "active": "87f163b829d64cdc",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "microarch/Sistema De Memoria/memoria-cache.md",
+    "microarch/Sistema De Memoria/coherencia-cache.md",
+    "microarch/Sistema De Memoria/notas-dram.md",
+    "microarch/Sistema De Memoria/summary.md"
+  ]
 }

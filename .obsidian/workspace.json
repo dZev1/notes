@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "microarch/Sistema De Memoria/coherencia-cache.md",
+                "file": "microarch/instruction-level-parallelism/notas-ilp.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "coherencia-cache"
+              "title": "notas-ilp"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -186,9 +187,14 @@
   },
   "active": "87f163b829d64cdc",
   "lastOpenFiles": [
-    "microarch/Sistema De Memoria/memoria-cache.md",
-    "microarch/Sistema De Memoria/coherencia-cache.md",
-    "microarch/Sistema De Memoria/notas-dram.md",
-    "microarch/Sistema De Memoria/summary.md"
+    "microarch/sistema-de-memoria/notas-dram.md",
+    "microarch/instruction-level-parallelism/notas-ilp.md",
+    "microarch/instruction-level-parallelism/Untitled 1.md",
+    "Untitled 1.md",
+    "Untitled.md",
+    "microarch/sistema-de-memoria/coherencia-cache.md",
+    "microarch/instruction-level-parallelism",
+    "microarch/sistema-de-memoria/memoria-cache.md",
+    "microarch/sistema-de-memoria/summary.md"
   ]
 }

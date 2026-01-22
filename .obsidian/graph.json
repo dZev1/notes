@@ -1,0 +1,65 @@
+{
+  "collapse-filter": false,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "path:microarch  file:microarquitectura",
+      "color": {
+        "a": 1,
+        "rgb": 10417407
+      }
+    },
+    {
+      "query": "path:design-patterns/Creationals  ",
+      "color": {
+        "a": 1,
+        "rgb": 16646051
+      }
+    },
+    {
+      "query": "path:design-patterns file:design-patterns",
+      "color": {
+        "a": 1,
+        "rgb": 8829694
+      }
+    },
+    {
+      "query": "path:microarch/sistema-de-memoria  ",
+      "color": {
+        "a": 1,
+        "rgb": 15895692
+      }
+    },
+    {
+      "query": "path:microarch/instruction-level-parallelism  ",
+      "color": {
+        "a": 1,
+        "rgb": 11861689
+      }
+    },
+    {
+      "query": "path:microarch file:historia",
+      "color": {
+        "a": 1,
+        "rgb": 14203135
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 0.840104166666667,
+  "lineSizeMultiplier": 2.11614583333333,
+  "collapse-forces": false,
+  "centerStrength": 0.03125,
+  "repelStrength": 1.875,
+  "linkStrength": 1,
+  "linkDistance": 77,
+  "scale": 1.4019828977761055,
+  "close": false
+}

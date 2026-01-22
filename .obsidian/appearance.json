@@ -1,5 +1,8 @@
 {
   "textFontFamily": "Libre Baskerville",
   "cssTheme": "Catppuccin",
-  "baseFontSize": 20
+  "baseFontSize": 20,
+  "enabledCssSnippets": [
+    "full_width"
+  ]
 }

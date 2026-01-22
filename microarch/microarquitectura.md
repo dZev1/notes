@@ -3,13 +3,23 @@
 Preparación para el final de miroarquitectura, para sacarme un excelente 10 creo...
 
 ## Índice
-- [[microarch/README#Conceptitos|Conceptos]]
-	- [[microarch/README#Alta Impedancia (Z)|Hi-Z]]
-	- [[microarch/README#Transistor MOS|Transistor CMOS]]
+- [[microarquitectura#Conceptitos|Conceptos]]
+	- [[microarquitectura#Alta Impedancia (Z)|Hi-Z]]
+	- [[microarquitectura#Transistor MOS|Transistor CMOS]]
 - [[historia|Historia]]
-- [[sistema-de-memoria|Sistema de Memoria]]
-	- [[tecnologías-de-memoria|Tecnologías de Memoria]]
-	- [[memoria-cache|Memoria Cache]]
+- [[notas-jerarquia|Sistema de Memoria]]
+	- [[notas-cache|Memoria Cache (SRAM)]]
+		- [[notas-cache#Organización Cache|Organización Cache]]
+		- [[notas-cache#Protocolos de Coherencia|Protocolos de Coherencia]]
+	- [[notas-dram|Memoria DRAM]]
+- [[notas-ilp|Paralelismo a Nivel de Instrucciones (ILP)]]
+	- [[notas-ilp#Pipeline de instrucciones|Pipeline de instrucciones]]
+	- [[notas-ilp#Obstáculos/Hazards|Obstáculos de un pipeline]]
+	- [[notas-bpu|Branch Prediction Buffer]]
+		- [[notas-bpu#¿Es necesario?|Predicción estática]]
+		- [[notas-bpu#Predicción dinámica|Predicción dinámica]]
+	-  [[notas-ooo|Ejecución fuera de orden (OOO execution)]]
+
 ## Conceptitos
 
 ### Alta Impedancia (Z)

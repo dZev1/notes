@@ -19,6 +19,11 @@ Preparación para el final de miroarquitectura, para sacarme un excelente 10 cre
 		- [[notas-bpu#¿Es necesario?|Predicción estática]]
 		- [[notas-bpu#Predicción dinámica|Predicción dinámica]]
 	-  [[notas-ooo|Ejecución fuera de orden (OOO execution)]]
+		- [[notas-ooo#Scheduling Dinámico|Scheduling Dinámico]]
+		- [[notas-ooo#Algoritmo de Tomasulo (1967)|Algoritmo de Tomasulo (1967)]]
+		- [[notas-ooo#Especulación Por Hardware|Especulación Por Hardware]]
+
+---
 
 ## Conceptitos
 

@@ -4,11 +4,25 @@
     "type": "split",
     "children": [
       {
-        "id": "4223edee53dd3295",
+        "id": "160b73b4e158bda1",
         "type": "tabs",
         "children": [
           {
-            "id": "87f163b829d64cdc",
+            "id": "edf54b52de9b73ed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "microarch/sistema-de-memoria/notas-dram.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "notas-dram"
+            }
+          },
+          {
+            "id": "80d37942aa36384d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -185,28 +198,52 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "87f163b829d64cdc",
+  "active": "edf54b52de9b73ed",
   "lastOpenFiles": [
-    "microarch/microarquitectura.md",
-    "design-patterns/design-patterns.md",
-    "design-patterns/Creationals/FactoryMethod.md",
-    "Untitled.canvas",
+    "Preguntas.md",
+    "microarch/sistema-de-memoria/notas-cache.md",
+    "Untitled.base",
+    "README.md",
+    "Pasted Image 20260129165736_768.png",
+    "Untitled",
+    "microarch/instruction-level-parallelism/notas-ooo.md",
     "microarch/instruction-level-parallelism/notas-bpu.md",
     "microarch/instruction-level-parallelism/notas-ilp.md",
-    "microarch/instruction-level-parallelism/notas-ooo.md",
-    "microarch/sistema-de-memoria/notas-cache.md",
-    "microarch/sistema-de-memoria/notas-dram.md",
+    "microarch/instruction-level-parallelism/notas-multithread.md",
+    "microarch/hennessy-patterson/ch-2.md",
+    "Excalidraw/Drawing 2026-01-29 16.55.58.excalidraw.md",
     "microarch/sistema-de-memoria/notas-jerarquia.md",
     "microarch/historia.md",
-    "microarch/sistema-de-memoria/tecnologías-de-memoria.md",
-    "microarch/sistema-de-memoria/sistema-de-memoria.md",
-    "microarch/sistema-de-memoria/coherencia-cache.md",
-    "microarch/sistema-de-memoria/memoria-cache.md",
-    "README.md",
-    "Pasted image 20260121120957.png",
-    "microarch/instruction-level-parallelism/Untitled 1.md",
-    "Untitled 1.md",
-    "Untitled.md",
+    "Pasted Image 20260129165632_773.png",
+    "quantum-computing/Pasted image 20260126185220.png",
+    "Excalidraw/Untitled.md",
+    "Excalidraw/Drawing 2026-01-26 18.49.14.excalidraw.md",
+    "microarch/microarquitectura.md",
+    "microarch/hennessy-patterson",
+    "microarch/Resumen_orga_2_zamboni.pdf",
+    "microarch/Resumen_orga_2.pdf",
+    "Excalidraw/Drawing 2026-01-28 21.27.48.excalidraw.md",
+    "quantum-computing/repaso-complejos.md",
+    "Excalidraw",
+    "quantum-computing/introducción.md",
+    "Definition.md",
+    "mini-essays/f1-es-deporte.md",
+    "quantum-computing",
+    "Excalidraw/Drawing 2026-01-24 23.12.03.excalidraw.md",
+    "microarch/imgs/Pasted image 20260124142029.png",
+    "attachments/Pasted image 20260124153908.png",
+    "microarch/imgs/Pasted image 20260124154304.png",
+    "microarch/imgs/Pasted image 20260124150454.png",
+    "microarch/imgs/Pasted image 20260124152145.png",
+    "Pasted image 20260124154304.png",
+    "Pasted image 20260124153908.png",
+    "design-patterns/Creationals/builder.md",
+    "microarch/sistema-de-memoria/notas-dram.md",
+    "Los.md",
+    "mini-essays",
+    "design-patterns/Creationals/abstract-factory.md",
+    "design-patterns/Creationals/factory-method.md",
+    "Untitled.canvas",
     "microarch/instruction-level-parallelism"
   ]
 }

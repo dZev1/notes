@@ -16,6 +16,7 @@ Los alambres de cobre que conforman los buses internos para la comunicación ent
 - **Consumo de energía**
 
 ## Potencia dinámica
+
 Es la potencia que disipa un transistor CMOS en conmutación. Es proporcional a la capacidad de carga del dispositivo, al cuadrado de la tensión de alimentación y a la frecuencia de conmutación.
 
 $$
@@ -26,6 +27,7 @@ Entonces el scaling favorece decrementando tanto la capacidad de carga y la tens
 La energía dinámica es $C_c \cdot V^2$, entonces el scaling directamente nos sirve para que las baterías duren más.
 
 ## Leakage
+
 A pesar de que un transistor esté al corte, siempre alguna corriente muy pequeña circula de todos modos.
 Se calcula con la siguiente fórmula:
 $$
@@ -35,9 +37,11 @@ donde $E_e$ es la potencia estátitica, $I_e$ es la corriente de leakage y $V$ l
 Mientras más transistores haya, más aumenta esta corriente.
 
 ## Arquitectura
+
 Es el conjunto de recursos accesibles para el programador, como registros, ISA, estructuras de memoria.
 
 ## Microarquitectura
+
 Implementación en el silicio de la arquitectura. Lo que está detrás del set de registros y del modelo de programación. Puede ser simple o robusta y poderosa.
 Nos referimos a los detalles de la implementación de la ISA:
 - Organización e interconexión de memoria.

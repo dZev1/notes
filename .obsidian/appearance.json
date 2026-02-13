@@ -1,8 +1,9 @@
 {
   "textFontFamily": "Libre Baskerville",
-  "cssTheme": "Catppuccin",
+  "cssTheme": "Primary",
   "baseFontSize": 20,
   "enabledCssSnippets": [
     "full_width"
-  ]
+  ],
+  "theme": "obsidian"
 }

@@ -1,6 +1,6 @@
 # Factory Method
 
-Provee una interaz para crear objetos en una superclase,
+Provee una interfaz para crear objetos en una superclase,
 pero permite que las subclases alteren el tipo de objetos que se crean.
 
 ## Problema
@@ -68,7 +68,7 @@ public interface Burger {
 ```java
 public class CowBurger implements Burger {
     private boolean prepared; 
-
+	
     public void prepare() {
         // preparacion de burger.
     }
@@ -78,7 +78,7 @@ public class CowBurger implements Burger {
 ```java
 public class VeggieBurger implements Burger {
     private boolean prepared; 
-
+	
     public void prepare() {
         // preparacion de burger.
     }
@@ -96,7 +96,7 @@ public abstract class Restaurant {
         burger.prepare();
         return burger;
     }
-
+	
     public abstract Burger createBurger();
 }
 ```
@@ -128,7 +128,7 @@ public class Main {
     public static void main(String[] args) {
         Restaurant cowResto = new CowBurgerRestaurant();
         Burger cowBurger = cowResto.orderBurger();
-
+		
         Restaurant veggieResto = new VeggieBurgerRestaurant();
         Burger veggieBurger = veggieResto.orderBurger();
     }

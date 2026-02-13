@@ -49,11 +49,11 @@ Se aplican cuando:
 
 #### Algunos ejemplos
 
-- [Factory Method](./Creationals/FactoryMethod.md)
-- [Abstract Factory](./Creationals/AbstractFactory.md)
-- [Builder](./Creationals/Builder.md)
-- [Prototype](./Creationals/Prototype.md)
-- [Singleton](./Creationals/Singleton.md)
+- [Factory Method](factory-method.md)
+- [Abstract Factory](abstract-factory.md)
+- [builder](builder.md)
+- [prototype](prototype.md)
+- [singleton](singleton.md)
 
 ### Estructurales
 

@@ -1,0 +1,35 @@
+{
+  "cascadeColors": true,
+  "colorBackground": true,
+  "palette": [
+    {
+      "id": "smCDsGMkzba7SBAW-2loV",
+      "name": "Computer Architecture",
+      "value": "#86feaa"
+    },
+    {
+      "id": "I0jpTFjj4kIONM6NzpvaB",
+      "name": "Software Engineering",
+      "value": "#ffb3f9"
+    },
+    {
+      "id": "9wsZ73nTGaH9YqpBPBU3i",
+      "name": "Random topic",
+      "value": "#b4dafe"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "design-patterns",
+      "color": "I0jpTFjj4kIONM6NzpvaB"
+    },
+    {
+      "path": "microarch",
+      "color": "smCDsGMkzba7SBAW-2loV"
+    },
+    {
+      "path": "mini-essays",
+      "color": "9wsZ73nTGaH9YqpBPBU3i"
+    }
+  ]
+}

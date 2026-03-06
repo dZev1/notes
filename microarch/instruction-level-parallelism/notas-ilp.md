@@ -10,7 +10,7 @@
 	- **Write Result**
 - Hasta que aparece Intel, la mayoría de los procesadores ejecutaban el ciclo **en serie**.
 	- Una etapa por ciclo de clock y nada más se ejecutaba esa etapa.
-	- Si detectamos el estado de decodificación, sabemos que el bus está desocupado. Entonces agregamos señales de estado, esto lo hacemos con $\lceil log_2(\#estados + 1) \rceil$.
+	- Si detectamos el estado de decodificación, sabemos que el bus está desocupado. Entonces agregamos señales de estado, esto lo hacemos con $\lceil log_2(\#estados + 1) \rceil$ bits.
 - **Pipeline**
 	- Arquitectura que permite crear el efecto de superponer en el tiempo la ejecución de varias instrucciones a la vez.
 	- Se formaliza **ILP**.

@@ -55,3 +55,21 @@
 	- Un ejemplo son las variables en un programa.
 	- **Localidad Espacial**: Si accedimos a una dirección de memoria, es muy probable que accedamos a sus direcciones vecinas.
 	- Por ejemplo, acceder a los elementos de un array.
+
+
+```C
+int arr[10][10][10] = {{{}},{{}},{{}}, ...}; 
+void foo() {
+	int i, j, k;
+	int num
+	for (i = 0; i < 10; i++) {
+		for (j = 0; j < 10; j++) {
+			for (k = 0; k < 10; k++) {
+				num = arr[i][j][k];
+				...
+			}
+		}
+	}
+}
+```
+

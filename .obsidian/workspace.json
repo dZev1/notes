@@ -4,37 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "160b73b4e158bda1",
+        "id": "1d92612fc317daed",
         "type": "tabs",
         "children": [
           {
-            "id": "edf54b52de9b73ed",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2026-02-25 14.46.19.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-02-25 14.46.19.excalidraw"
-            }
-          },
-          {
-            "id": "4ac999e413e243b0",
+            "id": "b201feb83dd8633c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "design-patterns/Creationals/builder.md",
+                "file": "sistemas-operativos/introduccion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "builder"
+              "title": "introduccion"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -198,51 +185,51 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "4ac999e413e243b0",
+  "active": "b201feb83dd8633c",
   "lastOpenFiles": [
-    "Pasted image 20260226210159.png",
-    "design-patterns/design-patterns.md",
+    "Pasted image 20260315173317.png",
+    "README.md",
+    "Untitled.base",
+    "sistemas-operativos/introduccion.md",
+    "Preguntas.md",
+    "Excalidraw/Drawing 2026-02-25 14.46.19.excalidraw.md",
+    "sistemas-operativos",
     "design-patterns/Creationals/builder.md",
+    "design-patterns/Creationals/imgs/singleton_structure.png",
+    "design-patterns/Creationals/imgs/factory_method_structure.png",
+    "design-patterns/Creationals/imgs/factory_method_img.png",
+    "design-patterns/Creationals/imgs/builder_structure.png",
+    "Drawing 2026-02-16 22.57.39.excalidraw.md",
+    "Drawing 2026-02-16 23.06.31.excalidraw.md",
+    "quantum-computing/repaso-complejos.md",
+    "design-patterns/design-patterns.md",
     "design-patterns/Creationals/factory-method.md",
     "design-patterns/Creationals/abstract-factory.md",
     "design-patterns/Creationals/singleton.md",
     "design-patterns/Creationals/prototype.md",
     "design-patterns/Creationals/imgs/abstract_factory_structure.png",
     "design-patterns/Creationals/imgs/abstract_factory_ex.png",
-    "quantum-computing/repaso-complejos.md",
     "microarch/instruction-level-parallelism/notas-ooo.md",
     "microarch/instruction-level-parallelism/notas-bpu.md",
     "microarch/instruction-level-parallelism/notas-multithread.md",
     "microarch/instruction-level-parallelism/notas-ilp.md",
     "microarch/sistema-de-memoria/notas-dram.md",
     "microarch/sistema-de-memoria/notas-cache.md",
-    "Excalidraw/Drawing 2026-02-25 14.46.19.excalidraw.md",
     "microarch/microarquitectura.md",
-    "Drawing 2026-02-16 23.06.31.excalidraw.md",
     "Drawing 2026-02-16 23.21.40.excalidraw.md",
-    "Drawing 2026-02-16 22.57.39.excalidraw.md",
     "microarch/sistema-de-memoria/notas-jerarquia.md",
     "Excalidraw",
-    "Preguntas.md",
-    "Untitled.base",
-    "README.md",
     "Pasted Image 20260129165736_768.png",
-    "Untitled",
     "microarch/hennessy-patterson/ch-2.md",
     "Excalidraw/Drawing 2026-01-29 16.55.58.excalidraw.md",
     "microarch/historia.md",
     "Pasted Image 20260129165632_773.png",
     "quantum-computing/Pasted image 20260126185220.png",
-    "Excalidraw/Untitled.md",
     "microarch/hennessy-patterson",
     "microarch/Resumen_orga_2_zamboni.pdf",
     "microarch/Resumen_orga_2.pdf",
     "quantum-computing",
     "microarch/imgs/Pasted image 20260124142029.png",
-    "attachments/Pasted image 20260124153908.png",
-    "microarch/imgs/Pasted image 20260124154304.png",
-    "microarch/imgs/Pasted image 20260124150454.png",
-    "microarch/imgs/Pasted image 20260124152145.png",
     "mini-essays",
     "Untitled.canvas",
     "microarch/instruction-level-parallelism"

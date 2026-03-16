@@ -25,6 +25,4 @@ El director esconde completamente detalles de la producción al código cliente.
 
 ## Estructura
 
-![[Pasted image 20260226210159.png]]
-
-## 
+![[builder_structure.png]]

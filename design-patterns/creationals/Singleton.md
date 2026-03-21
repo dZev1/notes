@@ -22,7 +22,7 @@ Todas las implementaciones de Singleton hacen lo siguiente:
 
 ## Estructura
 
-![alt text](./imgs/singleton_structure.png)
+![alt text](singleton_structure.png)
 
 La clase singleton declara el método getInstance() que retorna la misma instancia de su propia clase.
 

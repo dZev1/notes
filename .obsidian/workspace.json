@@ -11,12 +11,14 @@
             "id": "ac7b558906f7dc5d",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/imgs/Pasted image 20260321174955.png"
+                "file": "sistemas-operativos/scheduling.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260321174955"
+              "icon": "lucide-file",
+              "title": "scheduling"
             }
           }
         ]
@@ -182,11 +184,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "0b19f6be4c2ae59a",
+  "active": "ac7b558906f7dc5d",
   "lastOpenFiles": [
     "sistemas-operativos/procesos.md",
-    "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
     "sistemas-operativos/imgs/Pasted image 20260321174955.png",
+    "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
     "sistemas-operativos/scheduling.md",
     "sistemas-operativos/introduccion.md",
     "sistemas-operativos/imgs",

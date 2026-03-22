@@ -285,3 +285,71 @@ Pensemos que `fork()` permite hacer un setup para luego ejecutar el programa, de
 `kill()` envía señales al proceso, ya sea un **SIGINT** (interrupt), **SIGSTP** (stop), para interrumpir (en muchos casos terminándolo) o pararlo en medio de la ejecución.
 
 `signal()` captura las señales enviadas por el usuario.
+
+## InterProcess Communication (IPC)
+
+La comunicación entre procesos sirve para compartir información, mejorar la velocidad de procesamiento y modularizar los procesos. Hay varias formas de IPC:
+
+- **Shared Memory**
+- **Recursos compartidos** (BBDD, archivos, etc)
+- **Pasaje de mensajes**
+
+### File Descriptors
+
+Representan instancias de archivos abiertos. Más concretamente, son índices de una tabla que indica los archivos abiertos por el proceso.
+
+Cada proceso en UNIX viene con su propia tabla al momento de ser creado. Estos son usados por el kernel para referenciar a los archivos abiertos que tiene cada proceso. Cada entrada apunta a un archivo.
+### Flujo de la comunicación
+
+En UNIX, el teclado y la pantalla se modelan como un archivo. La mayoría de procesos esperan tener abiertos tres file descriptors (entradas 0, 1 y 2 de la tabla), que apuntan a:
+
+- 0 $\rightarrow$ `stdin`
+- 1 $\rightarrow$ `stdout`
+- 2 $\rightarrow$ `stderr`
+
+Cuando lanzamos un proceso desde consola podemos encontrar algo así
+![[Pasted image 20260321174955.png]]
+
+Estos file descriptors se heredan de un proceso padre a un proceso hijo al usar `fork()`, y se mantienen en llamadas a `execve()`.
+
+Si tenemos un file descriptor, podemos leer con `ssize_t read(int fd, void *buf, size_t count)` y escribir con `ssize_t write(int fd, const void *buf, size_t count)`, donde `fd` es el file descriptor, `buf` el puntero al buffer donde almacenamos los datos a escribir o leer, y `count` es la cantidad máxima de bytes a escribir o leer. Estas funciones retornan `-1` si hay error, y la cantidad de bytes leídos en caso de éxito.
+
+### Pipes
+
+Es un *pseudo archivo* que esconde una forma de IPC:
+
+- Ordinary Pipe
+
+```
+grep so file.txt | less
+```
+
+- Named Pipe
+
+```
+mkfifo -m 0640 /tmp/mituberia
+```
+
+Los pipes se escriben con el caracter `|`, se representan como un *archivo temporal* y *anónimo* que se aloja en memoria y actúa como buffer para leer y escribir de manera secuencial.
+
+Son un canal que se interpreta como un *byte stream*. No hay noción de separación por mensajes. Cuando se crean los archivos de los pipes, se agregan sus extremos a la tabla de file descriptors.
+
+### Comunicación vía PIPES
+
+Se crean mediante la syscall `int pipe(int pipefd[2])`. Luego de ejecutar `pipe`, tenemos en `pipefd[0]` un file descriptor que apunta al extremo del pipe en el cual se lee, y en `pipefd[1]` el extremo en el cual se escribe.
+
+Si hacemos `fork()`, los file descriptors del padre se copian al hijo, y siguen apuntando a los mismos extremos del pipe.
+
+### Sockets
+
+Son una interfaz de comunicación entre procesos que permiten intercambiar datos. Tipos principales en UNIX:
+- Sockets UNIX
+	- Son de comunicación rápida y eficiente dentro de un mismo sistema.
+	- Usan archivos del sistema de archivos como puntos de conexión.
+	- No requieren configuración de red.
+- Sockets de red.
+	- Usan direcciones IP y puertos.
+	- Permiten comunicarse entre diferentes máquinas.
+	- Tienen mayor latencia y overhead por los protocolos de red.
+
+Se proveen syscalls para manejarlos de forma homogéneas, sin importar el tipo.

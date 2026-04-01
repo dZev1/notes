@@ -26,7 +26,7 @@ Cuando el proceso quiere realizar una syscall, cambia a modo kernel nuevamente, 
 
 Debería ser algo simple, dejar de correr un proceso e iniciar el próximo, pero... Si estoy corriendo un proceso en la CPU, no está corriendo el SO, ¿no? Sip, y no puede hacer nada si no está corriendo. Entonces, ¿Cómo retomo el control de la CPU?
 
-#### Approach **cooperativo**: esperar una syscall
+#### Approach **cooperativo**: esperar una syscall (Approach cooperative)
 
 Es un approach que tomó Apple en su momento con los SO de las primeras Macintosh. El SO *confía* en que los procesos del sistema van a devolver el control de la CPU al mismo. Se asume que los procesos que corren por mucho tiempo le dan periódicamente el control de la CPU de nuevo al SO para que este decida si corre otra tarea.
 
@@ -36,7 +36,7 @@ Los procesos también dan el control de nuevo al SO cuando hacen algo ilegal, co
 
 Ahora, ¿qué pasa si un programa termina en un loop infinito, y nunca hace una syscall? ¿Qué puede hacer la CPU?
 
-#### Approach **no-cooperativo**: la CPU toma el control
+#### Approach **no-cooperativo**: la CPU toma el control (Approach preemptive)
 
 Sin otras ayudas, el SO se queda colgado si un proceso no quiere hacer una syscall o cometer errores, pues no cede nunca el control al SO de la CPU. ¿Cómo vuelvo a obtener el control (como SO) si el proceso no coopera? Usemos una interrupción por tiempo.
 
@@ -49,3 +49,74 @@ El hardware tiene la responsabilidad de guardar el contexto de ejecución del pr
 El **scheduler** se encarga de decidir si seguimos corriendo un proceso o cambiamos a otro. En caso de querer cambiar el proceso, debe ejecutar lo que se conoce como **Context Switch**. Debe guardar el valor de unos registros del proceso que se está corriendo en algún lugar (su Kernel Stack, por ejemplo). De esta manera, al hacer el *return-from-trap*, en vez de continuar la ejecución del proceso anterior, estamos corriendo otro, teniendo el contexto de ejecución del anterior proceso guardado, para poder retomarlo.
 
 Se guardan los registros de propósito general, el kernel stack pointer y el program counter del proceso.
+
+## Política de Scheduling
+
+Es una de las principales huellas de identidad de un SO y es gran parte del esfuerzo para optimizar el rendimiento del mismo. Es tan importante que los SO dan más de una.
+
+Se necesita optimizar:
+
+- **Fairness:** $\longrightarrow$ Cada proceso reciba una dosis de CPU *justa*.
+- **Eficiencia:** $\longrightarrow$ Tratar que la CPU esté ocupada todo el tiempo.
+- **Carga del sistema:** $\longrightarrow$ Minimizar la cantidad de procesos **READY** que estén esperando a la CPU.
+- **Response Time:** $\longrightarrow$ Minimizar el tiempo de respuesta percibido por los usuarios.
+- **Latencia:** $\longrightarrow$ Minimizar el tiempo requerido para que un proceso comience a dar resultados.
+- **Execution Time:** $\longrightarrow$ Minimizar el tiempo total que le toma a un proceso ejecutar hasta terminarse.
+- **Rendimiento:** $\longrightarrow$ Maximizar el número de procesos terminados por unidad de tiempo.
+- **Liberación de recursos:** $\longrightarrow$ Hacer que terminen los procesos que tienen reservados más recursos primero.
+
+No se pueden optimizar todos a la vez, pues unos contradicen a otros, como el **fairness** y el **execution time**. Cada política de scheduling va a buscar maximizar una función objetivo, que va a ser una combinación de estas metas evitando dar un gran impacto sobre el resto de políticas.
+
+### Preemptive Scheduling (cont. de [[#Approach **no-cooperativo** la CPU toma el control (Approach preemptive|esto]])
+
+Es el scheduling con desalojo. El scheduler se vale de la interrupción del clock para decidir si seguir ejecutando el proceso actual o cambiar a otro. Como se vale de la interrupción del clock, requiere que la misma exista, y además no da garantías de continuidad en procesos, lo cual puede ser problemático en un SO.
+
+### Scheduling Cooperativo (cont. de [[#Approach **cooperativo** esperar una syscall (Approach cooperative)|esto]])
+
+El scheduler  analiza la situación cuando el kernel toma el control (es decir, cuando ocurre una syscall), especialmente si el proceso hace I/O. A veces se proveen syscalls explícitas para permitir que se ejecuten otros procesos.
+
+---
+
+Los schedulers preemptive combinan ambos enfoques.
+
+## Algunos enfoques
+
+### FIFO, o FCFS (First Came, First Served)
+
+Supone que todos los procesos son iguales, lo que hace que si llega un proceso que requiere mucha CPU, actúa de tapón para los procesos que se encuentran detrás.
+
+Agreguemos entonces prioridades al modelo. Esto trae un nuevo problema, el que los procesos de mayor prioridad demoren infinitamente a los de menor prioridad, los cuales pueden no ejecutarse nunca. Esto se conoce como *starvation*.
+
+Para mitigar esto, podríamos aumentar la prioridad de los procesos a medida que estén hace más tiempo. Concluimos entonces que cualquier esquema con prioridades **fijas** corre riesgo de el problema de *starvation* mencionado.
+
+### RR (Round Robin)
+
+La idea es darle un quantum a cada proceso e ir alternando entre ellos. Este quantum no debe ser *ni muy largo*, pues podría parecer que el SO no responde, *ni muy corto*, pues sino una gran proporción del quantum se la lleva el tiempo de scheduling y el context switch. Esto haría que el sistema esté más tiempo en mantenimiento en lugar de trabajando.
+
+Se suele combinar el modelo Round Robin con prioridades. Estas pueden estar dadas por el tipo de usuario (root-super user-user) o decididas por el mismo proceso, lo cual no suele funcionar. Las prioridades decrecen a medida que los procesos reciben su quantum, para evitar la starvation de los otros procesos.
+
+Los procesos que hacen I/O ganan un crédito extra por ser buenos compañeros de scheduling.
+
+### Múltiples colas
+
+Se tienen colas con 1, 2, 4, 8 quanta cada una. A la hora de elegir un proceso, la prioridad la tiene siempre la cola cono menos quanta. Si a un proceso no le alcanza su cuota de CPU, es pasado a la cola siguiente, disminuyendo su prioridad, pero asignándole más tiempo de CPU en el próximo turno.
+
+Se puede hacer que cuando un proceso termina de hacer I/O, vuelva a la cola de máxima prioridad, pues se supone que va a volver a hacerse interactivo. La idea general es minimizar el tiempo de respuesta para los procesos interactivos, suponiendo que los cómputos largos son menos sensibles a demoras.
+
+### SJF (Shortest Job First)
+
+Está ideada para sistemas donde predominan los trabajos batch. Está orientada a maximizar el throughput. En estos casos se puede predecir la duración del trabajo o al menos clasificarlo. Si conozco las duraciones de antemano, es óptimo, en cuanto a latencia promedio.
+
+Otra alternativa es no pensar en la duración total, sino en cuánto tiempo necesita hasta hacer I/O de nuevo. El problema real es cómo saber cuánta CPU va a necesitar un proceso. Podemos predecir usando información pasada, lo que puede salir mal en procesos con comportamiento irregular.
+
+### Scheduling en SMP
+
+Es un scheduling con un problema importante: el **cache**. Este es de vital importancia para rendimiento de los programas.
+
+Si la política de scheduling hace pasar un proceso a otro procesador, este llega con el cache vacío, tardando más de lo que tardaría si se hubiese ejecutado en el mismo CPU que antes.
+
+Por esto se trata de usar el mismo procesador, aunque se tarde un poco más en obtenerlo. Esto es conocido como *afinidad al procesador*, donde si se respeta a rajatabla es *afinidad dura*, y si es un intento, *afinidad blanda*.
+
+A veces, se distribuye la carga entre todos los procesadores:
+- **push migration**
+- **pull migration**

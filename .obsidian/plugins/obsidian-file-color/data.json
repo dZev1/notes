@@ -14,8 +14,18 @@
     },
     {
       "id": "9wsZ73nTGaH9YqpBPBU3i",
-      "name": "Random topic",
+      "name": "Random Topic",
       "value": "#b4dafe"
+    },
+    {
+      "id": "dLGNQG0aLb-W22P3kJXPm",
+      "name": "Quantum Computing",
+      "value": "#ffdd80"
+    },
+    {
+      "id": "TQfeyD9g7-VjoS2hhvoYo",
+      "name": "Operating Systems",
+      "value": "#9b94ff"
     }
   ],
   "fileColors": [
@@ -30,6 +40,14 @@
     {
       "path": "mini-essays",
       "color": "9wsZ73nTGaH9YqpBPBU3i"
+    },
+    {
+      "path": "quantum-computing",
+      "color": "dLGNQG0aLb-W22P3kJXPm"
+    },
+    {
+      "path": "sistemas-operativos",
+      "color": "TQfeyD9g7-VjoS2hhvoYo"
     }
   ]
 }

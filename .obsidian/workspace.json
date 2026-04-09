@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/scheduling.md",
+                "file": "sistemas-operativos/sincronizacion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "scheduling"
+              "title": "sincronizacion"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -187,17 +186,19 @@
   },
   "active": "ac7b558906f7dc5d",
   "lastOpenFiles": [
+    "sistemas-operativos/imgs/Pasted image 20260406101956.png",
+    "sistemas-operativos/sincronizacion.md",
+    "Untitled.base",
+    "Untitled 1.md",
+    "Untitled.md",
+    "sistemas-operativos/scheduling.md",
     "sistemas-operativos/procesos.md",
     "sistemas-operativos/imgs/Pasted image 20260321174955.png",
     "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
-    "sistemas-operativos/scheduling.md",
     "sistemas-operativos/introduccion.md",
     "sistemas-operativos/imgs",
     "sistemas-operativos/imgs/Pasted image 20260315173317.png",
-    "Untitled.md",
     "Untitled 2.md",
-    "Untitled 1.md",
-    "Untitled.base",
     "design-patterns/behavioral/visitor.md",
     "design-patterns/creationals/abstract-factory.md",
     "design-patterns/behavioral",
@@ -223,10 +224,8 @@
     "microarch/instruction-level-parallelism/notas-bpu.md",
     "microarch/instruction-level-parallelism/notas-multithread.md",
     "microarch/instruction-level-parallelism/notas-ilp.md",
-    "microarch/sistema-de-memoria/notas-dram.md",
     "Excalidraw",
     "Pasted Image 20260129165736_768.png",
-    "Pasted Image 20260129165632_773.png",
     "microarch/hennessy-patterson",
     "microarch/Resumen_orga_2_zamboni.pdf",
     "microarch/Resumen_orga_2.pdf",

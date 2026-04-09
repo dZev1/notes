@@ -120,3 +120,57 @@ Por esto se trata de usar el mismo procesador, aunque se tarde un poco más en o
 A veces, se distribuye la carga entre todos los procesadores:
 - **push migration**
 - **pull migration**
+
+
+## MLFQ (Multilevel Feedback Queue)
+
+Se busca **optimizar el turnaround time**, corriendo trabajos más cortos primero, y hacer al sistema responsive para los usuarios, es decir, **minimizar el response time**.
+
+¿Cómo hacemos que el scheduler funcione bien siendo este algo que no sabe realmente cómo son los trabajos?
+
+### Reglas básicas
+
+Usamos varias colas, cada una con una prioridad distinta {`Q0`,...,`Q8`}. A menor número mayor prioridad. Un trabajo está solo en una cola, y el scheduler prioriza decidir qué correr en un tiempo dado.
+
+Así llegamos a las reglas de MLFQ:
+
+1. Si $Prioridad(A) > Prioridad(B)$ entonces corremos A (pero no B) 
+2. Si $Prioridad(A) = Prioridad(B)$ entonces corremos A y B en Round Robin 
+
+La prioridad de los trabajos no es estática, sino que el Scheduler va aprendiendo de los trabajos y acomoda según su uso de CPU y de I/O.
+
+### ¿Cómo cambiamos la prioridad?
+
+Necesitamos ir aprendiendo cómo es nuestra carga de trabajo: una mezcla de trabajos interactivos que corren rápido y que normalmente dependen de la CPU, y trabajos largos que están *CPU bounded*, que requieren un CPU time mayor pero donde el response time no es importante.
+
+Así nace entonces el concepto de **allotment**. Esta es la cantidad de tiempo que un trabajo puede usar en un nivel de prioridad dado antes que el scheduler reduzca su prioridad. Primero asumiremos que el allotment es igual a un solo lapso de tiempo.
+
+Primera versión de las nuevas reglas:
+
+3. Cuando un trabajo entra al sistema, se pone en prioridad más alta.
+4. A) Si un trabajo usa mucho de su **allotment** cuando corre, se reduce su prioridad. B) Si un trabajo cede la CPU antes que el allotment termine, se mantiene en el mismo nivel, reseteando el allotment.
+
+Esto trae problemas de *starvation* y se puede llegar a *engañar al scheduler*. Imaginemos un proceso que justo cuando se esté por terminar el allotment, cede la CPU por entrar a un I/O. Se mantiene en la misma prioridad. Esto hace que un trabajo pueda monopolizar la CPU. Veamos otro intento, agregando esta regla:
+
+5. Después de un determinado tiempo $S$, movamos todos los trabajos nuevamente a la cola de más alta prioridad.
+
+Lo que estamos haciendo acá es **boostear** la prioridad de todos los trabajos del sistema. Esto arregla dos problemas a la vez: arregla la starvation, la CPU se comparte entre todos los trabajos en RR, y entonces todos los trabajos van a recibirla.  En segundo lugar, si un trabajo CPU-bound  se vuelve interactivo, el scheduler lo trata como tal, dándole su priority boost.
+
+La constante $S$ no debe ser muy grande, pues sino habrá starvation para los trabajos más largos. Pero tampoco puede ser muy pequeña, pues sino los trabajos interactivos no van a recibir su tiempo de CPU correspondiente.
+
+Falta poder no engañar al scheduler. Para eso vamos a contar mejor el uso de CPU de cada nivel de MLFQ. En vez de olvidarnos cuánto allotment usó un proceso en un nivel dado cuando usa I/O, el scheduler debe seguir manteniendo la cuenta de cuánto allotment usó cuando retorne del I/O. Reescribimos entonces la regla 4 a
+
+4. Cuando un trabajo use todo su allotment time en cualquier nivel, sin importar cuántas veces haya cedido la CPU, su prioridad se reduce. 
+
+---
+
+## Ráfagas de I/O y CPU
+
+La ejecución de un proceso consiste en un ciclo entre ejecución de CPU y espera por I/O. La ejecución siempre comienza con una ráfaga de **CPU**. Luego le sigue una ráfaga de I/O, luego CPU, luego I/O, ... hasta terminar.
+
+Un programa **intensivo I/O** tiene muchas ráfagas de CPU cortas. Un programa **intensivo en CPU** tiene pocas ráfagas de CPU largas. 
+
+![[Pasted image 20260406101956.png]]
+
+### FCFS
+

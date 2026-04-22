@@ -160,7 +160,80 @@ La constante $S$ no debe ser muy grande, pues sino habrá starvation para los tr
 
 Falta poder no engañar al scheduler. Para eso vamos a contar mejor el uso de CPU de cada nivel de MLFQ. En vez de olvidarnos cuánto allotment usó un proceso en un nivel dado cuando usa I/O, el scheduler debe seguir manteniendo la cuenta de cuánto allotment usó cuando retorne del I/O. Reescribimos entonces la regla 4 a
 
-4. Cuando un trabajo use todo su allotment time en cualquier nivel, sin importar cuántas veces haya cedido la CPU, su prioridad se reduce. 
+4. Cuando un trabajo use todo su allotment time en cualquier nivel, sin importar cuántas veces haya cedido la CPU, su prioridad se reduce.
+
+## Proportional Share Scheduler
+
+Son schedulers que dan ráfagas de CPU a los procesos en base a una *lotería* en la que participan todos los procesos. Cada proceso tiene una proporción de *tickets*, mientras mayor sea la proporción, más posibilidades tiene de recibir ráfagas de CPU.
+
+No es un scheduler determinístico, sino probabilístico. Cada cierto tiempo se sortean los recursos haciendo que el scheduler elija un número aleatorio, y así el proceso que tiene el ticket con ese número es el elegido para correr. 
+
+### Mecanismos de Tickets
+
+Necesitamos un mecanismo para manipular los tickets, hay varias formas que vamos a detallar.
+
+#### Ticket Currency
+
+Un proceso con una cierta cantidad de tickets, puede dar tickets a sus procesos hijos, pero como si fuese otra moneda de cambio con respecto a los tickets que tiene el proceso. Básicamente, subdividimos los tickets y el sistema convierte esa cantidad de tickets en moneda *"extranjera"* a la moneda global.
+
+#### Ticket Transfer
+
+Un proceso puede ceder sus tickets, ya sea una proporción o todos, a otro a modo de cambiar su probabilidad de que sea sorteado, a modo de aumentar su prioridad. Útil en escenarios cliente/servidor.
+
+#### Ticket Inflation
+
+Los procesos pueden aumentar o disminuir su cantidad de tickets según necesiten y calculen su importancia. Esto debe implementarse solo en caso de que no haya procesos greedy, que tomen todos los tickets para si mismos, tomando control total del sistema.
+
+### Implementación
+
+Es una implementación sencilla, solo debemos tener un buen generador de números aleatorios para elegir el ticket ganador, una estructura de datos que guarde los procesos y su cantidad de tickets, y el total de tickets.
+
+Entonces, para tomar decisiones de scheduling, solo tomamos un número aleatorio, vemos que proceso posee ese ticket y lo corremos. Algo asío:
+
+```c
+int counter = 0;
+
+// 0 <= winner <= total_tickets - 1
+int winner = rng(0, total_tickets);
+
+node_t *current = head;
+
+while (current) {
+	counter = counter + current->tickets;
+	if (counter > winner) break;
+	current = current->next;
+}
+// schedule current si se provocó el 'break'.
+```
+
+### Asignación de tickets
+
+Es un problema que se mantiene abierto. Veamos como hacen algunos schedulers
+
+#### Stride Scheduling
+
+Es un scheduler fair-share deteminístico. Cada trabajo tiene un *stride*, proporcionalmente inverso a la cantidad de tickets que tiene. Cada vez que un proceso corra, incrementamos un contador (llamado *pass*) para este en su stride para trackear su progreso global.
+
+Luego, el scheduler utiliza este *stride* y este *pass* para determinar qué proceso correr luego. La política es correr el proceso con menor pass. Sería algo así:
+
+```c
+curr = remove_min(queue);
+schedule(curr);
+curr->pass += curr->stride;
+insert(queue, curr);
+```
+
+Este tipo de scheduling trae un problema contra los probabilísticos en que qué ocurre si entra un proceso nuevo al scheduler: ¿le asignamos 0 stride? En ese caso tomaría el control de la CPU. Esto en los lottery schedulers no ocurre, solamente agregamos al total de tickets la cantidad asignada al proceso y listo.
+
+### Linux Completely Fair Scheduler (CFS)
+
+Implementa fair-share pero de manera eficiente y escalable. Trata de no tardar mucho en tomar decisiones de scheduling, a través de su diseño y los usos de estructuras de datos acordes a la tarea.
+
+En vez de basarse en un time slice fijo, busca dividir la CPU de manera equitativa sobre todos los procesos en competencia.  Lo hace usando una técnica de conteo llamada *virtual runtime* (**vruntime**).
+
+Mientras cada proceso corre, se acumula su `vruntime`. El `vruntime` de cada proceso aumenta a la misma tasa, en proporción al tiempo real. Cuando ocurre una decisión de scheduling, elegimos el proceso con menor `vruntime` para correrlo.
+
+Usa Red Black Trees para almacenar los procesos
 
 ---
 
@@ -171,6 +244,3 @@ La ejecución de un proceso consiste en un ciclo entre ejecución de CPU y esper
 Un programa **intensivo I/O** tiene muchas ráfagas de CPU cortas. Un programa **intensivo en CPU** tiene pocas ráfagas de CPU largas. 
 
 ![[Pasted image 20260406101956.png]]
-
-### FCFS
-

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/sincronizacion.md",
+                "file": "sistemas-operativos/threads.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sincronizacion"
+              "title": "threads"
             }
           }
         ]
@@ -187,12 +187,13 @@
   },
   "active": "ac7b558906f7dc5d",
   "lastOpenFiles": [
-    "sistemas-operativos/imgs/Pasted image 20260406101956.png",
     "sistemas-operativos/sincronizacion.md",
+    "sistemas-operativos/threads.md",
+    "sistemas-operativos/scheduling.md",
+    "sistemas-operativos/imgs/Pasted image 20260406101956.png",
     "Untitled.base",
     "Untitled 1.md",
     "Untitled.md",
-    "sistemas-operativos/scheduling.md",
     "sistemas-operativos/procesos.md",
     "sistemas-operativos/imgs/Pasted image 20260321174955.png",
     "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",

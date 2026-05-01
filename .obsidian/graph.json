@@ -4,7 +4,7 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": true,
+  "showOrphans": false,
   "collapse-color-groups": false,
   "colorGroups": [
     {
@@ -48,6 +48,41 @@
         "a": 1,
         "rgb": 14203135
       }
+    },
+    {
+      "query": "path:quantum-computing  ",
+      "color": {
+        "a": 1,
+        "rgb": 10420128
+      }
+    },
+    {
+      "query": "path:sistemas-operativos file:sistemas-operativos",
+      "color": {
+        "a": 1,
+        "rgb": 13794558
+      }
+    },
+    {
+      "query": "path: sistemas-operativos/virtualization  ",
+      "color": {
+        "a": 1,
+        "rgb": 16683152
+      }
+    },
+    {
+      "query": "path:sistemas-operativos/concurrency  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701138
+      }
+    },
+    {
+      "query": "path:microarch/hennessy-patterson  ",
+      "color": {
+        "a": 1,
+        "rgb": 16772812
+      }
     }
   ],
   "collapse-display": false,
@@ -60,6 +95,6 @@
   "repelStrength": 1.875,
   "linkStrength": 1,
   "linkDistance": 77,
-  "scale": 1.4019828977761102,
+  "scale": 0.9346552651840734,
   "close": false
 }

@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "989623bfebcb4764",
+        "id": "68e662a9f8123895",
         "type": "tabs",
         "children": [
           {
-            "id": "ac7b558906f7dc5d",
+            "id": "44c7838b79ec4da1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/threads.md",
+                "file": "sistemas-operativos/persistence/input-output.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "threads"
+              "title": "input-output"
             }
           }
         ]
@@ -185,23 +185,35 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "ac7b558906f7dc5d",
+  "active": "44c7838b79ec4da1",
   "lastOpenFiles": [
-    "sistemas-operativos/sincronizacion.md",
-    "sistemas-operativos/threads.md",
-    "sistemas-operativos/scheduling.md",
-    "sistemas-operativos/imgs/Pasted image 20260406101956.png",
-    "Untitled.base",
-    "Untitled 1.md",
+    "Pasted image 20260429182014.png",
     "Untitled.md",
-    "sistemas-operativos/procesos.md",
-    "sistemas-operativos/imgs/Pasted image 20260321174955.png",
-    "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
-    "sistemas-operativos/introduccion.md",
-    "sistemas-operativos/imgs",
-    "sistemas-operativos/imgs/Pasted image 20260315173317.png",
-    "Untitled 2.md",
+    "sistemas-operativos/persistence/input-output.md",
+    "sistemas-operativos/virtualization/memoria.md",
+    "sistemas-operativos/persistence",
     "design-patterns/behavioral/visitor.md",
+    "sistemas-operativos/sistemas-operativos.md",
+    "microarch/hennessy-patterson/ch-2.md",
+    "Untitled.base",
+    "sistemas-operativos/imgs/Pasted image 20260406101956.png",
+    "sistemas-operativos/imgs/Pasted image 20260321174955.png",
+    "sistemas-operativos/imgs/Pasted image 20260315173317.png",
+    "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
+    "sistemas-operativos/concurrency",
+    "sistemas-operativos/virtualization/procesos.md",
+    "sistemas-operativos/concurrency/threads.md",
+    "sistemas-operativos/concurrency/sincronizacion.md",
+    "sistemas-operativos/virtualization",
+    "microarch/microarquitectura.md",
+    "microarch/instruction-level-parallelism/notas-multithread.md",
+    "microarch/instruction-level-parallelism/notas-ooo.md",
+    "microarch/instruction-level-parallelism/notas-bpu.md",
+    "microarch/instruction-level-parallelism/notas-ilp.md",
+    "sistemas-operativos/virtualization/scheduling.md",
+    "Untitled 1.md",
+    "sistemas-operativos/imgs",
+    "Untitled 2.md",
     "design-patterns/creationals/abstract-factory.md",
     "design-patterns/behavioral",
     "README.md",
@@ -215,24 +227,12 @@
     "design-patterns/creationals/imgs/builder_structure.png",
     "Drawing 2026-02-16 22.57.39.excalidraw.md",
     "Drawing 2026-02-16 23.06.31.excalidraw.md",
-    "quantum-computing/repaso-complejos.md",
-    "design-patterns/design-patterns.md",
-    "design-patterns/creationals/factory-method.md",
-    "design-patterns/Creationals/singleton.md",
-    "design-patterns/Creationals/prototype.md",
     "design-patterns/creationals/imgs/abstract_factory_structure.png",
     "design-patterns/creationals/imgs/abstract_factory_ex.png",
-    "microarch/instruction-level-parallelism/notas-ooo.md",
-    "microarch/instruction-level-parallelism/notas-bpu.md",
-    "microarch/instruction-level-parallelism/notas-multithread.md",
-    "microarch/instruction-level-parallelism/notas-ilp.md",
     "Excalidraw",
     "Pasted Image 20260129165736_768.png",
     "microarch/hennessy-patterson",
     "microarch/Resumen_orga_2_zamboni.pdf",
-    "microarch/Resumen_orga_2.pdf",
-    "quantum-computing",
-    "mini-essays",
     "Untitled.canvas"
   ]
 }

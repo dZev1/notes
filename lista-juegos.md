@@ -1,0 +1,105 @@
+# Juegos que se pasó dezetita1
+
+- Minecraft (matar al Ender Dragon)
+- Minecraft Dungeons
+- Resident Evil 5
+- Resident Evil 2 Remake
+- The Legend of Zelda: Ocarina of Time
+- The Legend of Zelda: Majora's Mask
+- The Legend of Zelda: The Wind Waker
+- The Legend of Zelda: A Link Between Worlds
+- The Legend of Zelda: The Minish Cap
+- Sonic The Hedgehog
+- Sonic CD
+- Sonic The Hedgehog 2
+- Sonic Adventure DX
+- Sonic Adventure 2: Battle
+- Sonic Generations
+- Shadow Generations
+- Sonic Heroes
+- Sonic Colors
+- Project 06
+- Celeste
+- Hollow Knight
+- Hollow Knight: Silksong
+- Bioshock
+- Bioshock 2
+- Bioshock: Infinite
+- Cuphead
+- Dark Souls III
+- Elden Ring
+- Sekiro: Shadows Die Twice
+- Grand Theft Auto III
+- Grand Theft Auto: San Andreas
+- Grand Theft Auto IV
+- Grand Theft Auto V
+- Saints Row: The Third
+- Saints Row IV
+- Saints Row: Gat Out of Hell
+- Portal
+- Portal 2
+- Black Mesa
+- Half Life 2
+- Undertale
+- Shovel Knight
+- Hades
+- A Hat in Time
+- Lego Star Wars: The Complete Saga
+- Lego The Lord of the Rings
+- Lego Harry Potter 1-4
+- Lego Harry Potter 5-7
+- Lego Batman
+- Lego Batman 2: DC Super Heroes
+- Lego Indiana Jones
+- Lego Indiana Jones 2: The Adventure continues
+- Lego Pirates of the Caribbean (PSP)
+- Return of the Obra Dinn
+- Superliminal
+- Escape Simulator
+- Castle Crashers
+- Super Meat Boy
+- Super Meat Boy: Forever
+- Assassin's Creed II
+- Assassin's Creed: Revelations
+- Assassin's Creed: Unity
+- God of War
+- God of War II
+- God of War III
+- God of War: Chains of Olympus
+- God of War: Ghost of Sparta
+- God of War: Ascension
+- Crash Bandicoot
+- Crash Bandicoot 2: Cortex Strikes Back
+- Crash Bandicoot Warped
+- Crash of the Titans
+- Crash: Mind over Mutant
+- Devil May Cry 3
+- Devil May Cry 4
+- Devil May Cry 5
+- DmC Devil May Cry
+- The Binding of Isaac
+- The Last of Us: Part I
+- Metal Gear Rising: REVENGEANCE
+- Super Mario Bros.
+- Super Mario Bros. 3
+- Super Mario World
+- Super Mario 64
+- Super Mario Sunshine
+- Super Mario Galaxy
+- Super Mario Galaxy 2
+- Super Mario Odyssey
+- Dragon Ball Z: Budokai Tenkaichi 2
+- Dragon Ball Z: Budokai Tenkaichi 3
+- Dragon Ball Z: Shin Budokai
+- Dragon Ball Z: Shin Budokai 2
+- Dragon Ball Z: Tenkaichi Tag Team
+- Guitar Hero III: Warriors of Rock
+- Michael Jackson: The Experience (PSP)
+- Wall-E (PS2)
+- Ben 10: Protectors of the Earth
+- Ben 10: Alien Force
+- Up (PS2)
+- Dante's Inferno (PSP)
+- Journey (PS4)
+- Mario Kart 64
+- 

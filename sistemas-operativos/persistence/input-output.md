@@ -80,3 +80,73 @@ Se proveen *funciones de alto nivel* para acceder a los archivos de los disposit
 - `fgetc`, `fputc`: Leer/escribir archivos en modo char.
 - `fgets`, `fputs`: Leer/escribir archivos en modo stream.
 - `fscanf`, `fprintf`: Leer/escribir archivos en modo char con formato.
+
+## Planificación de I/O
+
+Queremos minimizar los movimientos que hace la cabeza para llegar a la posición donde leer/escribir. Los pedidos de I/O llegan al disco constantemente, incluso antes de que terminemos uno de ellos, razón por la cual debemos planificar cómo manejar la cola de pedidos de I/O para lograr el mejor rendimiento posible.
+
+No solo hay que manejar el *ancho de banda*, que es la cantidad de bytes que es posible transferir por vez, y la *latencia rotacional*, que es el tiempo que toma el disco en rotar y que la cabeza quede donde queramos, sino que también hay que manejar el tiempo de búsqueda o *seeek time*, que es el tiempo necesario para que la cabeza se ubique sobre el cilindro que tiene el sector buscado.
+
+## Políticas de scheduling I/O a disco
+
+Esquema más simple: **FIFO**, el tema es que si tenemos pedidos en distintos cilindros, tenemos que mover la cabeza de un lado a otro sin sentido.
+
+Otro esquema posible es **SSTF** (Shortest Seek Time First). La idea de este esquema es atender como próximo pedido al más cercano de donde está la cabeza en ese momento. Si bien mejora los tiempos de respuesta, puede producir starvation. Es un algoritmo greedy, pero no óptimo.
+
+Otra posibilidad es el algoritmo *scan*: ir primero en un sentido, atendiendo los pedidos que se encuentran en el camino, y luego ir en el otro sentido. Podría suceder que llegue una solicitud para el cilindro inmediato anterior, pero no la vamos a resolver hasta que volvamos a pasar por ese cilindro en sentido contrario. El tiempo de espera no es uniforme.
+
+En la práctica, no se usa ninguno de estos algoritmos de manera pura, sino que hay prioridades (como bajar páginas de caches, swapping de procesos), etcétera.
+
+## SSDs
+
+- Los discos de estado sólido mejoraron sus prestaciones y disminuido su precio.
+- Son más livianos, resistentes, silenciosos y consumen menos energía.
+- Tienen mejor performance en la lectura que los discos duros, pues no tienen componentes mecánicos, pero tienen una escritura más compleja.
+- Presentan problemas de durabilidad y *write amplification*.
+
+## Gestión del disco
+
+### Formateo
+
+Se trata de poner en cada sector unos códigos que luego sirven a la controladora de disco para efectuar detección y corrección de errores. Funcionan como un prefijo y un postfijo a la parte donde efectivamente van los datos en cada sector. Si al leer un sector, el prefijo y postfijo no tienen el valor que deberían, el sector está dañado.
+
+### Booteo
+
+Las computadoras tienen un programa en la ROM que carga a memoria ciertos sectores del comienzo del disco y los comienza a ejecutar. El programa es tan pequeño que no llega a ser un SO, sino un cargador de SO.
+
+### Bloques dañados
+
+A veces se manejan por software, y el sistema de archivo es responsable de anotar los inválidos. Los discos vienen con sectores extra para reemplazar los defectuosos.
+
+Cuando la controladora detecta un bloque dañado, se actualiza una tabla interna de remapeo y usa otro sector. Para no interferir con optimizaciones del scheduler I/O, los discos llevan sectores extra en todos los cilindros.
+
+## Spooling
+
+Es una forma de manejar dispositivos que requieren acceso dedicado en sistemas multiprogramados. Un ejemplo de ello es la impresora. No queremos, como usuario, que la impresora se bloquee hasta que se termine de imprimir todo.
+
+La idea entonces es poner el trabajo en una cola, y designar un proceso que los desencole a medida que el dispositivo se libere.
+
+El kernel no se entera que se está haciendo spooling, el usuario si.
+
+## Protección de la información
+
+### Copias de seguridad
+
+Resguardo de todo lo importante en otro lado. Se suele hacer en cintas, por lo que toman tiempo y se suelen programar para hacerse por la noche.
+
+Otra forma es copiar los datos a otro disco, en lo posible removible.
+
+Copiar todos los datos puede ser costoso. Una estrategia consiste en:
+- Una vez al mes/semana/... hacer una copia total.
+- Todas las noches hacer una copia *incremental*, solo los archivos modificados desde la última copia incremental.
+- Sino se puede hacer una copia *diferencial*, solo los archivos modificados desde la última copia total.
+
+Para restaurar:
+- Si hago solo copias totales, tomo la del día correspondiente y listo.
+- Si hago copias diferenciales, necesito la última copia total + la copia diferencial.
+- Si lo que tengo son incrementales, se necesita la última copia total, todas las incrementales entre esa copia total y la fecha requerida.
+
+Entonces:
+- Hoy = $Ultimo \ total + ultimo \ diferencial$
+- Hoy = $Ultimo \ total + \sum_i{incremental_i}$
+

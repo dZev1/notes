@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/persistence/sistema-de-archivos.md",
+                "file": "sistemas-operativos/virtualization/memoria.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "sistema-de-archivos"
+              "title": "memoria"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -186,10 +185,10 @@
       "obsidian-matrix:Obsidian Matrix": false
     }
   },
-  "active": "cfc3e5180a2baec0",
+  "active": "0b19f6be4c2ae59a",
   "lastOpenFiles": [
-    "sistemas-operativos/persistence/input-output.md",
     "sistemas-operativos/persistence/sistema-de-archivos.md",
+    "sistemas-operativos/persistence/input-output.md",
     "quantum-computing/espacios-vectoriales-complejos.md",
     "quantum-computing/repaso-complejos.md",
     "quantum-computing/Pasted image 20260126185220.png",

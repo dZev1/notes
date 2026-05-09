@@ -67,3 +67,43 @@ es la firma de `malloc()`. No se le suele pasar el valor numérico de tamaño, s
 ### Llamada a `free()`
 
 Esta llamada libera del heap el puntero que usamos para alojar nuestros datos. Lo más difícil es saber cuándo alojar, y cuando desalojar la memoria. La rutina solamente toma un argumento: el puntero que había sido devuelto por `malloc()`.
+
+## Traducción de direcciones
+
+Vamos a apoyarnos en el hardware para conseguir la mayor eficiencia y control posible. Esto va a comenzar muy simple (registros) y luego se va a complejizar bastante (TLB, page tables, etcétera).
+
+El control implica que el SO es el que se asegura que una aplicación no acceda a otra memoria más que la suya propia, por lo que para proteger tanto a las aplicaciones entre sí, como al SO de las aplicaciones, también vamos a necesitar apoyo del hardware.
+
+Vamos a querer que los programas puedan usar sus address spaces como quieran, haciendo al sistema más fácil de programar.
+
+### Hardware-based address translation
+
+El hardware va a transformar cada acceso a memoria, cambiando su dirección virtual dada por la instrucción en la dirección física donde la información está realmente ubicada. Entonces en cada referencia a memoria, el hardware hace una traducción a su lugar real en la memoria física.
+
+El SO debe involucrarse en momentos clave para configurar el hardware para hacer la traducción correcta. Debe entonces hacer **memory management**, manteniendo un registro de cuáles localizaciones están libres y cuales en uso (una cache).
+
+### Asumimos
+
+- Address space del usuario contiguo en memoria física.
+- Address space no muy grandee, es menor que el tamaño de la memoria física.
+- Cada address space tiene el mismo tamaño.
+
+Luego romperemos estas suposiciones para ir a lo real.
+
+## Reubicación dinámica (por hardware)
+
+- ¿Cómo reubico un proceso en memoria de forma que sea transparente para el proceso?
+- ¿Cómo damos la ilusión de que el espacio virtual de memoria empieza en 0, cuando en realidad comienza en otra ubicación de la memoria física?
+
+Necesitamos dos registros en cada CPU:
+El **base** register y el **bounds** (o **limit** register). Con este par podemos ubicar dónde queramos las cosas en el address space, sabemos dónde empieza y termina.
+
+Con esta configuración, el SO decide dónde cargar el programa en la memoria física, y setea el **base** register en ese valor. Ahora, cuando cualquier referencia de memoria, generada por el proceso, se traduce de esta manera:
+$$
+DirecciónFisica = DirecciónVirtual + Base
+$$
+Este proceso de transformar una dirección virtual en una física es la **traducción de direcciones**, y como este mecanismo se da en tiempo de ejecución, y porque podemos mover address spaces hasta una vez que el programa esté corriendo, se conoce a este mecanismo como **Reubicación Dinámica**.
+
+El **bounds** register, lo que hace es fijar un fin al address space del programa, a fin de proteger los procesos. Si una dirección está entre $Base$ y $Base + Límite$ (o $Base$ y $Límite$ si se guarda la dirección física de donde termina el address space).
+
+Estos registros son parte del hardware para ayudar a traducir las direcciones, y forman parte de la **Memory Management Unit** o (**MMU**), junto a otros circuitos más. La MMU debe poder ser manejada por el SO en modo kernel y, la CPU debe poder generar excepciones en caso de que un proceso quiera acceder a direcciones de memoria ilegales, para que el SO decida qué hacer ante esto.

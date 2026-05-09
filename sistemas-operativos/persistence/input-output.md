@@ -150,3 +150,50 @@ Entonces:
 - Hoy = $Ultimo \ total + ultimo \ diferencial$
 - Hoy = $Ultimo \ total + \sum_i{incremental_i}$
 
+### Redundancia
+
+A veces una copia de seguridad no nos alcanza, pues el costo de que el sistema salga de línea es muy alto. Entonces, conviene implementar *redundancia*.
+
+Un método común para implementarla es **RAID**: *Redundant Array of Inexpensive Disks*. La idea es usar dos discos: cada escritura se hace en los dos, cosa que si uno de los dos se llega a romper, tenemos el otro. Esta alternativa es muy costosa, pero a su vez nos permite hacer dos lecturas a la vez, una en cada disco.
+
+Hay varios niveles de RAID, que tienen distintas ventajas y desventajas en cuanto a rendimiento y redundancia.
+
+#### RAID 0 (*stripping*)
+
+No aporta redundancia, pero mejora el rendimiento. Los bloques de un mismo archivo se distribuyen en dos o más discos. Esto mejora el ancho de banda y permite escrituras en paralelo, si los discos están en diferentes controladoras.
+
+#### RAID 1 (*mirroring*)
+
+Se espejan los discos, lo que trae un mejor rendimiento de las lecturas. Las escrituras, en mejor caso, tardan lo mismo pero en peor el doble. Es muy caro.
+
+#### RAID 0+1
+
+Se combinan los dos niveles anteriores, el *mirroring* y el *stripping*. En otras palabras, cada archivo está espejado, pero al leerlo se lee un bloque de cada disco. Se leen más rápido que en mirroring simple, es como en stripping. Pero al escribir, tenemos que escribir cada bloque en ambos, como en mirroring.
+
+#### RAID 2 y 3
+
+La idea es tener, por cada bloque, guardada información adicional que permita determinar si se dañó o no. Cierto tipo de errores se pueden corregir automáticamente, recomputando el bloque dañado a partir de la información redundante.
+
+Adicionalmente, cada bloque lógico se distribuye entre todos los discos participantes. RAID 2 requiere 3 discos de paridad por cada 4 de datos, mientras RAID 3 solo 1. Sin embargo, todos los discos participan de todas las I/O, lo cual lo hace más lento que RAID 1.
+
+Se puede requerir mucho procesamiento para computar las redundancias, por lo que se suele implementar por hardware en una controladora dedicada, como todos los niveles siguientes.
+
+#### RAID 4
+
+Como RAID 3, pero hace el stripping a nivel del bloque. El disco dedicado a paridad sigue siendo un cuello de botella para el rendimiento, porque todas las escrituras lo necesitan.
+
+#### RAID 5
+
+Junto a 0, 1 y 1+0, es de los más usados en la práctica. Usa datos redundantes, pero los distribuye en N + 1 discos. No hay un disco que sólo contenga redundancia.
+
+Cada bloque de cada archivo va a un disco distinto, y por cada bloque, uno de los discos tiene los datos y otro tiene la información de paridad. No hay más cuello de botellas, pero hay que mantener la paridad distribuida para las escrituras.
+
+Se puede soportar la pérdida de un disco cualquiera. Cuando se reemplaza y comienza la reconstrucción, el rendimiento se degrada notablemente.
+
+#### RAID 6
+
+Es como RAID 5, pero agrega un segundo bloque de paridad, distribuido entre todos los discos. distribuido entre todos los discos. Las implementaciones varían, pero el objetivo es soportar la rotura de hasta dos discos.
+
+#### RAID no protege contra borrar un archivo accidentalmente
+
+Por eso se combina con copias de seguridad. Si la aplicación corrompe datos, ningún mecanismo sirve. Si se corrompe la estructura interna de los archivos, RAID tampoco sirve, por lo que es por eso que hay sistemas de archivos que brindan algo de protección.

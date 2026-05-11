@@ -106,4 +106,8 @@ Este proceso de transformar una dirección virtual en una física es la **traduc
 
 El **bounds** register, lo que hace es fijar un fin al address space del programa, a fin de proteger los procesos. Si una dirección está entre $Base$ y $Base + Límite$ (o $Base$ y $Límite$ si se guarda la dirección física de donde termina el address space).
 
-Estos registros son parte del hardware para ayudar a traducir las direcciones, y forman parte de la **Memory Management Unit** o (**MMU**), junto a otros circuitos más. La MMU debe poder ser manejada por el SO en modo kernel y, la CPU debe poder generar excepciones en caso de que un proceso quiera acceder a direcciones de memoria ilegales, para que el SO decida qué hacer ante esto.
+Estos registros son parte del hardware para ayudar a traducir las direcciones, y forman parte de la **Memory Management Unit** o (**MMU**), junto a otros circuitos más. La rMMU debe poder ser manejada por el SO en modo kernel y, la CPU debe poder generar excepciones en caso de que un proceso quiera acceder a direcciones de memoria ilegales, para que el SO decida qué hacer ante esto.
+
+## Manejo del espacio libre
+
+

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/virtualization/memoria.md",
+                "file": "sistemas-operativos/virtualization/segmentacion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "memoria"
+              "title": "segmentacion"
             }
           }
         ]
@@ -185,8 +185,11 @@
       "obsidian-matrix:Obsidian Matrix": false
     }
   },
-  "active": "0b19f6be4c2ae59a",
+  "active": "cfc3e5180a2baec0",
   "lastOpenFiles": [
+    "sistemas-operativos/virtualization/memoria.md",
+    "sistemas-operativos/virtualization/segmentacion.md",
+    "Pasted image 20260510123724.png",
     "sistemas-operativos/persistence/sistema-de-archivos.md",
     "sistemas-operativos/persistence/input-output.md",
     "quantum-computing/espacios-vectoriales-complejos.md",
@@ -197,7 +200,6 @@
     "lista-juegos.md",
     "Pasted image 20260429182014.png",
     "Untitled.md",
-    "sistemas-operativos/virtualization/memoria.md",
     "sistemas-operativos/persistence",
     "design-patterns/behavioral/visitor.md",
     "sistemas-operativos/sistemas-operativos.md",
@@ -223,13 +225,11 @@
     "design-patterns/creationals/abstract-factory.md",
     "design-patterns/behavioral",
     "README.md",
-    "Preguntas.md",
     "sistemas-operativos",
     "design-patterns/creationals/imgs/singleton_structure.png",
     "design-patterns/creationals/imgs/factory_method_structure.png",
     "design-patterns/creationals/imgs/factory_method_img.png",
     "design-patterns/creationals/imgs/builder_structure.png",
-    "design-patterns/creationals/imgs/abstract_factory_structure.png",
     "Excalidraw",
     "microarch/hennessy-patterson",
     "microarch/Resumen_orga_2_zamboni.pdf",

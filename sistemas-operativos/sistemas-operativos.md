@@ -4,7 +4,7 @@
 
 | Semana |                                                    Tema                                                    |
 | :----: | :--------------------------------------------------------------------------------------------------------: |
-|   01   |                          [[sistemas-operativos#Sistema Operativo\|Introducción]]                          |
+|   01   |                          [[sistemas-operativos#Sistema Operativo\|Introducción]]                           |
 |   02   |                                      [[procesos#Procesos\|Procesos]]                                       |
 |   03   |              [[procesos#InterProcess Communication (IPC)\|Comunicación entre procesos (IPC)]]              |
 |   04   |                                   [[scheduling#Scheduling\|Scheduling]]                                    |

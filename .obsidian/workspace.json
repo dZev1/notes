@@ -11,14 +11,10 @@
             "id": "cfc3e5180a2baec0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sistemas-operativos/virtualization/segmentacion.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "segmentacion"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -187,8 +183,13 @@
   },
   "active": "cfc3e5180a2baec0",
   "lastOpenFiles": [
-    "sistemas-operativos/virtualization/memoria.md",
-    "sistemas-operativos/virtualization/segmentacion.md",
+    "sistemas-operativos/virtualization/memoria/memoria.md",
+    "sistemas-operativos/sistemas-operativos.md",
+    "sistemas-operativos/virtualization/memoria/paginacion.md",
+    "sistemas-operativos/virtualization/memoria/manejo-de-free-space.md",
+    "sistemas-operativos/virtualization/memoria/segmentacion.md",
+    "sistemas-operativos/virtualization/memoria",
+    "sistemas-operativos/virtualization/procesos",
     "Pasted image 20260510123724.png",
     "sistemas-operativos/persistence/sistema-de-archivos.md",
     "sistemas-operativos/persistence/input-output.md",
@@ -202,7 +203,6 @@
     "Untitled.md",
     "sistemas-operativos/persistence",
     "design-patterns/behavioral/visitor.md",
-    "sistemas-operativos/sistemas-operativos.md",
     "microarch/hennessy-patterson/ch-2.md",
     "Untitled.base",
     "sistemas-operativos/imgs/Pasted image 20260406101956.png",
@@ -210,7 +210,7 @@
     "sistemas-operativos/imgs/Pasted image 20260315173317.png",
     "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
     "sistemas-operativos/concurrency",
-    "sistemas-operativos/virtualization/procesos.md",
+    "sistemas-operativos/virtualization/procesos/procesos.md",
     "sistemas-operativos/concurrency/threads.md",
     "sistemas-operativos/concurrency/sincronizacion.md",
     "sistemas-operativos/virtualization",
@@ -219,20 +219,16 @@
     "microarch/instruction-level-parallelism/notas-ooo.md",
     "microarch/instruction-level-parallelism/notas-bpu.md",
     "microarch/instruction-level-parallelism/notas-ilp.md",
-    "sistemas-operativos/virtualization/scheduling.md",
+    "sistemas-operativos/virtualization/procesos/scheduling.md",
     "sistemas-operativos/imgs",
     "Untitled 2.md",
-    "design-patterns/creationals/abstract-factory.md",
     "design-patterns/behavioral",
-    "README.md",
     "sistemas-operativos",
     "design-patterns/creationals/imgs/singleton_structure.png",
     "design-patterns/creationals/imgs/factory_method_structure.png",
     "design-patterns/creationals/imgs/factory_method_img.png",
     "design-patterns/creationals/imgs/builder_structure.png",
     "Excalidraw",
-    "microarch/hennessy-patterson",
-    "microarch/Resumen_orga_2_zamboni.pdf",
     "Untitled.canvas"
   ]
 }

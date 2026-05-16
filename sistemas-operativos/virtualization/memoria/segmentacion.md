@@ -71,21 +71,23 @@ if (!has_permissions(segment, access_type)) {
 
 paddr_t phy_addr;
 
-// si estoy out of bounds, lanza excepción:
+// Si estoy en el segmento del stack (crecimiento negativo)
 if (!grows_positive[segment]) {
 	uint64_t negative_offset = offset - MAX_SEG_SIZE;
 	
+	// si estoy out of bounds, lanza excepción:
 	if (abs(negative_offset) > bounds[segment]) {
 		RaiseException(PROTECTION_FAULT);
 	}
 	
+	// consigo la dirección física
 	phy_addr = base[segment] + negative_offset;
 } else {
-	// consigo la dirección física
+
 	if (offset >= bounds[segment]) {
 		RaiseException(PROTECTION_FAULT);
 	}
-	
+	// consigo la dirección física
 	phy_addr = base[segment] + offset;
 	
 }

@@ -11,10 +11,14 @@
             "id": "cfc3e5180a2baec0",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "sistemas-operativos/virtualization/memoria/paginacion.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "paginacion"
             }
           }
         ]
@@ -160,13 +164,23 @@
               "icon": "lucide-list",
               "title": "Outline of notas-dram"
             }
+          },
+          {
+            "id": "13451683cc5bd56b",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -178,14 +192,16 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "obsidian-matrix:Obsidian Matrix": false
+      "obsidian-matrix:Obsidian Matrix": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "cfc3e5180a2baec0",
   "lastOpenFiles": [
+    "lista-juegos.md",
+    "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/virtualization/memoria/memoria.md",
     "sistemas-operativos/sistemas-operativos.md",
-    "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/virtualization/memoria/manejo-de-free-space.md",
     "sistemas-operativos/virtualization/memoria/segmentacion.md",
     "sistemas-operativos/virtualization/memoria",
@@ -198,7 +214,6 @@
     "quantum-computing/Pasted image 20260126185220.png",
     "quantum-computing/introducción.md",
     "quantum-computing/Drawing 2026-05-05 22.56.06.excalidraw.md",
-    "lista-juegos.md",
     "Pasted image 20260429182014.png",
     "Untitled.md",
     "sistemas-operativos/persistence",

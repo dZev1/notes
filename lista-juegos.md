@@ -9,6 +9,7 @@
 - The Legend of Zelda: The Wind Waker
 - The Legend of Zelda: A Link Between Worlds
 - The Legend of Zelda: The Minish Cap
+- The Legend of Zelda: Twilight Princess
 - Sonic The Hedgehog
 - Sonic CD
 - Sonic The Hedgehog 2

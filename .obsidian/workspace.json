@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"cssclasses\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "microarch/Sistema De Memoria/notas-dram.md",
+                "file": "sistemas-operativos/virtualization/memoria/paginacion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for notas-dram"
+              "title": "Backlinks for paginacion"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "microarch/Sistema De Memoria/notas-dram.md",
+                "file": "sistemas-operativos/virtualization/memoria/paginacion.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of notas-dram"
+              "title": "Outline of paginacion"
             }
           },
           {
@@ -180,7 +181,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,12 +199,15 @@
   },
   "active": "cfc3e5180a2baec0",
   "lastOpenFiles": [
-    "lista-juegos.md",
+    "Pasted image 20260531160803.png",
+    "Pasted image 20260531152033.png",
+    "sistemas-operativos/virtualization/memoria/segmentacion.md",
+    "Untitled.canvas",
     "sistemas-operativos/virtualization/memoria/paginacion.md",
+    "lista-juegos.md",
     "sistemas-operativos/virtualization/memoria/memoria.md",
     "sistemas-operativos/sistemas-operativos.md",
     "sistemas-operativos/virtualization/memoria/manejo-de-free-space.md",
-    "sistemas-operativos/virtualization/memoria/segmentacion.md",
     "sistemas-operativos/virtualization/memoria",
     "sistemas-operativos/virtualization/procesos",
     "Pasted image 20260510123724.png",
@@ -236,14 +240,11 @@
     "microarch/instruction-level-parallelism/notas-ilp.md",
     "sistemas-operativos/virtualization/procesos/scheduling.md",
     "sistemas-operativos/imgs",
-    "Untitled 2.md",
     "design-patterns/behavioral",
     "sistemas-operativos",
     "design-patterns/creationals/imgs/singleton_structure.png",
     "design-patterns/creationals/imgs/factory_method_structure.png",
     "design-patterns/creationals/imgs/factory_method_img.png",
-    "design-patterns/creationals/imgs/builder_structure.png",
-    "Excalidraw",
-    "Untitled.canvas"
+    "Excalidraw"
   ]
 }

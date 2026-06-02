@@ -108,3 +108,38 @@ Arquitecturas más modernas o aquellas que son RISC, tienen una TLB manejada por
 2. Cuando corremos el código del handler del TLB miss, debemos evitar que ocurra una cadena eterna de TLB misses. Esto se puede hacer, por ejemplo, manteniendo los handlers de TLB en memoria física, o reservando algunas entradas de la TLB para traducciones permanentemente válidas que se usan para el código del handler en sí mismo.
 
 Hacer esto por software nos da gran flexibilidad. El SO puede usar cualquier estructura de datos que quiera para implementar la page table, sin requerir cambios en el hardware. Además nos da simplicidad. El hardware no hace mucho en el miss, solo eleva una excepción y deja que el handler del SO haga lo que tenga que hacer para resolverlo.
+
+>[!Note] Bit `valid` de TLB $\neq$ bit `valid` de Page Table
+>
+>El bit `valid` de la page table indica que esa PTE no fue todavía alojada por el proceso, por lo que no puede ser accedida por un programa que funcione correctamente. Esto envía una trap al procesador que termina el proceso.
+>El bit `valid` de una entrada de la TLB refiere a que esa entrada no tiene una traducción válida en él. Es útil a la hora de hacer context switches, entre otras cosas, como notaré más adelante.
+
+### Contenidos de una TLB
+
+Una TLB típica suele tener 32, 64 o 128 entradas que son **fully associative**, es decir las entradas pueden colocarse en cualquier lugar de la TLB, y que el hardware busca en toda la TLB en paralelo hasta encontrar la traducción deseada. Una entrada puede verse algo así:
+
+![[Pasted image 20260531152033.png]]
+
+El VPN y PFN están en cada entrada, pues la traducción puede llegar a cualquiera de estas ubicaciones.
+Lo interesante viene en esos *other bits*. Comúnmente tiene un bit de **validez**, que nos dice si hay una traducción válida en esa entrada o no. También suele haber bits de **protección**, que nos dicen de qué manera se puede acceder a una página (Read and Execute, Read and Write, ...). También hay otros campos, como un **identificador de address-space** o un bit **dirty**.
+
+### Context Switches
+
+Con la llegada de la TLB, tenemos nuevos problemas al hacer context switches. Específicamente, la TLB tiene traducciones virtual->física que solo son válidas para el proceso que está corriendo, pero no para el resto de procesos.
+Entonces cuando hacemos un switch de un proceso a otro, el hardware y el SO deben tener garantizar que el proceso que está por correr no acceda accidentalmente a las traducciones de un proceso que corrió antes.
+
+Para administrar los contenidos en un context switch, tenemos un gran número de approaches. Uno es simplemente hacer un flush de la TLB en los cambios, limpiándola completamente antes de correr el próximo proceso. Esto trae un costo: cada vez que un proceso corre, debe incurrir en TLB misses cuando entre en páginas de código y datos. Si el SO cambia entre procesos frecuentemente, el costo es muy alto.
+
+Para reducir este overhead, algunos sistemas agregan soporte al hardware para compartir la TLB entre context switches. Algunos sistemas de hardware proveen un **address space identifier (ASID)** como campo en la TLB. Este ASID es como un PID, pero con menos bits.
+
+Se usa una política de reemplazo **LRU** o **Random**, cada una con sus pros y sus contras.
+
+### Una entrada real
+
+Veamos esta entrada de un MIPS R4000, que usa una TLB administrada por software. En la imagen se puede observar la entrada
+
+![[Pasted image 20260531160803.png]]
+
+Este procesador soporta un address space de 32 bits con páginas de 4 KB. Por ende, debería tener un VPN de 20 bits y un offset de 12 bits en nuestras direcciones. Pero tenemos solo 19 bits para la VPN, porque las direcciones de usuario vendrán solo de la mitad de las direcciones, el resto está reservado para el kernel, dejándonos en `20 >> 2 = 19` bits para el VPN. Este VPN se traduce a 24 bits de PFN, y entonces soporta sistemas de hasta 64 GB de memoria física principal ($2^{24}$ páginas de 4KB).
+
+Tenemos también un bit **global** (G), que es utilizado para páginas compartidas globalmente entre procesos. Si `G=1` se ignora el `ASID`. El ASID es de 8 bits, soportando hasta 256 procesos. ¿Qué hacemos si tenemos más de 256 procesos corriendo a la vez? Pues, tenemos un 3 bits de **coherencia** (C), que determinan cómo una página se inserta en el cache por el hardware. El bit **dirty** marca que se modificó la página. El bit de **validez** nos dice si está presente la traducción en la entrada.

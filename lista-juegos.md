@@ -1,6 +1,6 @@
-# Juegos que se pasó dezetita1
+# Juegos que se pasó dezetin
 
-- Minecraft (matar al Ender Dragon)
+- Minecraft
 - Minecraft Dungeons
 - Resident Evil 5
 - Resident Evil 2 Remake

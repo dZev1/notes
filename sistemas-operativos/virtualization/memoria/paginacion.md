@@ -143,3 +143,28 @@ Veamos esta entrada de un MIPS R4000, que usa una TLB administrada por software.
 Este procesador soporta un address space de 32 bits con páginas de 4 KB. Por ende, debería tener un VPN de 20 bits y un offset de 12 bits en nuestras direcciones. Pero tenemos solo 19 bits para la VPN, porque las direcciones de usuario vendrán solo de la mitad de las direcciones, el resto está reservado para el kernel, dejándonos en `20 >> 2 = 19` bits para el VPN. Este VPN se traduce a 24 bits de PFN, y entonces soporta sistemas de hasta 64 GB de memoria física principal ($2^{24}$ páginas de 4KB).
 
 Tenemos también un bit **global** (G), que es utilizado para páginas compartidas globalmente entre procesos. Si `G=1` se ignora el `ASID`. El ASID es de 8 bits, soportando hasta 256 procesos. ¿Qué hacemos si tenemos más de 256 procesos corriendo a la vez? Pues, tenemos un 3 bits de **coherencia** (C), que determinan cómo una página se inserta en el cache por el hardware. El bit **dirty** marca que se modificó la página. El bit de **validez** nos dice si está presente la traducción en la entrada.
+
+## Tablas más pequeñas
+
+Las page tables son muy grandes, y por ende consumen mucha memoria. Sigamos con un address space de 32 bits ($2^{32}$ bytes), con páginas de 4KB ($2^{12}$ bytes) y una page entry de 4 bytes.
+
+Un address space tiene como un millón de páginas virtuales, que multiplicado por el tamaño de la entrada de la page table vemos que nuestra page table es de 4MB de tamaño, y sumemos a esto que tenemos una page table por cada proceso del sistema. Con cientos de procesos activos, algo común en SOs modernos, estaríamos alojando cientos de MBs de memoria SOLO para las page tables. ¿Cómo solucionamos este problema?
+
+### **Solución simple:** Páginas más grandes
+
+Podríamos reducir el tamaño de la page table aumentando el tamaño de las páginas. En nuestro address space de 32 bits, tomemos páginas de 16KB. Entonces tendríamos VPNs de 18 bits y un offset de 14 bits. Teniendo en cuenta que no aumentamos el tamaño de las entradas de la page table, tenemos ahora $2^{18}$ entradas en nuestra page table, usando un total de 1MB por page table.
+
+Esto trae como problema que desperdiciemos espacio *dentro* de cada página (**fragmentación interna**). Así las aplicaciones terminan alojando páginas pero solo usando pocos bytes de cada uno y se llena la memoria de páginas enormes. Por eso la mayoría de sistemas usan tamaños de página pequeños: 4KB (como en x86) u 8KB (como en SPARCv9).
+
+### **Solución híbrida:** Paginación y Segmentos
+
+Podemos combinar la paginación con la segmentación para así reducir el overhead de memoria de las page tables. Asumamos que tenemos un address space en el que las porciones del heap y el stack usadas son pequeñas. Entonces la page table si fuese lineal estaría llena de entradas inválidas...
+
+Metamos ahora la segmentación de por medio. En vez de tener una sola page table por todo el address space del proceso, por qué no tener una por segmento lógico. Tenemos un registro **base** y un registro **bound** que nos marcan el inicio del address space y el tamaño respectivamente. En el híbrido aún tenemos estas estructuras en nuestra MMU, así que usamos al **base** para apuntar a la address física de la page table del segmento. El **bound** entonces nos indica el fin de esa page table.
+
+Esto nos trae un gran ahorro de memoria comparado con la page table lineal. Las páginas sin alojar entre el stack y el heap ya no ocupan espacio de la page table.
+
+Pero aún tenemos problemas. Seguimos **usando segmentación**, lo que no es flexible; si tenemos un heap disperso, podemos aún así tener mucho desperdicio en page tables. Además el híbrido vuelve a insertar la **fragmentación externa** en la mesa. Mientras que toda la memoria se maneja en unidades de tamaño en base a páginas, las page tables ahora pueden ser de tamaño arbitrario. Encontrar espacio libre entre ellas es más complicado. Entonces seguimos buscando cómo.
+
+## Page Tables Multinivel
+

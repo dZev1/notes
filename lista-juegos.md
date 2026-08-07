@@ -10,6 +10,7 @@
 - The Legend of Zelda: A Link Between Worlds
 - The Legend of Zelda: The Minish Cap
 - The Legend of Zelda: Twilight Princess
+- The Legend of Zelda: Link's Awakening (2019)
 - Sonic The Hedgehog
 - Sonic CD
 - Sonic The Hedgehog 2

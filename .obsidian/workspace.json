@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/virtualization/memoria/paginacion.md",
+                "file": "lista-juegos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "paginacion"
+              "title": "lista-juegos"
             }
           }
         ],
@@ -56,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -93,8 +95,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -215,6 +216,8 @@
   },
   "active": "1df560475b087425",
   "lastOpenFiles": [
+    "README.md",
+    "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/virtualization/memoria/segmentacion.md",
     "lista-juegos.md",
     "Drawing 2026-06-08 23.21.55.excalidraw.md",
@@ -224,7 +227,6 @@
     "sistemas-operativos/imgs/Pasted image 20260429182014.png",
     "sistemas-operativos/sistemas-operativos.md",
     "sistemas-operativos/Untitled",
-    "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/imgs/Pasted image 20260531160803.png",
     "sistemas-operativos/imgs/Pasted image 20260531152033.png",
     "sistemas-operativos/virtualization/memoria/memoria.md",
@@ -256,7 +258,6 @@
     "microarch/instruction-level-parallelism/notas-multithread.md",
     "microarch/instruction-level-parallelism/notas-ooo.md",
     "microarch/instruction-level-parallelism/notas-bpu.md",
-    "microarch/instruction-level-parallelism/notas-ilp.md",
     "sistemas-operativos/imgs",
     "design-patterns/behavioral",
     "sistemas-operativos",

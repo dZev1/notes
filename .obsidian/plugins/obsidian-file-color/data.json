@@ -30,7 +30,7 @@
   ],
   "fileColors": [
     {
-      "path": "design-patterns",
+      "path": "swe/design-patterns",
       "color": "I0jpTFjj4kIONM6NzpvaB"
     },
     {
@@ -38,16 +38,12 @@
       "color": "smCDsGMkzba7SBAW-2loV"
     },
     {
-      "path": "mini-essays",
-      "color": "9wsZ73nTGaH9YqpBPBU3i"
-    },
-    {
-      "path": "quantum-computing",
-      "color": "dLGNQG0aLb-W22P3kJXPm"
-    },
-    {
       "path": "sistemas-operativos",
       "color": "TQfeyD9g7-VjoS2hhvoYo"
+    },
+    {
+      "path": "swe",
+      "color": "I0jpTFjj4kIONM6NzpvaB"
     }
   ]
 }

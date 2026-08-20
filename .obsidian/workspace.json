@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "c48feb93784bfb08",
+        "id": "187aa3910276de10",
         "type": "tabs",
         "children": [
           {
-            "id": "8b31ecf885ff164a",
+            "id": "13671b5127dbefb4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Untitled.md",
+                "file": "lista-juegos.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
-            }
-          },
-          {
-            "id": "1df560475b087425",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "sistemas-operativos/virtualization/memoria/paginacion.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "paginacion"
+              "title": "lista-juegos"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -56,10 +41,12 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "Explorador de archivos"
             }
           },
           {
@@ -93,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -196,35 +182,48 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "bases:Create new base": false,
+      "switcher:Abrir selector rápido": false,
+      "graph:Abrir vista gráfica": false,
+      "canvas:Crear nuevo lienzo": false,
+      "daily-notes:Abrir la nota de hoy": false,
+      "templates:Insertar plantilla": false,
+      "command-palette:Abrir paleta de comandos": false,
+      "bases:Crear nueva base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-matrix:Obsidian Matrix": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "1df560475b087425",
+  "active": "0b19f6be4c2ae59a",
   "lastOpenFiles": [
+    "sistemas-operativos/practicas/pr_1/9.c",
+    "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
+    "sistemas-operativos/practicas/pr_1/image.png",
+    "sistemas-operativos/practicas/pr_1/ejercicios.md",
+    "sistemas-operativos/practicas/pr_1/7b.c",
+    "sistemas-operativos/practicas/pr_1/7a.c",
+    "sistemas-operativos/practicas/pr_1",
+    "sistemas-operativos/practicas/Nueva carpeta",
+    "sistemas-operativos/practicas/01-syscalls-signals.md",
+    "sistemas-operativos/clase-01.md",
+    "sistemas-operativos/sistemas-operativos.md",
+    "swe/papers",
+    "Drawing 2026-06-08 23.21.55.excalidraw.md",
+    "Pasted image 20260817181323.png",
+    "sistemas-operativos/practicas",
+    "microarch/Resumen_orga_2.pdf",
+    "Untitled.md",
+    "Drawing 2026-06-18 18.06.07.excalidraw.md",
+    "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/virtualization/memoria/segmentacion.md",
     "lista-juegos.md",
-    "Drawing 2026-06-08 23.21.55.excalidraw.md",
-    "Drawing 2026-06-18 18.06.07.excalidraw.md",
-    "Untitled.md",
     "Untitled.canvas",
     "sistemas-operativos/imgs/Pasted image 20260429182014.png",
-    "sistemas-operativos/sistemas-operativos.md",
     "sistemas-operativos/Untitled",
-    "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/imgs/Pasted image 20260531160803.png",
     "sistemas-operativos/imgs/Pasted image 20260531152033.png",
     "sistemas-operativos/virtualization/memoria/memoria.md",
@@ -239,28 +238,14 @@
     "quantum-computing/Pasted image 20260126185220.png",
     "quantum-computing/introducción.md",
     "quantum-computing/Drawing 2026-05-05 22.56.06.excalidraw.md",
-    "sistemas-operativos/persistence",
     "design-patterns/behavioral/visitor.md",
     "microarch/hennessy-patterson/ch-2.md",
-    "Untitled.base",
     "sistemas-operativos/imgs/Pasted image 20260406101956.png",
     "sistemas-operativos/imgs/Pasted image 20260321174955.png",
     "sistemas-operativos/imgs/Pasted image 20260315173317.png",
     "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
-    "sistemas-operativos/concurrency",
     "sistemas-operativos/virtualization/procesos/procesos.md",
     "sistemas-operativos/concurrency/threads.md",
-    "sistemas-operativos/concurrency/sincronizacion.md",
-    "sistemas-operativos/virtualization",
-    "microarch/microarquitectura.md",
-    "microarch/instruction-level-parallelism/notas-multithread.md",
-    "microarch/instruction-level-parallelism/notas-ooo.md",
-    "microarch/instruction-level-parallelism/notas-bpu.md",
-    "microarch/instruction-level-parallelism/notas-ilp.md",
-    "sistemas-operativos/imgs",
-    "design-patterns/behavioral",
-    "sistemas-operativos",
-    "design-patterns/creationals/imgs/singleton_structure.png",
-    "design-patterns/creationals/imgs/factory_method_structure.png"
+    "sistemas-operativos/concurrency/sincronizacion.md"
   ]
 }

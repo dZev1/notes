@@ -1,4 +1,0 @@
-# Visitor Pattern
-
-## Problema
-

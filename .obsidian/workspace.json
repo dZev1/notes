@@ -198,8 +198,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0b19f6be4c2ae59a",
+  "active": "13671b5127dbefb4",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "lista-juegos.md",
     "sistemas-operativos/practicas/pr_1/9.c",
     "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
     "sistemas-operativos/practicas/pr_1/image.png",
@@ -220,7 +222,6 @@
     "Drawing 2026-06-18 18.06.07.excalidraw.md",
     "sistemas-operativos/virtualization/memoria/paginacion.md",
     "sistemas-operativos/virtualization/memoria/segmentacion.md",
-    "lista-juegos.md",
     "Untitled.canvas",
     "sistemas-operativos/imgs/Pasted image 20260429182014.png",
     "sistemas-operativos/Untitled",
@@ -229,7 +230,6 @@
     "sistemas-operativos/virtualization/memoria/memoria.md",
     "sistemas-operativos/virtualization/memoria/manejo-de-free-space.md",
     "sistemas-operativos/virtualization/memoria",
-    "sistemas-operativos/virtualization/procesos",
     "sistemas-operativos/imgs/Pasted image 20260510123724.png",
     "sistemas-operativos/persistence/sistema-de-archivos.md",
     "sistemas-operativos/persistence/input-output.md",

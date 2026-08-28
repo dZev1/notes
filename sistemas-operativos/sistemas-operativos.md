@@ -7,7 +7,7 @@
 |   01   |                          [[sistemas-operativos#Sistema Operativo\|Introducción]]                           |
 |   02   |                                      [[procesos#Procesos\|Procesos]]                                       |
 |   03   |              [[procesos#InterProcess Communication (IPC)\|Comunicación entre procesos (IPC)]]              |
-|   04   |                                   [[scheduling#Scheduling\|Scheduling]]                                    |
+|   04   |                                   [[sistemas-operativos/virtualization/procesos/scheduling#Scheduling\|Scheduling]]                                    |
 |   05   | [[threads#Threads\|Threads]], [[sincronizacion#Sincronización de Procesos\|Sincronización entre procesos]] |
 |   06   |                               [[memoria#Memoria\|Administración de memoria]]                               |
 |        |                                                                                                            |

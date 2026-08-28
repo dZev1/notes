@@ -44,7 +44,7 @@ En general los SO hacen *preemption*: cuando se acaba el quantum, se ejecuta el 
 
 Es parte fundamental del kernel y es quien decide a qué proceso le corresponde ejecutar en cada momento. Hay varias formas de decidir esto, y es muy importante elegir una buena política de scheduling, pues es una de las cosas que tiene el mayor impacto en el rendimiento de un SO.
 
-Abundamos más en **[[scheduling|SCHEDULING]]**
+Abundamos más en **[[sistemas-operativos/virtualization/procesos/scheduling|SCHEDULING]]**
 
 #### Context Switch
 

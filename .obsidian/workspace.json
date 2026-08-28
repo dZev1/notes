@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/practicas/pr_2/02-ipc.md",
+                "file": "sistemas-operativos/practicas/pr_2/scheduling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-ipc"
+              "title": "scheduling"
             }
           }
         ]
@@ -202,11 +202,16 @@
   },
   "active": "81cdb7ffd726528d",
   "lastOpenFiles": [
-    "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
+    "sistemas-operativos/practicas/pr_1/02-ipc.md",
+    "sistemas-operativos/practicas/pr_2/scheduling.md",
+    "sistemas-operativos/clase-01.md",
+    "complejidad-computacional/pr-02-bis.md",
+    "Pasted image 20260817181323.png",
     "sistemas-operativos/practicas/pr_2/02-ipc.md",
+    "complejidad-computacional",
+    "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
     "sistemas-operativos/clase-02.md",
     "sistemas-operativos/practicas/pr_2",
-    "sistemas-operativos/clase-01.md",
     "lista-juegos.md",
     "conflict-files-obsidian-git.md",
     "sistemas-operativos/practicas/pr_1/9.c",
@@ -218,9 +223,8 @@
     "sistemas-operativos/practicas/Nueva carpeta",
     "sistemas-operativos/practicas/01-syscalls-signals.md",
     "sistemas-operativos/sistemas-operativos.md",
-    "swe/papers",
+    "isw/papers",
     "Drawing 2026-06-08 23.21.55.excalidraw.md",
-    "Pasted image 20260817181323.png",
     "sistemas-operativos/practicas",
     "microarch/Resumen_orga_2.pdf",
     "Untitled.md",
@@ -229,7 +233,6 @@
     "sistemas-operativos/virtualization/memoria/segmentacion.md",
     "Untitled.canvas",
     "sistemas-operativos/imgs/Pasted image 20260429182014.png",
-    "sistemas-operativos/Untitled",
     "sistemas-operativos/imgs/Pasted image 20260531160803.png",
     "sistemas-operativos/imgs/Pasted image 20260531152033.png",
     "sistemas-operativos/virtualization/memoria/memoria.md",
@@ -243,11 +246,8 @@
     "quantum-computing/introducción.md",
     "quantum-computing/Drawing 2026-05-05 22.56.06.excalidraw.md",
     "design-patterns/behavioral/visitor.md",
-    "microarch/hennessy-patterson/ch-2.md",
     "sistemas-operativos/imgs/Pasted image 20260406101956.png",
     "sistemas-operativos/imgs/Pasted image 20260321174955.png",
-    "sistemas-operativos/imgs/Pasted image 20260315173317.png",
-    "sistemas-operativos/imgs/Drawing 2026-03-21 17.47.52.excalidraw.md",
-    "sistemas-operativos/virtualization/procesos/procesos.md"
+    "sistemas-operativos/imgs/Pasted image 20260315173317.png"
   ]
 }

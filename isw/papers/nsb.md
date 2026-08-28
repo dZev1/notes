@@ -1,0 +1,94 @@
+# No Silver Bullet - Frederick Brooks
+
+- Brooks discute el hecho de que la complejidad de la programación va a resolverse en algún momento.
+  - Esto lo hace haciendo usando como metáfora de la solución a la complejidad a las balas de plata usadas para eliminar hombres lobo.
+- Brooks dice que hay dificultades que son imposibles de minimizar, pues estas son esenciales al diseño del modelo del dominio de problema.
+  - No hay ningún avance que vaya a aumentar la productividad de manera rápida.
+- Hace una distinción entre las dificultades de la programación:
+  - Aquellas **esenciales**, como previamente mencioné.
+    - Relacionado con la representación del problema
+      - ¿Qué estructuras de datos?
+      - ¿Qué algoritmos?
+      - El throughput de las invocaciones de funciones.
+  - Aquellas **accidentales**, más relacionadas con las herramientas de uso, limitaciones de hardware, o falta de otros buen software que ayude al programador. 
+- En las dificultades **esenciales** menciona:
+  - _Complejidad_
+    - Entidades de software son inherentemente complejas por su tamaño, no hay repetición.
+    - Muchos estados, aún más que los que pueda tener una computadora.
+    - Interacción no lineal entre los elementos del sistema.
+  - _Conformidad_
+    - Complejidad arbitraria que tiene que ser confirmada por las interfaces.
+    - Estas interfaces pueden ser muy distintas, pues son diseñadas por humanos distintos.
+  - _Cambio_
+    - El software es "fácilemente cambiable", al menos con respecto a un automóvil ya ensamblado.
+    - El cambio es inherente al software (como dijo Naur).
+      - El buen software necesita nuevas funcionalidades, más allá de su dominio original, propuestas por los usuarios que lo usan.
+      - El buen software sobrevive a las specs del hardware para el que fue originalmente diseñado.
+        - Hay que cambiar para portear a nuevo hardware.
+  - _Invisibilidad_
+    - El software no es visualizable.
+    - No hay una representación gráfica, geométrica que mappee el cómoo funciona el softwaree.
+    - Lo más cercano a una representación son diagramas de flujo, grafos que empiezan a entremezclarse entre sí.
+    - Esto impide el proceso de diseño en la mente de uno y en la comunicación del diseño con demás mentes.
+- En cuanto a dificultades **accidentales**, da ejemplos de cosas que ayudaron a reducir las mismas:
+  - _Lenguajes de alto nivel_
+    - Personifican las creaciones abstractas que se quieren en el programa y evita las que estén por debajo. 
+    - Permite enfocarnos en el diseño del modelo del problema, y no en cómo manejar memoria, bits, registros, etcétera.
+    - Elimina completamente una parte de la dificultad accidental.
+  - _Time-Sharing_
+    - Habla de cómo el time sharing ayudó a reducir los tiempos de respuesta, llegando directamente a mitigarlo.
+    - Más abajo de 100ms no es posible darse cuenta como humanos.
+  - _Ambientes de desarrollo unificados_
+    - Habla de la utilidad de los sistemas operativos.
+    - Permiten el uso de diferentes programas en conjunto, dando librerías compartidas, formatos de archivo unificados y pilas y filtros.
+- Luego menciona puntos que son "esperanzas" en encontrar esa bala de plata que tanto buscamos para solucionar el desarrollo.
+  - En primer lugar vuelve a mencionar los lenguajes de alto nivel, más específicamente en la época, a Ada.
+    - Claramente hoy en día no se usa casi este lenguaje, así que las proyecciones de Brooks fueron correctas.
+    - Pero esto no significa que la filosofía de Ada no esté viva: la modularización, los TADs y la estructura en jerarquía siguen vigentes.
+  - En segundo lugar menciona a la **Programación Orientada a Objetos**.
+    - Hay dos corrientes: la que modela tipos abstractos de datos y la que modela entidades que tienen un nombre, valores definidos, operacion propias, en vez de ser una estructura para guardar cosas.
+    - Cada una de ellas permite al programador eliminar la dificultad accidental y permite una expresión de diseño de alto nivel.
+  - Por último, menciona a la Inteligencia Artificial, separándola en dos tipos
+    - _AI-1_
+      - Resuelve problemas que solo podían ser aplicados usando inteligencia humana.
+      - Tiene un problema, que es que no resuelve nada nuevo.
+      - Lo difícil de la creación del software es decidir qué decir, no decirlo.
+    - _AI-2_
+      - La define como el uso de un conjunto de heurísticas de programación, para así usar un programa que resuelva un problema de una manera en que lo harían los humanos.
+      - Son _Sistemas expertos_.
+      - Menciona que la mayor contribución que pueden haer estos sistemas es a servicio de los programadores sin experiencia, mediante el uso de la sabiduría de los mejores programadores.
+    - _Programación Automática_
+      - Un tercer tipo de AI.
+      - Dice que en esencia, la especificación que tiene que darse es para el método de solución, no del problema.
+      - Ve a este tipo de programación como un eufemismo.
+- En una última sección, menciona cosas para evitar caer en dificultades conceptuales. Entre ellas tenemos:
+  - **Comprar en vez de construir**
+    - Una forma de evitar caer en una de las dificultades que lleva hacer software, es adquirir la solución al problema, si la hay, en vez de construirla de cero.
+    - Es mucho menos costoso hacer esto que construirlo.
+    - El costo del software es de producción, no de replicación.
+    - Menciona que para aumentar la productividad en la oficina, lo mejor es dar una Personal Computer a cada trabajador, y darles buenos programas generalizados para tareas de oficina.
+      - Ejemplo de spreadsheets y bases de datos.
+  - **Refinamiento de requerimientos y prototipado rápido**
+    - Lo más difícil de construir un sistema es decidir precisamente qué querés construir.
+    - Ni siquiera el propio contractor sabe lo que quiere.
+    - Es por esto que se necesita que el equipo de software esté fuertemente relacionado con el contractor e ir dando prototipos rápidos, que no tengan error handling extenso, para obtener feedback del contractor.
+    - De esta manera, el programador va viendo si el modelo de su cabeza soluciona las necesidades del contractor.
+    - Esto es la parte iterativa del software (principio del movimiento Agile?)
+  - **Desarrollo incremental**
+    - Contrasta la idea de construcción con la del crecimiento en el software.
+      - La metáfora de construcción quedó atrás porque las estructuras conceptuales que construimos hoy son muy complejas para especificarse por adelantado, y aun mas complejas para construirse sin errores.
+      - Por esto tomó el concepto de crecimiento de la naturaleza. Los seres vivos crecen y se vuelven más complejos. Da ejemplo de cómo el cerebro se va volviendo cada vez más complejo.
+    - Menciona que el desarrollo del software tiene que ser por incrementos.
+    - Empezar por un sistema general, un prototipo de lo que queremos, con sus stubs de subprogramas.
+    - Luego, ir implementando cada subprograma por separado.
+    - De esta manera, vamos manteniendo correctitud, pues el sistema en su totalidad no va a fallar porque una parte no ande correctamente.
+    - Requiere de un pensamiento top-down del diseño.
+    - Brooks dice que los equipos pueden _hacer crecer_ entidades más complejas en cuatro meses de lo que pueden _construir_.
+  - **Grandes diseñadores**
+    - En este punto dice que hay que contratar diseñadores propiamente.
+    - Dice que el tener un gran diseñador es igual, o más importante, que tener un gran manager.
+    - Da unos pasos para hacer a un gran diseñador
+      - Sistemáticamente identificar a los diseñadores más top lo antes posible.
+      - Asignarles un mentor que sea responsable del desarrollo suyo en el diseño.
+      - Dar y mantener un plan de desarrolo de carrera, con apprenticeships con diseñadores de alto renombre, educación formal, cursos, etcétera.
+      - Darles oportunidad de que puedan interactuar con otros diseñadores, a fin de estimular su crecimiento como diseñador.

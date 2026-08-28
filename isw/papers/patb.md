@@ -1,0 +1,35 @@
+# Programming as Theory Building - Peter Neur
+
+- Neur en este paper introduce el concepto de Teoría en la programación.
+- No trata a la teoría de la manera científica de Ley, sino que la trata como conocimiento que se puede justificar, explicar y responder consultas, según la noción de Ryle.
+- El software va a cambiar constantemente, pues se lo ve como una pieza que resuelve una porción del problema, y comenzamos a ver un problema más grande que puede solucionar.
+  - Para cambiarlo es necesario saber qué cosas tocar para agregar una funcionalidad.
+  - Es necesario tener la **teoría** del desarrollo del programa.
+- Para introducirnos el concepto, se basa en dos casos.
+  - El primer caso nos muestra como un equipo pudo lograr hacer un compilador de la extensión de un lenguaje, usando como soporte a los desarrolladores del compilador del lenguaje original.
+    - Los desarrolladores originales les daban insight del proyecto, les indicaban que parte tocar para agregar X funcionalidad.
+    - Ellos tenían la teoría de cómo funcionaba el lenguaje, y pudieron transmitirla para poder hacer el producto de extensión.
+    - Sabían el porqué de las decisiones tomadas.
+  - El segundo caso nos introduce a un caso de una compañía que hacía software para empresas, unas 200k líneas de código que adaptar para cada empresa, además de una documentación para que el cliente se sepa manejar dentro del código.
+    - Era totalmente imposible para los clientes modificar cosas, siempre tenían que recurrir a los desarrolladores originales.
+    - Estos conseguían modificar el programa en, hablando mal y pronto, dos pedos, pues tenían la teoría del desarrollo del programa.
+- Neur menciona que la teoría tiene supremacía por sobre el texto, la documentación y especificaciones.
+- La teoría que posee el programador trasciende las documentaciones en tres aspectos:
+  - puede explicar cómo la solución se relaciona con el dominio de problema que su programa modela.
+  - puede explicar el porqué de cada decisión del diseño de su programa. Por qué cada cosa va en cada lugar.
+  - puede responder constructivamente a la demanda de modificaciones a su programa, puede diseñar cuál es la mejor manera de incorporar las mismas.
+- Así es como introduce la próxima idea: la **LAS ETAPAS DE UN PROGRAMA**
+  - La _vida_ de un programa sucede mientras el equipo de programadores que poseen la teoría trabaje y tenga activamente control sobre el programa, en cuanto a modificaciones se refiere.
+  - La _muerte_ de un programa sucede cuando el equipo original que posee la teoría se desarma.
+    - El programa puede seguir ejecutando en una computadora y producir resultados útiles, pero cuando llegue la hora de hacer modificaciones, no hay manera de justificar cómo introducirlas.
+  - La _resurrección_ de un programa ocurre cuando un nuevo equipo trata de reconstruir la teoría del programa.
+    - Estrictamente es imposible, pues necesita aunque sea una pizca de la teoría del proyecto original.
+- Neur menciona que la industria trata al programador como un obrero en una fábrica, que se puede reemplazar enseguida.
+  - Esto no es así, pues el reemplazo de alguien no tiene el insight del proyecto dada por el trabajador original en el mismo.
+  - Menciona que el programador nuevo debe trabajar en conjunto con el equipo que posee la teoría hasta desarrollarla él.
+  - Esto en pos de **familiarizarse** con el programa en el contexto más grande.
+  - Neur menciona que el programador debería tener un estatus **permanente** y profesional.
+- En la visión del Theory Building, no hay métodos correctos.
+- Paraleliza los métodos de la programación con el método científico
+  - Menciona que el método científico no es la manera estricta de cómo hacer ciencia, no es el cómo lo ejecutan los científicos en la realidad, sino que es una serie de guías para ayudarte a plantearte un nuevo descubrimiento.
+- Por otro lado, menciona que aquellos reportes en los que dicen que X metodología da mejores resultados no son metódicamente satisfactorios, sino que no tienen en cuenta la teoría que el equipo desarrollo sobre el sistema.

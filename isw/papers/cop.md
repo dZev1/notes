@@ -1,0 +1,97 @@
+# Cultures of Programming - Tomas Petricek
+
+- La lectura comienza dándonos a entender que siempre hubo conflictos en el mundo de la programación: **paradigma funcional vs OOP**, **qué significa programar**, entre otras cosas.
+- Para ello, se sostiene de cinco culturas:
+  - **Matemática**: representada por Pitágoras.
+    - Piensan que la programa como un ente matemático construido en un lenguaje formal.
+    - Programar es una forma de matemática aplicada que enseña pensamiento matemático.
+    - Quieren verificación formal, con métodos matemáticos formales.
+  - **Hackers**: representada por Diógenes.
+    - Piensan que todo el conocimiento debe ser accesible para el mundo.
+    - Les gusta tocar el límite de lo que se puede hacer con una computadora.
+    - Programar es hacer que la máquina haga lo que vos querés, explorando las posibilidades de lo que se puede hacer.
+    - Viene del término hacker original, no del atacante a seguridad.
+    - Creen en el acceso directo a la computadora y a mejorar las cosas.
+  - **Gerencial**: representada por Xenofón.
+    - Creen que el proceso de hacer software es un proceso con etapas bien marcadas.
+    - Quieren tener **control** sobre el equipo que hace el software.
+    - Ven a la programación como un proceso por el cual crear un software que solucione un problema de negocio.
+  - **Ingeniera**: representada por Arquímedes.
+    - Es como que encuentran un balance entre las diferentes culturas.
+    - Piensan a la programación como un proceso de diseñar un software para resolver problemas. Muchas veces de negocios.
+    - Crean herramientas, procesos y estilos de progrmación para ayudar a evitar errores.
+    - Son los más _realistas_, capaz.
+  - **Humanista**: representada por Sócrates.
+    - Ven a la programación como una forma de expresión creativa o de aprendizaje.
+    - Buscan la inclusión de todos en el proceso, es decir, es una corriente liberal.
+- La lectura se sostiene del caso de Knight Capital, que en 45 minutos, por una falla, perdió 440 millones de dolares. Llegando a que la empresa entre en bancarrota.
+  - Nos menciona cómo la cultura _matemática_ daba charlas mencionando el caso como una falla en **verificación formal de algoritmos**, a través de métodos formales matemáticos.
+    - El autor dice que el error es más sutil que verificar formalmente el algoritmo.
+  - La cultura _ingeniera_ aprovechó este error para impulsar más aún la automatización de testing, deployment, monitoreo. Lo que sería hoy el rol del DevOps.
+    - Reconoce que los errores humanos son inevitables, pero que hay que encontrar procesos y herramientas para que sean menos frecuentes.
+  - La cultura _gerencial_, representada por la entidad estatal SEC, solamente dijo **violaron esta regla** y es por eso que fallaron.
+    - Esto se queda cortísimo de decir por qué ocurrió la falla.
+- El autor usa el término cultura para destacar que las distintas maneras de pensar acerca de la programación viene de sus creencias particulares, valores, suposiciones y prácticas.
+- El autor cuestiona qué es la correctitud de un programa, pues la respuesta depende de a qué cultura le preguntes.
+  - Para los matemáticos, es ver que en la verificación formal del programa, se cumpla una especificación formal dada para ese programa.
+  - Para los managers es que cumpla con el requerimiento del cliente dado en la especificación.
+  - Para los ingenieros es que cumpla con las necesidades del cliente.
+  - Para los humanistas, es que de un mensaje a la gente que le haga pensar.
+- Ejemplos de cada cultura
+  - Matemática
+    - Cosas
+      - Lenguaje Algol
+      - Microkernel sel4
+    - Personas
+      - Edsger Dijkstra
+      - Tony Hoare
+      - Alonzo Church
+      - Alan Turing
+  - Hacker
+    - Cosas
+      - C
+      - UNIX
+      - GNU
+      - Linux
+      - ARPANET
+    - Personas
+      - Ken Thompson
+      - Daniel Ritchie
+      - Linus Torvalds
+      - Richard Stallman
+  - Manager
+    - Cosas
+      - SAGE system
+      - Apollo Guidance Software
+    - Personas/Organizaciones
+      - NASA
+      - McKinsey
+  - Ingeniero
+    - Cosas
+      - TDD
+      - Patrones de Diseño
+      - Pair programming
+      - Metodología Agile
+    - Personas
+      - James Gosling
+      - Niklaus Wirth
+      - Fred Brooks
+  - Humanista
+    - Cosas
+      - Smalltalk
+      - Logo
+      - ENIAC
+      - Algorave
+    - Personas
+      - Vannevar Bush
+      - Alan Kay
+      - Ivan Sutherland
+      - Adele Goldberg
+- Luego habla de cómo es la educación de las Ciencias de la Computación.
+  - Sigue siendo más matemática, históricamente fue para dar prestigio a la carrera.
+    - Damos más pie a la parte de algoritmos, correctitud y verificación formal, teoría de la computabilidad y de lenguajes formales.
+  - Se están metiendo más materias del lado ingenieril y del hacker.
+    - Sistemas Operativos o Arquitectura del Computador son materias del lado hacker.
+    - Ingeniería de Software más para el lado ingenieril y también humanista en mi facultad. Leemos la historia de la profesión.
+  - Es muy complicado meter temas ingenieriles, pues estos se tendrían que adaptar rápidamente a un mercado cambiante año a año.
+    - Por esto es que capaz la materia de mi facultad de ingeniería de software estudia un poco más un paradigma adoptado en la industria, y vemos la historia.

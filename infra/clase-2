@@ -1,0 +1,20 @@
+# Clase 2
+
+- KVM
+    - Plataforma de virtualización integrada en el kernel de Linux.
+    - Crea y administra redes virtuales.
+    - Se apoya en el kernel de linux, para no tener que emularlo.
+
+- Plataforma de virtualización.
+    - KVM trabaja con otros componentes para ofrecer virtualización.
+    - Ejemplos: QEMU, libvirt, vish, virt-manager.
+
+- VMs
+    - crear, configurar VMs.
+    - Asignarles vCPU, vRAM, disco y placa de red virtual (vNIC).
+    - Se conectan a una red privada con **NAT**. La VM usaría una red administrada por libvirt y accede a internet con NAT.
+    - o a una red física con **Bridge**. Esta VM se conectaría directamente a la red física como un equipo más de la LAN.
+
+- Podemos entrar por el hipervisor o por `ssh`.
+
+- QEMU con KVM delega la ejecución del código del SO al módulo KVM de linux, que trabaja sobre el hw físico.

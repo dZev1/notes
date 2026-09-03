@@ -14,8 +14,13 @@
     },
     {
       "id": "9wsZ73nTGaH9YqpBPBU3i",
-      "name": "Infrastructure",
-      "value": "#ff9500"
+      "name": "Random Topic",
+      "value": "#b4dafe"
+    },
+    {
+      "id": "dLGNQG0aLb-W22P3kJXPm",
+      "name": "Quantum Computing",
+      "value": "#ffdd80"
     },
     {
       "id": "TQfeyD9g7-VjoS2hhvoYo",
@@ -25,23 +30,19 @@
   ],
   "fileColors": [
     {
-      "path": "isw/design-patterns",
-      "color": "I0jpTFjj4kIONM6NzpvaB"
+      "path": "sistemas-operativos",
+      "color": "TQfeyD9g7-VjoS2hhvoYo"
     },
     {
       "path": "microarquitectura",
       "color": "smCDsGMkzba7SBAW-2loV"
     },
     {
-      "path": "sistemas-operativos",
-      "color": "TQfeyD9g7-VjoS2hhvoYo"
-    },
-    {
       "path": "isw",
       "color": "I0jpTFjj4kIONM6NzpvaB"
     },
     {
-      "path": "complejidad-computacional",
+      "path": "infra",
       "color": "9wsZ73nTGaH9YqpBPBU3i"
     }
   ]

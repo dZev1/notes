@@ -1,5 +1,5 @@
 {
-  "textFontFamily": "Libre Baskerville",
+  "textFontFamily": "TeX Gyre Schola,TeX Gyre Heros,TeX Gyre Adventor",
   "cssTheme": "AnuPpuccin",
   "baseFontSize": 22,
   "enabledCssSnippets": [

@@ -41,4 +41,3 @@
 	- Sockets de red
 		- Remotos
 - Estándar POSIX sockets para las syscalls para operar con ellos.
-- 

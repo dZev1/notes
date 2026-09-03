@@ -11,12 +11,26 @@
             "id": "81cdb7ffd726528d",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "split-diff-view",
               "state": {
-                "file": "sistemas-operativos/imgs/Pasted image 20260903103820.png"
+                "aFile": ".obsidian/plugins/obsidian-excalidraw-plugin/data.json",
+                "bFile": ".obsidian/plugins/obsidian-excalidraw-plugin/data.json",
+                "aRef": ""
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260903103820"
+              "icon": "diff",
+              "title": "Diff: data.json  (Working Tree)"
+            }
+          },
+          {
+            "id": "be8690d25d7de85a",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Drawing 2026-09-03 13.50.09.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "Drawing 2026-09-03 13.50.09.excalidraw"
             }
           }
         ]
@@ -196,13 +210,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0b19f6be4c2ae59a",
+  "active": "81cdb7ffd726528d",
   "lastOpenFiles": [
+    "Drawing 2026-09-03 13.50.09.excalidraw.md",
+    "lista-juegos.md",
+    "Pasted image 20260903135905.png",
+    "sistemas-operativos/practicas/pr_2/ejercicios.md",
+    "sistemas-operativos/imgs/Pasted image 20260903103820.png",
     "sistemas-operativos/imgs/Pasted image 20260429182014.png",
     "sistemas-operativos/imgs/Pasted image 20260406101956.png",
     "sistemas-operativos/imgs/Pasted image 20260315173317.png",
-    "sistemas-operativos/practicas/pr_2/ejercicios.md",
-    "sistemas-operativos/imgs/Pasted image 20260903103820.png",
     "sistemas-operativos/practicas/pr_1/practica1.pdf",
     "sistemas-operativos/practicas/pr_1/image.png",
     "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
@@ -230,8 +247,6 @@
     "microarquitectura/imgs/Pasted image 20260124153618.png",
     "microarquitectura/imgs/Pasted image 20260124152145.png",
     "microarquitectura/imgs/Pasted image 20260124150454.png",
-    "microarquitectura/imgs/Pasted image 20260124142029.png",
-    "microarquitectura/imgs/Pasted image 20260122134413.png",
     "microarquitectura/hennessy-patterson/ch-2.md",
     "microarquitectura/imgs",
     "microarquitectura/historia.md",
@@ -239,8 +254,6 @@
     "microarquitectura",
     "isw/design-patterns/creationals/imgs",
     "isw/design-patterns/creationals/factory-method.md",
-    "isw/design-patterns/creationals/builder.md",
-    "isw/design-patterns/creationals/abstract-factory.md",
     "isw/design-patterns/creationals",
     "isw/papers",
     "isw/design-patterns",

@@ -34,3 +34,9 @@ Esta modificación haría que los procesos de cierta manera tengan una prioridad
 Esto trae como ventaja el hecho de las prioridades. Aquellas tareas que capaz no necesiten mucha CPU, pueden darse con una prioridad más alta así terminan más rápidamente que aquellas que si necesiten, además evitando la starvation, pues seguimos siendo un RR. Bajo esta implementación, siguen estando los cambios de contexto, aún sea para el mismo proceso, generando overhead innecesario, por lo que esto es una gran desventaja del modelo.
 
 Para mantener las ventajas sin duplicar las entradas en la cola de procesos, podemos usar un esquema de prioridades, donde aquellas que tengan mayor prioridad, se le da un quantum mayor que a las que tengan menor prioridad.
+
+## Ejercicio 6
+
+ ### Ejercicio 6.A
+ 
+[[Drawing 2026-09-03 13.50.09.excalidraw.md#^zvh9302v|6a FCFS Gantt]]

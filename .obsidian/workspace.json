@@ -4,25 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2776de54e69c33e1",
+        "id": "467515714bcb80d3",
         "type": "tabs",
         "children": [
           {
-            "id": "81cdb7ffd726528d",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": ".obsidian/plugins/obsidian-excalidraw-plugin/data.json",
-                "bFile": ".obsidian/plugins/obsidian-excalidraw-plugin/data.json",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: data.json  (Working Tree)"
-            }
-          },
-          {
-            "id": "be8690d25d7de85a",
+            "id": "478b1192a0ddaf83",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
@@ -194,7 +180,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -210,53 +197,53 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "81cdb7ffd726528d",
+  "active": "478b1192a0ddaf83",
   "lastOpenFiles": [
+    "sistemas-operativos/practicas/pr_2/ejercicios.md",
+    "Pasted image 20260905233303.png",
     "Drawing 2026-09-03 13.50.09.excalidraw.md",
+    "Pasted image 20260905232728.png",
+    "Pasted image 20260905231617.png",
+    "sistemas-operativos/practicas/pr_2/clase.md",
+    "Pasted image 20260905231416.png",
+    "Drawing 2026-09-04 19.45.39.excalidraw.md",
+    "README.md",
+    "Pasted image 20260905231208.png",
+    "Pasted image 20260905231205.png",
+    "sistemas-operativos/practicas/pr_3/clase.md",
+    "sistemas-operativos/sistemas-operativos.md",
+    "sistemas-operativos/clases",
+    "sistemas-operativos/ostep",
+    "sistemas-operativos/practicas/pr_3",
+    "sistemas-operativos/clases/clase-sincronizacion.md",
     "lista-juegos.md",
     "Pasted image 20260903135905.png",
-    "sistemas-operativos/practicas/pr_2/ejercicios.md",
     "sistemas-operativos/imgs/Pasted image 20260903103820.png",
     "sistemas-operativos/imgs/Pasted image 20260429182014.png",
     "sistemas-operativos/imgs/Pasted image 20260406101956.png",
-    "sistemas-operativos/imgs/Pasted image 20260315173317.png",
     "sistemas-operativos/practicas/pr_1/practica1.pdf",
-    "sistemas-operativos/practicas/pr_1/image.png",
     "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
     "sistemas-operativos/practicas/pr_1/ejercicios.md",
-    "sistemas-operativos/clase-procesos.md",
-    "sistemas-operativos/clase-scheduling.md",
-    "sistemas-operativos/clase-ipc.md",
-    "sistemas-operativos/virtualization/procesos/scheduling.md",
+    "sistemas-operativos/clases/clase-procesos.md",
+    "sistemas-operativos/clases/clase-scheduling.md",
+    "sistemas-operativos/clases/clase-ipc.md",
+    "sistemas-operativos/ostep/virtualization/procesos/scheduling.md",
     "sistemas-operativos/practicas/pr_1/02-ipc.md",
-    "sistemas-operativos/virtualization/memoria/segmentacion.md",
-    "sistemas-operativos/virtualization/memoria/manejo-de-free-space.md",
-    "sistemas-operativos/virtualization/memoria/memoria.md",
-    "sistemas-operativos/virtualization/memoria/paginacion.md",
+    "sistemas-operativos/ostep/virtualization/memoria/segmentacion.md",
+    "sistemas-operativos/ostep/virtualization/memoria/manejo-de-free-space.md",
+    "sistemas-operativos/ostep/virtualization/memoria/memoria.md",
+    "sistemas-operativos/ostep/virtualization/memoria/paginacion.md",
     "sistemas-operativos/practicas/pr_2/02-ipc.md",
     "microarquitectura/sistema-de-memoria/notas-jerarquia.md",
     "microarquitectura/sistema-de-memoria/notas-dram.md",
     "microarquitectura/sistema-de-memoria/notas-cache.md",
     "microarquitectura/sistema-de-memoria",
     "microarquitectura/microarquitectura.md",
-    "microarquitectura/instruction-level-parallelism/notas-ooo.md",
-    "microarquitectura/instruction-level-parallelism/notas-ilp.md",
-    "microarquitectura/instruction-level-parallelism/notas-bpu.md",
     "microarquitectura/instruction-level-parallelism",
-    "microarquitectura/imgs/Pasted image 20260124154304.png",
-    "microarquitectura/imgs/Pasted image 20260124153618.png",
-    "microarquitectura/imgs/Pasted image 20260124152145.png",
-    "microarquitectura/imgs/Pasted image 20260124150454.png",
-    "microarquitectura/hennessy-patterson/ch-2.md",
     "microarquitectura/imgs",
-    "microarquitectura/historia.md",
     "microarquitectura/hennessy-patterson",
     "microarquitectura",
     "isw/design-patterns/creationals/imgs",
-    "isw/design-patterns/creationals/factory-method.md",
-    "isw/design-patterns/creationals",
-    "isw/papers",
-    "isw/design-patterns",
     "Untitled.canvas"
   ]
 }

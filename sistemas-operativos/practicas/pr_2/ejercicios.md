@@ -37,6 +37,39 @@ Para mantener las ventajas sin duplicar las entradas en la cola de procesos, pod
 
 ## Ejercicio 6
 
- ### Ejercicio 6.A
- 
-[[Drawing 2026-09-03 13.50.09.excalidraw.md#^zvh9302v|6a FCFS Gantt]]
+### FCFS
+
+![[Pasted image 20260905231416.png]]
+
+- **Métricas**
+	- $Avg. Turnaround = 13.4$
+	- $Avg. Waiting = 9.6$
+### SJF
+
+![[Pasted image 20260905231617.png]]
+
+- **Métricas**
+	- $Avg. Turnaround = 7$ *%ESTE ES EL MENOR TURNAROUND*
+	- $Avg. Waiting = 3.2$ *%ESTE ES EL MENOR WAITING TIME*
+
+### Priorities nonpreemptive
+
+![[Pasted image 20260905232728.png]]
+
+- **Métricas**
+	- $Avg. Turnaround = 10.4$
+	- $Avg. Waiting = 6.6$
+### RR
+
+![[Pasted image 20260905233303.png]]
+
+- **Métricas**
+	- $Avg. Turnaround = 9.2$
+	- $Avg. Waiting = 5.4$ 
+
+## Ejercicio 7
+
+- Métricas
+	- $Avg. Turnaround = 7.2$
+	- $Avg. Waiting = 3.2$
+- Este scheduler usa un algoritmo SRTF. En primer lugar se ve que es preemptive, P2 fue desalojado para correr P3. En segundo lugar, este cambio de contexto se dio porque a P2 le faltaban 5 ms de CPU antes de terminar, y a P3 le faltaban, recién llegado 4 ms. Luego, cuando arriba P5 que corre por 2 ms, instante en que a P3 también le faltan 2 ms, corre P3 hasta terminarlo y luego P5. No se vuelve a P2, sino que corre P5, porque le falta menos, pues a P2 le faltan 5 ms. Por lo tanto, es un algoritmo SRTF

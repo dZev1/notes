@@ -1,0 +1,30 @@
+# Polymorphic Hierarchy - Bobby Woolf
+
+- Métodos polimórficos llevan a clases polimórficas, y estas llevan a **jerarquías polimórficas**.
+- Woolf tiene como filosofía **duplicar tan poco como se pueda**.
+- Comienza quejándose de los comentarios.
+	- No quiere escribir el mismo comentario explicando el comportamiento de un mensaje en varias clases, si simplemente podemos decir *"busca qué hace en el superimplementor de este mensaje"*.
+	- Nos dice que otra pista para darnos cuenta qué hace un implementor, es ver a qué **protocolo/categoría** pertenece.
+	- Si estamos subimplementando un método, debería ir al mismo protocolo.
+- El superimplementor define la jerarquía.
+- Este simplemente retorna `self` o `subclassResponsibility`, pero define qué hace el mensaje para toda la jerarquía.
+- Este mismo principio aplica también para el hábito de tener métodos que simplemente llaman a otro método con el mismo nombre pero con parámetros extra que tenemos en Smalltalk (algo así como hacemos con el **State** y el **Double Dispatch**).
+	- Estos mensajes funcionan de la misma manera, pero usando defaults para algunos parámetros.
+- En los comentarios Woolf evita refrasear el nombre del método.
+- Usa la descripción del métoodo para describirlo. No escribe entre entremedio del código.
+- Divide la descripción del método en dos partes: el **propósito** (o sea el *qué hace*), y los **detalles de implementación** (el *cómo lo hace*).
+	- De hecho menciona que los detalles implementativos son opcionales, son más que nada para aclarar qué hace una parte rara del código.
+	- El propósito es reutilizable, los detalles implementativos no.
+	- En cada descripción de la implementación del método en la jerarquía, deberías poder decir el mismo propósito, entonces no hace falta describirlo en toda la jerarquía, sino que simplemente es más necesario en la superclase.
+- Cuando creamos una subclase, no nos fijamos en **qué debería** hacer, sino en **cómo se diferencia** de la superclase.
+- La superclase sabe qué hacer, pero no cómo.
+- **El propósito es lo que es polimórifco**.
+- Definimos al polimorfismo como una relación entre métodos que comparten el nombre y comportamiento.
+	- Aceptan el mismo número de parámetros y del mismo tipo.
+	- Tienen los mismos side effects.
+	- Retornan el mismo tipo de restultado.
+- Dos clases son polimórficas sii **entienden los mismos mensajes** y sus implementors de esos **mensajes son polimórficos**.
+- A medida que los métodos son más polimórficos, toda la jerarquía se va volviendo más polimórfica y, por tanto, son mejores para el diseño de la programación orientada a objetos.
+- Si dos clases tienen el mismo mensaje pero no hay una superclase para poner el superimplementor, agregamos una clase abstracta nueva, que describe el comportamiento polimórfico de la jerarquía.
+	- Esto es lo que llama el **patrón de Template Class**.
+	- Esta tiene todos **Template Methods**.

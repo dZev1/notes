@@ -11,12 +11,14 @@
             "id": "478b1192a0ddaf83",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "Drawing 2026-09-03 13.50.09.excalidraw.md"
+                "file": "isw/papers/astfhmp.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-09-03 13.50.09.excalidraw"
+              "icon": "lucide-file",
+              "title": "astfhmp"
             }
           }
         ]
@@ -78,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "bf64ec9f0fc8799b",
@@ -171,8 +174,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           }
         ],
@@ -199,9 +202,18 @@
   },
   "active": "478b1192a0ddaf83",
   "lastOpenFiles": [
+    "isw/papers/ph.md",
+    "isw/papers/astfhmp.md",
+    "isw/papers/cop.md",
+    "isw/papers/nsb.md",
+    "isw/papers/sdp.md",
+    "isw/papers/patb.md",
+    "isw/papers/self.md",
+    "isw/papers/tdoet.md",
+    "2026-09-08.md",
+    "Drawing 2026-09-03 13.50.09.excalidraw.md",
     "sistemas-operativos/practicas/pr_2/ejercicios.md",
     "Pasted image 20260905233303.png",
-    "Drawing 2026-09-03 13.50.09.excalidraw.md",
     "Pasted image 20260905232728.png",
     "Pasted image 20260905231617.png",
     "sistemas-operativos/practicas/pr_2/clase.md",
@@ -230,15 +242,7 @@
     "sistemas-operativos/ostep/virtualization/procesos/scheduling.md",
     "sistemas-operativos/practicas/pr_1/02-ipc.md",
     "sistemas-operativos/ostep/virtualization/memoria/segmentacion.md",
-    "sistemas-operativos/ostep/virtualization/memoria/manejo-de-free-space.md",
-    "sistemas-operativos/ostep/virtualization/memoria/memoria.md",
-    "sistemas-operativos/ostep/virtualization/memoria/paginacion.md",
-    "sistemas-operativos/practicas/pr_2/02-ipc.md",
-    "microarquitectura/sistema-de-memoria/notas-jerarquia.md",
-    "microarquitectura/sistema-de-memoria/notas-dram.md",
-    "microarquitectura/sistema-de-memoria/notas-cache.md",
     "microarquitectura/sistema-de-memoria",
-    "microarquitectura/microarquitectura.md",
     "microarquitectura/instruction-level-parallelism",
     "microarquitectura/imgs",
     "microarquitectura/hennessy-patterson",

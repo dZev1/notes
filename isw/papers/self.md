@@ -2,9 +2,9 @@
 
 - Self es un lenguaje de programación orientada a objetos.
 - En vez de basarse en clases, como Smalltalk, se basa en prototipos.
-- Operación fundamental --> Paso de mensajes. 
+- Operación fundamental --> Paso de mensajes.
 - Tampoco tiene variables.
-- Ideas de: prototipo, slots y behavior.
+- Ideas principales: prototipos, slots y behavior.
 - **Prototipos**
   - Ejemplos existentes en lugar de descripciones de formato e inicialización, como son las clases.
   - Combinan inheritance e instantiation.
@@ -14,7 +14,15 @@
   - No hay diferencia entre estado y behavior.
     - Esto reduce la grieta entre objetos ordinarios, procedimientos y closures.
   - Un objeto accede a su información de estado enviando mensajes a `self`, el receptor del mensaje actual.
-    - De allí el nombre del lenguaje.
+  - De allí el nombre del lenguaje.
+  - Dos tipos de Slots
+    - **Asignación**
+      - Definen slots mutables.
+      - Contienen primitivas de asignación, como `<-` o `*'`.
+    - **Sólo lectura**
+      - Definen slots inmutables.
+      - Si definimos un slot con `=`, este es inmutable.
+      - Al no generar el slot de asignación `x:`, el slot se vuelve **read-only** de manera natural.
 - **Behavior**
   - El conjunto de mensajes que sabe responder el objeto.
   - Es el _qué_.
@@ -29,3 +37,15 @@
   - Fábrica de behavior.
 - Los mensajes a `self` implícitos, toman el contexto del objeto que recibió el mensaje, no del código.
   - Si usamos `self` explícito en esos casos, tomamos el contexto del código.
+- **Clonación**
+  - En _Self_, la creación de objetos es un acto concreto: cualquier objeto puede ser copiado con el mensaje `clone`.
+  - Para evitar que el prototipo se vuelva un objeto especial, y pierda su carácter típico, los datos de formato se separan del comportamiento.
+    - El comportamiento compartido se coloca en el parent.
+- **Se elimina el Meta-Regress**
+  - En sistemas con clases, un objeto no es autosuficiente. Se requiere de una clase para definir su comportamiento, que requiere a su vez de una metaclase, y esta de otra metaclase para esa metaclase, y así.
+  - En prototipación, se elimina este _Meta-Regress_, porque un objeto puede contener su propio formato y comportamiento directamente; no se necesita de ningún otro intermediario para existir o funcionar.
+- **Conductismo**
+	- El objeto es lo que hace.
+- Los closures son prototipos de **activation records**, que son clonados cuando son invocados.
+	- Las variables dentro de ellos son simplemente slots dentro del activation record.
+	- El linking al objeto externo se hace con el parent link del objeto de activación.

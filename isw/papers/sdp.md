@@ -1,6 +1,45 @@
 # Smalltalk Design Principles - Daniel Ingalls.
 
-- El lenguaje tiene que alimentar la creatividad.
-- Diseño con objetos.
-  - TODO es un objeto, hasta el envío de los mismos mensajes, o las clases.
-- Critica cosas de los SSOO.
+- El lenguaje está diseñado alrededor de dar soporte a la creatividad del humano.
+	- Por esto tiene que ser entendible por un individuo cualquiera.
+- **Filosofía**
+	- **Buen diseño**
+		- Sistema construido con un **conjunto mínimo de partes inmutables**.
+		- Estas partes deben ser lo más generales posibles.
+	- **Scope**
+		- El lenguaje no debe limitarse a organizar procedimientos o gestionar memoria.
+		- Debe abordar los **modelos internos de la mente, medios externos y la interacción entre ambos**.
+	- **Metáfora Uniforme**
+		- Todo el sistema debe estructurarse en torno a una metáfora única y potente.
+		- En Smalltalk, esta es la de **objetos que se comunican enviando mensajes**.
+		- Esto gira en torno a la idea de la comunicación humana, donde el lenguaje es como un *framework* para la comunicación.
+		- En el universo de Smalltalk, los objetos son entes bien educados que piden hacer acciones entre sí.
+- **Modelo de objetos y memoria**
+	- **Objetos**
+		- El lenguaje debe proveer un medio uniforme para referenciar a cualquier objeto de su universo.
+		- Todo en el sistema es un objeto
+	- **Administración de memoria**
+		- Administración de memoria automática.
+		- Si hubiese instrucciones para manejar la memoria, no estaríamos cumpliendo con la metáfora.
+	- **Clasificación**
+		- Agrupar objetos similares mediante clases.
+		- Agregar clases en igualdad de condiciones con las clases del sistema.
+		- Esto asegura que el usuario siempre elija la representación más expresiva y natural para el problema.
+- **Flexibilidad y Reutilización de Código**
+	- **Polimorfismo**
+		- El programa debe especificar el **comportamiento** de los objetos, no su representación interna.
+		- El código no debe especificar si se trabaja con un tipo de dato específico, sino simplemente que responde al mensaje enviado.
+	- **Factoring**
+		- Cada componente del sistema debe estar escrito en un único lugar.
+		- Smalltalk promueve esto mediante la **herencia**.
+	- **Leverage**
+		- Cuando el sistema tiene buen factoring, se obtiene un gran leverage.
+		- Cualquier mejora o funcionalidad nueva agregada a una clase general es heredada por todas sus subclases.
+- **Infraestructura**
+	- **VM**
+		- Establece el marco tecnológico básico, definiendo un modelo de almacenamiento Orientado a Objetos, un modelo de procesamiento orientado a mensajes, y modelo de bitmaps para la visualización en pantalla.
+	- **Reactive Principle**
+		- Cada componente accesible por el usuario en la pantalla debe ser capaz de presentarse a sí mismo de manera sinificativa, para que se pueda observar y manipular directamente.
+	- **Sin SO**
+		- Ingalls menciona que *un SO es una colección de cosas que no cupieron en el lenguaje*.
+		- En Smalltalk, las tareas tradicionales de un SO, se modelan de forma natural como objetos y flujos normales en el propio lenguaje.

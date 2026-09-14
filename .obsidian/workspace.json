@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "isw/papers/astfhmp.md",
+                "file": "sistemas-operativos/practicas/pr_3/ejercicios.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "astfhmp"
+              "title": "ejercicios"
             }
           }
         ]
@@ -174,8 +174,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -202,52 +202,51 @@
   },
   "active": "478b1192a0ddaf83",
   "lastOpenFiles": [
-    "isw/papers/ph.md",
+    "sistemas-operativos/imgs/Pasted image 20260914102020.png",
+    "Pasted image 20260912203235.png",
+    "sistemas-operativos/practicas/pr_3/ejercicios.md",
+    "Drawing 2026-09-03 13.50.09.excalidraw.md",
+    "Untitled.md",
+    "sistemas-operativos/parciales-viejos/1P-2025-1c.md",
+    "sistemas-operativos/parciales-viejos/1P-2025-2c.md",
+    "sistemas-operativos/practicas/pr_4/clase.md",
+    "sistemas-operativos/parciales-viejos",
+    "sistemas-operativos/clases/clase-memoria.md",
+    "sistemas-operativos/practicas/pr_4",
+    "sistemas-operativos/imgs/Pasted image 20260909103235.png",
+    "sistemas-operativos/imgs/Pasted image 20260909101709.png",
+    "sistemas-operativos/practicas/pr_3/clase.md",
+    "lista-juegos.md",
+    "2026-09-08.md",
+    "sistemas-operativos/imgs/Pasted image 20260905231205.png",
+    "sistemas-operativos/imgs/Pasted image 20260905231208.png",
+    "sistemas-operativos/imgs/Pasted image 20260905231416.png",
+    "sistemas-operativos/imgs/Pasted image 20260905232728.png",
+    "sistemas-operativos/imgs/Pasted image 20260905233303.png",
     "isw/papers/astfhmp.md",
+    "isw/papers/ph.md",
     "isw/papers/cop.md",
     "isw/papers/nsb.md",
     "isw/papers/sdp.md",
     "isw/papers/patb.md",
     "isw/papers/self.md",
     "isw/papers/tdoet.md",
-    "2026-09-08.md",
-    "Drawing 2026-09-03 13.50.09.excalidraw.md",
     "sistemas-operativos/practicas/pr_2/ejercicios.md",
-    "Pasted image 20260905233303.png",
-    "Pasted image 20260905232728.png",
-    "Pasted image 20260905231617.png",
+    "sistemas-operativos/imgs/Pasted image 20260905231617.png",
     "sistemas-operativos/practicas/pr_2/clase.md",
-    "Pasted image 20260905231416.png",
     "Drawing 2026-09-04 19.45.39.excalidraw.md",
     "README.md",
-    "Pasted image 20260905231208.png",
-    "Pasted image 20260905231205.png",
-    "sistemas-operativos/practicas/pr_3/clase.md",
     "sistemas-operativos/sistemas-operativos.md",
     "sistemas-operativos/clases",
     "sistemas-operativos/ostep",
     "sistemas-operativos/practicas/pr_3",
     "sistemas-operativos/clases/clase-sincronizacion.md",
-    "lista-juegos.md",
-    "Pasted image 20260903135905.png",
-    "sistemas-operativos/imgs/Pasted image 20260903103820.png",
-    "sistemas-operativos/imgs/Pasted image 20260429182014.png",
-    "sistemas-operativos/imgs/Pasted image 20260406101956.png",
     "sistemas-operativos/practicas/pr_1/practica1.pdf",
     "sistemas-operativos/practicas/pr_1/01-syscalls-signals.md",
-    "sistemas-operativos/practicas/pr_1/ejercicios.md",
-    "sistemas-operativos/clases/clase-procesos.md",
-    "sistemas-operativos/clases/clase-scheduling.md",
-    "sistemas-operativos/clases/clase-ipc.md",
-    "sistemas-operativos/ostep/virtualization/procesos/scheduling.md",
-    "sistemas-operativos/practicas/pr_1/02-ipc.md",
-    "sistemas-operativos/ostep/virtualization/memoria/segmentacion.md",
     "microarquitectura/sistema-de-memoria",
     "microarquitectura/instruction-level-parallelism",
     "microarquitectura/imgs",
     "microarquitectura/hennessy-patterson",
-    "microarquitectura",
-    "isw/design-patterns/creationals/imgs",
     "Untitled.canvas"
   ]
 }

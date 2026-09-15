@@ -52,8 +52,8 @@ Se aplican cuando:
 - [Factory Method](factory-method.md)
 - [Abstract Factory](abstract-factory.md)
 - [Builder](builder.md)
-- [Prototype](Prototype.md)
-- [Singleton](Singleton.md)
+- [prototype](prototype.md)
+- [singleton](singleton.md)
 
 ### Estructurales
 

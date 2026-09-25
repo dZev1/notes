@@ -1,0 +1,22 @@
+# Method Object - Kent Beck
+
+- Hay métodos donde muchas líneas de código comparten muchos argumentos y variables temporales.
+- Si queremos hacer el método como método compuesto sigue siendo igual de engorroso, porque hay que pasar todas las variables temporales del método original.
+- Para solucionar esto, podemos crear un objeto que represente la invocación al método y use el namespace compartido de variables de instancia en el objeto para simplificar mejor usando el método compuesto.
+- Estos objetos son extraños.
+  - No tienen analogía en el mundo real.
+  - Son verbos, no sustantivos.
+  - Reresentan una parte del comportamiento del sistema, y se vuelven el centro de la arquitectura.
+- ¿Cómo usarlo?
+  - Crear una clase nombrada como el método.
+  - Darle una variable de instancia para el receptor del método original, cada argumento y cada variable temporal.
+  - Darle un método constructor, que tome el receptor original y los argumentos del método.
+  - Darle un método de instancia **#compute**, implementado copiando el cuerpo del método original.
+  - Reemplazar el método con uno que cree la instancia de esta nueva clase y enviarle el mensaje #compute.
+- Beck menciona ue cuando es necesario, realmente lo necesitamos.
+- Luego comienza un ejemplo, en el cual Beck tenía un método `sendTask: aTask job: aJob`, con 4 variables temporales.
+- Cada vez que tenía que hacer un método para componer con `sendTask:job:`, tenía que pasar todos los argumentos terminando con un mensaje engorrosamente largo, donde pasaba a cada rato todas las variables temporales y argumentos.
+- Esto no llevaba a acortar líneas de código.
+- Por esto implemento un Method Object, donde el nombre de la clase era el verbo de lo que hacía el método `TaskSender`, que recibe tanto el receptor original `obligation`, los argumentos del método `task job` y agrega como variables de instancia también a las variables temporales `notProcessed processed copied executed`.
+- Luego define el constructor como `obligation: anObligation task: aTask job: aJob`, tal cual el nombre del método original, y luego define el mensaje `#compute`, copiando y pengando todo el cuerpo del mensaje.
+- Ahora si, al componer con métodos obviamos el pase de los parámetros, pues son variables de instancia, y en el método original solo debemos construir el TaskSender y enviar el mensaje `compute`.

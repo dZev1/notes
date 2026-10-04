@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/practicas/pr_5/clase.md",
+                "file": "sistemas-operativos/practicas/pr_5/ejercicios.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "clase"
+              "title": "ejercicios"
             }
           }
         ]
@@ -202,8 +202,10 @@
   },
   "active": "478b1192a0ddaf83",
   "lastOpenFiles": [
-    "sistemas-operativos/practicas/pr_4/clase.md",
     "sistemas-operativos/practicas/pr_5/clase.md",
+    "sistemas-operativos/practicas/pr_5/ejercicios.md",
+    "isw/papers/nsb.md",
+    "sistemas-operativos/practicas/pr_4/clase.md",
     "sistemas-operativos/practicas/pr_5",
     "sistemas-operativos/clases/clase-drivers.md",
     "sistemas-operativos/parciales-viejos/1P-REC-2025-2c.md",
@@ -240,8 +242,6 @@
     "isw/papers/astfhmp.md",
     "isw/papers/ph.md",
     "isw/papers/cop.md",
-    "isw/papers/nsb.md",
-    "isw/papers/sdp.md",
     "sistemas-operativos/clases",
     "sistemas-operativos/ostep",
     "sistemas-operativos/practicas/pr_3",

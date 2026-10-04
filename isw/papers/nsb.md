@@ -20,7 +20,7 @@
     - Complejidad arbitraria que tiene que ser confirmada por las interfaces.
     - Estas interfaces pueden ser muy distintas, pues son diseñadas por humanos distintos.
   - _Cambio_
-    - El software es "fácilemente cambiable", al menos con respecto a un automóvil ya ensamblado.
+    - El software es "fácilmente cambiable", al menos con respecto a un automóvil ya ensamblado.
     - El cambio es inherente al software (como dijo Naur).
       - El buen software necesita nuevas funcionalidades, más allá de su dominio original, propuestas por los usuarios que lo usan.
       - El buen software sobrevive a las specs del hardware para el que fue originalmente diseñado.

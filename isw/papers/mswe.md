@@ -1,0 +1,58 @@
+# Modern Software Engineering - David Farley
+
+- Desarrollo de software como proceso de descubrimiento y exploración.
+- El ingeniero de software necesita **volverse experto en aprendizaje.**
+- Para ello, usar técnicas y estrategias de la ciencia y aplicarlas a los problemas de desarrollo.
+- Al organizar nuestro pensamiento, copiando al método científico, empezamos a hacer progreso en base a muchos experimentos pequeños, evitando así el salto a conclusiones impropias, haciendo un mejor trabajo.
+- Si empezamos a ser escépticos de nuestras propias ideas y buscamos cómo falsearlas, podemos identificar y eliminar malas ideas más rápidamente y acelerar el progreso.
+- La ingeniería de software es la aplicación de un approach científico empírico a encontrar soluciones eficientes y económicas a problemas prácticos en el software.
+- Adoptar el approach ingenieril al software es importanto por dos razones.
+	- El software siempre es un ejercicio de descubrimiento y aprendizaje
+	- Si el desarrollador busca ser lo más eficiente y económico, entonces el aprendizaje tiene que ser sostenible.
+- Se necesita volverse un **experto en aprendizaje** y **expertos en el manejo de la complejidad**.
+- Para volvernos expertos en el aprendizaje,  Farley menciona cinco técnicas:
+	- Iteración
+	- Feedback
+	- Incrementalismo
+	- Experimentación
+	- Empirismo
+- Los sistemas complejos se hacen crecer de a incrementos, no nacen desde cero con vasta complejidad.
+- Necesitamos trabajar de formas que nos pemitan hacer progreso aún cuando las respuestas o direcciones son inciertas.
+- Para eso necesitamos volvernos expertos en el manejo de la complejidad, con estas ideas:
+	- Modularidad
+	- Cohesión
+	- Separación de responsabilidades
+	- Abstracción
+	- Bajo acoplamiento
+- Farley busca organizar estas ideas como herramientas para conducir el desarrollo de software. 
+- Otras ideas que nos ayudan para esta estrategia para cualquier software son:
+	- Testability
+	- Deployability
+	- Speed
+	- Control de variables
+	- Entrega continua (CD)
+- De esta manera crea el desarrollador software de mayor calidad, más rápido y la gente trabajando en los equipos que adopte estos principios puedan tener un mejor balance trabajo-vida... (xd).
+- La ingeniería en la industria de software se veía únicamente como el código o algo que hacía que la gente se sintiese más burocrática.
+- En otras disciplinas, la ingeniería es *cosas que funcionan*.
+	- Procesos y práctica que aplicamos para hacer un buen trabajo.
+- Si las prácticas de *ingeniería de software* no permites que construyamos software más rápido, entonces hay que cambiarlas, porque eso no sería ingeniería.
+- El desarrollo de software es una actividad compleja y sofisticada.
+- Necesitamos ponernos de acuerdo en algún set de principios y disciplinas que guíen las actividades.
+- Esto, si se aplica mal, lleva a una directiva de *decisión de la autoridad*.
+- Necesitamos una estructura que nos permita crecer y evolucionar los approaches, estrategias, procesos, etc.
+	- Esto es **SCIENCE BITCH**.
+	- Cuando lo hacemos de manera aplicada, **ENGINEERING BITCH**.
+- El nacimiento del concepto de **Ingeniería de software** nace de Margaret Hamilton en los 1960s.
+	- Era la líder de hacer el software de control de vuelo del programa Apollo.
+- Luego, la OTAN llevaría a la primera **conferencia de Ingeniería de Software**.
+- Con el pasar del tiempo, se dieron cuenta las empresas que no es la mejor idea que el software sea inmutable en la máquina, sino que deberíamos poder tener programas que nosotros instalemos y usemos.
+- Para fines de los 60s, los programas se habían vuelto tan complejos que era difícil mantenerlos.
+- Había un gap significante entre el crecimiento el hardware con el crecimiento de las capacidades del software.
+	- Esto fue la **software crisis**.
+- Brooks advirtió que no hay manera de que el improvement de hardware o cualquier técnica de management produzca magnitudes de orden de mejora en productividad, simplicidad o reliability.
+	- Esto lo hace en contraste a la **Ley de Moore**.
+- Dice Brooks que no es un problema del desarrollo de software, sino que es por el crecimiento único que tuvo el hardware.
+- Farley menciona que hay veces en que tenemos que cambiar completamente la perspectiva de algo, y para ello hay que descartar completamente todo lo que pensabamos que sabíamos anteriormente
+	- Esto lo ejemplifica con la biología pre-Selección natural y post-Selección Natural y la física pre-Heliocentrismo y post-Heliocentrismo.
+- Es esencial descartar estos approaches "malos".
+- Nos da una nueva perspectiva de lo que hacemos y cómo lo hacemos.

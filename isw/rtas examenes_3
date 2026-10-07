@@ -1,0 +1,16 @@
+1. Double Dispatch es una técnica que consiste en reducir el grado de polimorfismo por cada llamado.
+    Esto lo hace "regresando la pelota" al objeto emisor del mensaje, ahora ya sabiendo el tipo del
+    receptor del mensaje. Esto evita el chequeo de tipos en los casos cuando evitabamos el primer
+    chequeo con jerarquías polimórficas, pero que luego teníamos que hacerlo para otra parte del comportamiento
+    con sus argumentos.
+
+2. El propósito del Null Object es garantizar dar un comportamiento de "no hacer nada" en una jerarquía polimórfica,
+    evitando así el chequeo de `nil/null` para hacer el comportamiento de no hacer nada si no estuviese este Null Object.
+    El caso del NoController, que funciona como Controller en el MVC que nombra Bobby Woolf es un perfecto ejemplo, en vez de separar
+    el caso de controller ifNil: [^self error: ...] controller doSomething, podemos integrar el objeto nulo a la jerarquía polimórfica,
+    y podemos sacar ese ifNil, reduciendo todo a `controller doSomething`, donde `doSomething` para `NoController` es `self error: ...`.
+
+3. El polimorfismo según Ingalls, es una relación entre dos objetos y sus mensajes, donde ambos comparten un subconjunto de mensajes que
+    cumplen el mismo _qué_, pero pueden diferir en el _cómo_. Es decir son objetos que hacen lo mismo, pero de manera distinta. No solo comparten el
+    nombre de mensaje. Esto evita el chequeo de tipos cada vez que usemos estos objetos, sino que simplemente podemos usar el mismo mensaje para
+    todos los objetos que cumplan este protocolo.

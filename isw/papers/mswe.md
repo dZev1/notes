@@ -1,5 +1,7 @@
 # Modern Software Engineering - David Farley
 
+## 1
+
 - Desarrollo de software como proceso de descubrimiento y exploración.
 - El ingeniero de software necesita **volverse experto en aprendizaje.**
 - Para ello, usar técnicas y estrategias de la ciencia y aplicarlas a los problemas de desarrollo.
@@ -33,6 +35,7 @@
 	- Entrega continua (CD)
 - De esta manera crea el desarrollador software de mayor calidad, más rápido y la gente trabajando en los equipos que adopte estos principios puedan tener un mejor balance trabajo-vida... (xd).
 - La ingeniería en la industria de software se veía únicamente como el código o algo que hacía que la gente se sintiese más burocrática.
+
 - En otras disciplinas, la ingeniería es *cosas que funcionan*.
 	- Procesos y práctica que aplicamos para hacer un buen trabajo.
 - Si las prácticas de *ingeniería de software* no permites que construyamos software más rápido, entonces hay que cambiarlas, porque eso no sería ingeniería.
@@ -56,3 +59,72 @@
 	- Esto lo ejemplifica con la biología pre-Selección natural y post-Selección Natural y la física pre-Heliocentrismo y post-Heliocentrismo.
 - Es esencial descartar estos approaches "malos".
 - Nos da una nueva perspectiva de lo que hacemos y cómo lo hacemos.
+
+## 2
+
+- La ingeniería de software no es una **ingeniería de producción**, sino que es **ingeniería de diseño**.
+- La inge de producción es una disciplina compleja que trabaja con lo físico.
+- Adapta ideas teóricas a la realidad práctica.
+- Los assets digitales son completamente distintos, pues el costo de producción es esencialmente gratuito.
+- Producir cosas es la parte difícil. Llevar la idea y el diseño del prototipo inicial a producción masiva es inmensamente costoso.
+- Quisieron llevar la idea del fordismo, un pensamiento de cómo producir, al software.
+- Así llegamos a los procesos *cascada*, donde se trataba al software como una cadena de montaje.
+- Se veía al software como herramientas de producción masiva, no como herramientas de descubrimiento, aprendizaje, etc.
+- En el software, la producción es simplemente compilar/buildear! Es gratis! Es apretar un botón!
+- La producción no es problema de la ingeniería de software.
+
+- Es por esto que todo el trabajo "ingenieril" cae en el diseño.
+	- Es una **ingeniería de diseño**.
+- Farley usa el ejemplo de construir un puente. Construirlo si ya está diseñado, complejo, pero construirlo de cero requiere tener el diseño antes.
+- Es difícil en lo físico porque no se puede iterar entre le producto y algo físico.
+	- Por ello usan modelos físicos, o simulaciones en computadoras.
+- Los ingenieros de software tienen la ventaja de que estos modelos que creamos como software, o como simulaciones, SON el producto.
+- Son más fáciles de verificar, es más fácil de iterar con el cliente, no hay que preocuparse en el costo de cambiar el modelo.
+- Es una disciplina técnica.
+- Tomamos malas decisiones en la historia y hoy en día poco desarrollo de software se hace con el razonamiento científico.
+	- En parte, esto se debe a haber buscado precisión matemática. ESTO NO ES INGENIERÍA.
+	- Los métodos formales se habían vuelto una idea popular para verificar el código.
+	- El problema es que si ya de por sí escribir código en un sistema complejo es difícil, es aún más difícil hacerlo para que mantenga un comportamiento y a la vez se pueda probar a sí mismo correcto.
+	- Los métodos formales hacen que el código sea **más difícil de producir**.
+	- Hay mucha variablidad en el mundo real, entonces es difícil probar correctitud.
+		- Si hay concurrencia, o espera interacción con el mundo real, ya no hay una manera determinística de comportamiento.
+- La ventaja que tiene la ingeniería de software frente a otras ingenierías es que al testear el modelo, estamos testeando el producto final, no una predicción del producto.
+- Si aislamos una parte del sistema en la que estamos interesados, podemos evaluarla exactamente en el mismo ambiente que la va a exponer a producción.
+- En un momento nos cuenta cómo Margaret Hamilton acuñó el término ingeniería de software para que se tome al software más seriamente.
+- Margaret siempre asumía que no vas a tener lo correcto al primer intento, y entonces trataba de romper todo con todos los casos donde podía fallar el software.
+- Esto ayudó a que el humano llegue a la luna de forma segura, aun cuando había errores, eran "errores seguros".
+
+- La definición de ingeniería de software que propone Farley es: **Ingeniería es la aplicación de un approach empírico y científico a encontrar soluciones eficientes y económicas a problemas prácticos**.
+- Las soluciones de la ingeniería no son abstractas.
+
+- Hay gran cantidad de cambios en la industria de software, en cuanto a tecnologías y productos, pero... estas *son un gran cambio realmente?*
+- Da un ejemplo de Christin Gorman con Hibernate, el framework de Java para bases de datos relacionales.
+	- En muchos casos es más fácil de leer el SQL que a las anotaciones necesarias para lograr el mismo comportamiento en el framework, o aún así necesitabamos igualmente escribir el SQL dentro del framework que se supone que se encargaría de hacerlo.
+- Farley cree que a la industria le cuesta aprender y progresar.
+- El estancamiento en avances se enmascara por el progreso de la industria del hardware.
+- Menciona dos cosas que, en los lenguajes de programación, lo marcaron:
+	- El salto de Assembler a C.
+	- El salto del paradigma procedural al de objetos.
+- Brooks se olvidó de decir que si bien no hay 10x gains, existen 10x losses.
+	- Muchas relacionadas con el approach de las empresas al desarrollo, ya sea por tecnología o, más comunmente, por el proceso.
+- Menciona la importancia de la medición.
+- Es por culpa de no saber qué medir que no descartamos fácilmente las malas ideas.
+- Muchas métricas que se usan son irrelevantes o hasta hirientes, como lo son la velocidad, las lineas de código o el test coverage.
+- No hay una métrica defendible de la productividad, pero si que podemos medir cosas útiles.
+- Las dos mediciones importantes son:
+	- **Estabilidad:** medida por
+		- *Change Failure Rate:* el rate al cual se introducen defectos a partir de un cambio en una parte del proceso.
+		- *Recovery Failure Time:* cuánto se tarda en recuperarse a partir de una falla en algún momento del proceso.
+	- **Throughput:** medida por
+		- *Lead time:* ¿Cuánto se tarda en hacer que un cambio de línea de código vaya de idea a software que funcione?
+		- *Frecuencia:* ¿Con cuánta frecuencia se despliegan cambios a producción?
+
+- La estabilidad no dice nada sobre si un equipo está haciendo las cosas correctas, sino que mide su efectividad en entregar software con una calidad medible.
+- El throughput es medible en la eficiencia de un equipo en entregar ideas, en la forma de software que funciona.
+- Son ideas buenas, pero no dicen nada de si se construyen las cosas correctas, solo si la estamos construyendo bien.
+- La velocidad y la calidad tienen correlación.
+	- La ruta a la velocidad es el software de gran calidad,
+	- La ruta la la gran calidad de software es la velocidad del feedback.
+	- La ruta a ambas es la buena ingeniería.
+- Sin mediciones eficientes, no podemos saber si un cambio funciona o no. Solo podemos predecir.
+- Podemos medir cosas en la reflexión. Si agarramos algo y lo cambiamos, esto... cambia significativamente algo?

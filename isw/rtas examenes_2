@@ -1,0 +1,22 @@
+1. Fred Brooks diferencia las complejidades accidentales de las esenciales según su origen.
+    Las complejidades accidentales son aquellas que surgen de las herramientas que usamos, de las limitaciones de
+    cómputo, hardware, etcétera. Las complejidades esenciales son aquellas que son inherentes al dominio del
+    modelo del problema. Menciona que ninguna tecnología va a dar una productividad 10x porque hay límites que no se
+    pueden superar en complejidades accidentales, no hay _balas de plata_ que nos salven de ellas,
+    y las esenciales siempre van a existir, pues son inherentes al problema.
+
+2. Method object se utiliza cuando encontramos que en un método de una clase, necesitamos variables temporales, y al
+    querer hacer el refactoring de composición de métodos, notamos que siempre estamos pasando todas las mismas variables
+    temporales una y otra vez, no ganando declaratividad ni reduciendo líneas de código. Acá es donde separamos esta función
+    en una clase que está nombrada tras un verbo: el de la acción que realizaba el método original, todas las variables temporales
+    pasan a ser variables de instancia, así como los argumentos del método original y el objeto receptor original y tiene que tener un
+    mensaje #compute que es el encargado de computar el método original.
+    Este método va a ganar declaratividad a la hora de hacer la composición, pues no hay que pasarlos por parámetros, sumado a que
+    el refactoring es aun más simple, pues no hay que extraer variables, son todas de instancia.
+
+3. Una jerarquía polimórfica es un sistema de clasificación donde la superclase define el comportamiento que todas las subclases
+    implementarán de manera polimórfica, es decir, donde no importe qué instancia de qué subclase tengamos, el "qué" de este mensaje
+    será el mismo, lo único que cambie será el cómo lo hagan. Buscamos eliminar la repetición de código, pues si una subclase no difiere
+    en comportamiento con su superclase, no hace falta implementar el mensaje, simplemente podemos utilizar el algoritmo de method lookup a
+    nuestro favor y comenzar a buscar en su superclase. Además eliminamos la necesidad de usar ifs para saber de qué tipo es el receptor, sino
+    que simplemente al estar dentro de esa jerarquía (supongamos una Collection), ya sabemos que responde a un mensaje específico (collect, inject: into:, etc).

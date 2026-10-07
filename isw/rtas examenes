@@ -1,0 +1,15 @@
+1. Peter Naur considera que un programa está muerto cuando ninguno de los programadores del equipo formaron la teoría trabajen más en el proyecto.
+   Es imposible revivirlo en base a la documentación ya que el equipo que trate de revivirlo no posee la teoría, no puede argumentar por qué se diseñó así,
+   responder consultas sobre el diseño, justificarlo. Recomienda Naur entonces comenzar a escribir desde 0 el programa.
+
+2. Un modelo conceptual es aquel modelo que nos permite predecir lo que va a hacer el objeto tras nuestra acción y saber qué hacer cuando no funcione como esperamos.
+   Tiene 3 elementos:
+    El modelo de diseño, el cual es el modelo mental que posee el diseñador sobre cómo funciona el objeto.
+    El modelo del usuario, el cual es el modelo mental que el usuario construye sobre el objeto a través de la experiencia directa.
+    La imagen del sistema, es la parte física y visible del objeto. Tiene que transmitir toda la información a través de ella, pues si es incoherente, el usuario se frustra al usarlo.
+
+3. Las tres ideas simples y concretas en las que se basa `self` son Comportamiento, Slots y Prototipos.
+    En este lenguaje todo es un objeto, y todo objeto se comunica con mensajes, entonces los slots con los mensajes a self, permiten acceder a los colaboradores
+    internos del objeto, eliminando de esta manera la distinción entre estado y comportamiento. Pensemos que para asignar un valor a un slot, usamos el mensaje `x:`
+    enviado a `self`, y para acceder a la misma, podemos usar el mensaje `x` enviado a `self`, de la misma manera que hacemos con el comportamiento del objeto con un
+    mensaje `doSomething`.

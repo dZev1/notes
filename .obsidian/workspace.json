@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "isw/papers/mswe.md",
+                "file": "sistemas-operativos/practicas/pr_5/ejercicios.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mswe"
+              "title": "ejercicios"
             }
           }
         ]
@@ -202,6 +202,8 @@
   },
   "active": "478b1192a0ddaf83",
   "lastOpenFiles": [
+    "sistemas-operativos/clases/clase-filesystem.md",
+    "Untitled 1.md",
     "isw/papers/mswe.md",
     "sistemas-operativos/practicas/pr_5/ejercicios.md",
     "sistemas-operativos/practicas/pr_5/clase.md",
@@ -240,8 +242,6 @@
     "sistemas-operativos/imgs/Pasted image 20260905231416.png",
     "sistemas-operativos/imgs/Pasted image 20260905232728.png",
     "sistemas-operativos/imgs/Pasted image 20260905233303.png",
-    "isw/papers/astfhmp.md",
-    "isw/papers/ph.md",
     "sistemas-operativos/clases",
     "sistemas-operativos/ostep",
     "sistemas-operativos/practicas/pr_3",

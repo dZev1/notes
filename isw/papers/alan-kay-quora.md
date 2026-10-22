@@ -1,0 +1,22 @@
+# Was computing dumbed down by the arrival of computer science in academia? - Alan Kay
+
+- Alan Kay nos dice que en los 60s, se enseñaba _real computer science_ solamente en las universidades más prestigiosas del mundo (MIT, Cambridge, Stanford, ...).
+- Cuando empezó a hacerse masiva la carrera de ciencias de la computación, había un problema, que es que los _real computer scientists_ no alcanzaban para cubrir todas las universidades alrededor del mundo, obviamente.
+- Entonces es acá donde comenzaron a acercarse las empresas a las universidades para ayudar a formar los planes de estudios de las carreras de CS.
+- Se empezó a transicionar hacia un modelo de entrenamiento vocacional, y no uno de aprendizaje en profundidad de problemas complejos, como se acostumbró en el pasado.
+  - Esto lo atribuye a la inflación del costo de vida de los humanos, donde muchos estudiantes no buscan la ilustración, sino que buscan el empleo.
+- Da el ejemplo de como es que se adoptó Java como lenguaje de programación inicial para los estudiantes en Stanford, dejándose llevar por las necesidades de la industria.
+- Alan Kay menciona una realidad: nosotros, estudiantes de computación, no conocemos casi la historia de la computación, ni mucho menos de la ciencia de la computación.
+  - En física aparte de aprender leyes como $\sum F=m * a$, se aprende también quién fue Newton, cómo se llegó a esa fórmula, etc.
+  - Entonces de cierta manera no se está enseñando a la computación como un campo de estudio real.
+- De cierta manera, no solo perdimos la perspectiva sino que también la curiosidad intelectual.
+- Hoy en día la gran mayoría de estudiantes de ciencias de la computación, define a estas como algo parecido a la ingeniería, sin conectar con la idea de ciencia.
+- Entonces afirma que realmente el campo de las ciencias de la computación tuvo una reducción de dificultad/perspectiva/curiosidad, pero atribuye la culpa no solo a la academia, sino que también a la industria.
+- Luego define cómo veían a las ciencias de la computación en los 60s.
+  - La ciencia es un intento de detectar y obtener datos de fenómenos para explicarlos mediante modelos. Para hacerlo, usamos nuestros sentidos y nuestra cabeza.
+  - Muchas ciencias usan matemáticas de algún tipo, muchas veces surgiendo inventos específicos para resolver los modelos científicos, para ayudar con el modelado. Esto no es la parte de la ciencia, sino es simplemente el sostén de la teoría/modelo.
+  - Alan Perlis definía a la ciencia de la computación como _ciencia de los procesos_.
+    - Esto reconoce que los algoritmos, estructuras de datos, etc. son una pequeña parte de lo que es la computación.
+    - La computación se trata de entender, inventar y construir sistemas.
+- Por último menciona que los pioneros se dieron cuenta que las computadoras son **meta**, en el sentido que es un buen modelo para explorar ideas en sí mismo, así las matemáticas necesarias podían extraerse del modelo mismo.
+  - Caso de **Smalltalk** por ejemplo, completamente metacircular.

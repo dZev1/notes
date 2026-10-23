@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "sistemas-operativos/clases/08-seguridad.md",
+                "file": "sistemas-operativos/clases/09-contenedores.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "08-seguridad"
+              "title": "09-contenedores"
             }
           }
         ]
@@ -202,6 +202,8 @@
   },
   "active": "478b1192a0ddaf83",
   "lastOpenFiles": [
+    "sistemas-operativos/clases/08-seguridad.md",
+    "sistemas-operativos/clases/09-contenedores.md",
     "Pasted image 20261021230602.png",
     "sistemas-operativos/clases/07-filesystem.md",
     "sistemas-operativos/clases/06-drivers.md",
@@ -210,7 +212,6 @@
     "sistemas-operativos/clases/03-scheduling.md",
     "sistemas-operativos/clases/02-ipc.md",
     "sistemas-operativos/clases/01-procesos.md",
-    "sistemas-operativos/clases/08-seguridad.md",
     "sistemas-operativos/practicas/pr_5/ejercicios.md",
     "isw/papers/alan-kay-quora.md",
     "Untitled 1.md",
@@ -241,7 +242,6 @@
     "sistemas-operativos/imgs/Pasted image 20260905231208.png",
     "sistemas-operativos/imgs/Pasted image 20260905231416.png",
     "sistemas-operativos/imgs/Pasted image 20260905232728.png",
-    "sistemas-operativos/imgs/Pasted image 20260905233303.png",
     "sistemas-operativos/clases",
     "sistemas-operativos/ostep",
     "sistemas-operativos/practicas/pr_3",

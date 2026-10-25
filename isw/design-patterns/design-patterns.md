@@ -52,9 +52,30 @@ Se aplican cuando:
 - [Factory Method](factory-method.md)
 - [Abstract Factory](abstract-factory.md)
 - [Builder](builder.md)
-- [prototype](prototype.md)
-- [singleton](singleton.md)
+- [Prototype](prototype.md)
+- [Singleton](singleton.md)
 
 ### Estructurales
 
+Explican cómo clases y objetos se componen para formar estructuras más complejas. Usan herencia para componer interfaces o implementaciones.
+
+Describen maneras de componer objetos para que estos realicen nuevas funcionalidades. Esta flexibilidad de la composición de objetos trae la habilidad de cambiar en tiempo de ejecución la composición de un objeto.
+
+#### Algunos ejemplos
+
+- [Adapter](adapter.md)
+- [Composite](composite.md)
+- [Decorator](decorator.md)
+- [Proxy](proxy.md)
+
 ### Comportamineto
+
+#### Algunos ejemplos
+
+- [Null Object](null-object.md)
+- [State](state.md)
+- [Strategy](strategy.md)
+- [Observer](observer.md)
+- [Visitor](visitor.md)
+- [Template Method](template-method.md)
+- [Object Recursion](object-recursion.md)

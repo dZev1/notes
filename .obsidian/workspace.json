@@ -13,12 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
+<<<<<<< HEAD
                 "file": "isw/design-patterns/structurals/proxy.md",
+=======
+                "file": "sistemas-operativos/clases/08-seguridad.md",
+>>>>>>> 2c0aa9f (Proxy)
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
+<<<<<<< HEAD
               "title": "proxy"
+=======
+              "title": "08-seguridad"
+>>>>>>> 2c0aa9f (Proxy)
             }
           }
         ]
@@ -201,6 +209,7 @@
   },
   "active": "21a3accc620c800b",
   "lastOpenFiles": [
+<<<<<<< HEAD
     "isw/design-patterns/design-patterns.md",
     "isw/design-patterns/structurals/composite.md",
     "isw/design-patterns/structurals/adapter.md",
@@ -208,6 +217,23 @@
     "isw/design-patterns/structurals/decorator.md",
     "isw/design-patterns/behavioral/null-object.md",
     "isw/design-patterns/behavioral/object-recursion.md",
+=======
+    "sistemas-operativos/practicas/pr_6/ejercicios.md",
+    "sistemas-operativos/practicas/pr_5/ejercicios.md",
+    "sistemas-operativos/practicas/pr_5/clase.md",
+    "sistemas-operativos/practicas/pr_6",
+    "sistemas-operativos/parciales-viejos/2P-2025-1c.md",
+    "isw/design-patterns/behavioral/visitor.md",
+    "isw/design-patterns/behavioral/null-object.md",
+    "isw/design-patterns/design-patterns.md",
+    "isw/design-patterns/structurals/proxy.md",
+    "Pasted image 20261026143649.png",
+    "Pasted image 20261026143645.png",
+    "isw/design-patterns/structurals/composite.md",
+    "isw/design-patterns/structurals/adapter.md",
+    "Pasted image 20261025005533.png",
+    "isw/design-patterns/structurals/decorator.md",
+>>>>>>> 2c0aa9f (Proxy)
     "isw/design-patterns/behavioral/observer.md",
     "isw/design-patterns/behavioral/state.md",
     "isw/design-patterns/behavioral/visitor.md",
@@ -235,18 +261,37 @@
     "isw/papers/alan-kay-quora.md",
     "isw/papers/astfhmp.md",
     "isw/papers/cop.md",
+<<<<<<< HEAD
     "isw/design-patterns/behavioral",
+=======
+    "isw/papers/method-object.md",
+    "isw/papers/mswe.md",
+    "isw/papers/no.md",
+    "isw/papers/nsb.md",
+    "isw/papers/patb.md",
+    "isw/papers/ph.md",
+    "isw/papers/sdp.md",
+    "isw/papers/self.md",
+    "isw/design-patterns/behavioral",
+    "Pasted image 20261021230602.png",
+    "Pasted image 20260912203235.png",
+    "Pasted image 20260915111819.png",
+>>>>>>> 2c0aa9f (Proxy)
     "sistemas-operativos/practicas/pr_5",
     "isw/design-patterns/structurals",
     "sistemas-operativos/imgs/Pasted image 20260914102020.png",
     "sistemas-operativos/parciales-viejos",
     "sistemas-operativos/practicas/pr_4",
     "sistemas-operativos/imgs/Pasted image 20260909103235.png",
+<<<<<<< HEAD
+=======
+    "sistemas-operativos/imgs/Pasted image 20260909101709.png",
+    "sistemas-operativos/imgs/Pasted image 20260905231205.png",
+>>>>>>> 2c0aa9f (Proxy)
     "sistemas-operativos/clases",
     "sistemas-operativos/ostep",
     "sistemas-operativos/practicas/pr_3",
     "sistemas-operativos/practicas/pr_1/practica1.pdf",
-    "microarquitectura/sistema-de-memoria",
     "Untitled.canvas"
   ]
 }

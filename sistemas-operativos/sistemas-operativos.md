@@ -5,9 +5,9 @@
 | Semana |                                                    Tema                                                    |
 | :----: | :--------------------------------------------------------------------------------------------------------: |
 |   01   |                          [[sistemas-operativos#Sistema Operativo\|Introducción]]                           |
-|   02   |                                      [[procesos#Procesos\|Procesos]]                                       |
-|   03   |              [[procesos#InterProcess Communication (IPC)\|Comunicación entre procesos (IPC)]]              |
-|   04   |                                   [[scheduling#Scheduling\|Scheduling]]                                    |
+|   02   |                        [[procesos#Procesos\|Procesos]] \|  [Clase](01-procesos.md)                         |
+|   03   |   [[procesos#InterProcess Communication (IPC)\|Comunicación entre procesos (IPC)]] \| [Clase](02-ipc.md)   |
+|   04   |                     [[scheduling#Scheduling\|Scheduling]] \| [Clase](03-scheduling.md)                     |
 |   05   | [[threads#Threads\|Threads]], [[sincronizacion#Sincronización de Procesos\|Sincronización entre procesos]] |
 |   06   |                               [[memoria#Memoria\|Administración de memoria]]                               |
 |        |                                                                                                            |

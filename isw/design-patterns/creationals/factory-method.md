@@ -32,7 +32,7 @@ Queremos llegar a la siguiente estructura:
 
 1. El producto declara la interfaz, que es común a todos los objetos producidos por el creador y sus subclases.
 2. Los productos concretos son diferentes implementaciones de la interfaz de producto.
-3. La clase creadora declara el método fábrica que retorna nuevos objetos productos. Es importante que el tipo de retorno de este método matchee la interfaz de producto. \
+3. La clase creadora declara el método fábrica que retorna nuevos objetos productos. Es importante que el tipo de retorno de este método matchee la interfaz de producto.
    Se puede declarar el factory method como abstracto para que todas las subclases implementen su propia version del método. Sino se puede hacer que retorne un producto default.
 4. Los creadores contcretos hacen un **override** del factory method así retorna un tipo diferente de producto. El factory method no tiene que **crear** nuevas instancias todo el tiempo, puede retornar también un objeto existente de una cache, una pool de objetos u otra fuente.
 

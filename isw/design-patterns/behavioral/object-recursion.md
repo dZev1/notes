@@ -1,4 +1,4 @@
-# The Object Recursion Pattern - Bobby Woolf
+# Object Recursion Pattern
 
 ## Intent
 

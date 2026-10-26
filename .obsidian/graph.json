@@ -15,7 +15,7 @@
       }
     },
     {
-      "query": "path:design-patterns/Creationals  ",
+      "query": "path:design-patterns/creationals  ",
       "color": {
         "a": 1,
         "rgb": 16646051
@@ -50,13 +50,6 @@
       }
     },
     {
-      "query": "path:quantum-computing  ",
-      "color": {
-        "a": 1,
-        "rgb": 10420128
-      }
-    },
-    {
       "query": "path:sistemas-operativos file:sistemas-operativos",
       "color": {
         "a": 1,
@@ -64,24 +57,24 @@
       }
     },
     {
-      "query": "path: sistemas-operativos/virtualization  ",
+      "query": "path: sistemas-operativos/clases path:sistemas-operativos/clases  ",
       "color": {
         "a": 1,
         "rgb": 16683152
       }
     },
     {
-      "query": "path:sistemas-operativos/concurrency  ",
+      "query": "path:isw/design-patterns/structurals  ",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 14701233
       }
     },
     {
-      "query": "path:microarch/hennessy-patterson  ",
+      "query": "path:isw/design-patterns/behavioral  ",
       "color": {
         "a": 1,
-        "rgb": 16772812
+        "rgb": 14701138
       }
     }
   ],
@@ -95,6 +88,6 @@
   "repelStrength": 1.875,
   "linkStrength": 1,
   "linkDistance": 77,
-  "scale": 0.9346552651840734,
+  "scale": 0.934655265184073,
   "close": false
 }

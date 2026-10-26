@@ -8,6 +8,8 @@
 
 - **¡NO SIEMPRE SON LA MEJOR OPCIÓN!**
 
+- Son HEURÍSTICAS
+
 ## ¿Por qué usarlos?
 
 - Implementan soluciones sin la necesidad de tener que replantear las mismas para nuestro problema.
